@@ -1,6 +1,6 @@
 
 function yourName() {
-  return 'Harish';
+  return 'Mohammad';
 }
 
 export {
