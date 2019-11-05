@@ -14,6 +14,7 @@
   "dependencies": {
     "chalk": "*",
     "dotenv": "*",
+    "global": "^4.4.0",
     "graphql-request": "*",
     "node-fetch": "*"
   },
@@ -28,7 +29,7 @@
     "eslint-plugin-jsx-a11y": "*",
     "eslint-plugin-react": "*",
     "husky": "*",
-    "jest": "*",
+    "jest": "^24.9.0",
     "lint-staged": "*"
   },
   "husky": {
@@ -37,6 +38,8 @@
     }
   },
   "lint-staged": {
-    "!(*.test).js": ["eslint"]
+    "!(*.test).js": [
+      "eslint"
+    ]
   }
 }
