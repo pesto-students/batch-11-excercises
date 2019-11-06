@@ -1,9 +1,9 @@
 
 function counter(...args) {
-  
+
   var i = 0;
 
-  return () => {return ++i};
+  return () => { return ++i };
 }
 
 export {
