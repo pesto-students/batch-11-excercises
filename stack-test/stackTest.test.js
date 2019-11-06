@@ -47,10 +47,17 @@ describe('stack test', () => {
     expect(actual).toEqual(expected);
   });
 
-  test('returns the last pushed element while peeking', ()=>{
+  test('returns the last pushed element while peeking', () => {
     const actual = myStack.peek();
     const expected = 3;
+
     expect(actual).toEqual(expected);
   });
 
+  test('should pop elements from stack in order', () => {
+    myStack.pop();
+    const actual = myStack.pop();
+
+    expect(actual).toEqual(2);
+  });
 });
