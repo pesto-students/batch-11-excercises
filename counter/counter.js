@@ -1,4 +1,3 @@
-
 function counter(...args) {
   return args;
 }
