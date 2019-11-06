@@ -1,5 +1,5 @@
 
-function binaryAgent(binaryString) {
+function convertBinaryToAscii(binaryString) {
   // One liner
   // return binaryString.split(' ').map(x => String.fromCharCode(Number.parseInt(x, 2))).join('');
 
@@ -15,5 +15,5 @@ function binaryAgent(binaryString) {
 }
 
 export {
-  binaryAgent,
+  convertBinaryToAscii,
 };

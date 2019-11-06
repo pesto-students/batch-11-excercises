@@ -1,4 +1,5 @@
-function bouncer(mixedValuesArray) {
+
+function removeFalsyValues(mixedValuesArray) {
   // One liner
   // return mixedValuesArray.filter(Boolean);
 
@@ -10,5 +11,5 @@ function bouncer(mixedValuesArray) {
 }
 
 export {
-  bouncer,
+  removeFalsyValues,
 };
