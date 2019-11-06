@@ -1,3 +1,5 @@
+/* eslint-disable implicit-arrow-linebreak */
+/* eslint-disable indent */
 function isPrime(num) {
   let i = 2;
   while (i < num) {
@@ -8,18 +10,21 @@ function isPrime(num) {
 }
 
 function getPrimeList(number) {
-  let num = number;
-  const primes = [];
-  while (num >= 2) {
-    if (isPrime(num)) primes.push(Number(num));
-    num -= 1;
+  let numberCopy = number;
+  const listOfPrimes = [];
+  while (numberCopy >= 2) {
+    if (isPrime(numberCopy)) listOfPrimes.push(Number(numberCopy));
+    numberCopy -= 1;
   }
-  return primes;
+  return listOfPrimes;
 }
 
 
-function sumPrimes(...args) {
-  return getPrimeList(args).reduce((a, b) => a + b, 0);
+function sumPrimes(range) {
+  const sumOfPrimeNumbers = getPrimeList(range)
+                                        .reduce((currentValue, accumulator) =>
+                                                    currentValue + accumulator, 0);
+  return sumOfPrimeNumbers;
 }
 
 export {
