@@ -1,6 +1,9 @@
 
 function booWho(...args) {
-  return args;
+  let ans;
+  if (typeof args === 'boolean') ans = true;
+  else ans = false;
+  return ans;
 }
 
 export {
