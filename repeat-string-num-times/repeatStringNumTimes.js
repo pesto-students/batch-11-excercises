@@ -1,5 +1,5 @@
 function repeatStringNumTimes(string, valueOfRepeatation) {
-  let emptyString = " ";
+  let emptyString = '';
   if (valueOfRepeatation < 0) return emptyString;
   let repeatedString = string.repeat(valueOfRepeatation);
   return repeatedString;
