@@ -1,6 +1,7 @@
 
-function isPalindrome(...args) {
-  return args;
+function isPalindrome(inputString) {
+  const caseInsensitiveString = inputString.toLowerCase();
+  return caseInsensitiveString;
 }
 
 export {
