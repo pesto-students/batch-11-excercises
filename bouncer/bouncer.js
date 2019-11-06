@@ -1,6 +1,12 @@
+function bouncer(mixedValuesArray) {
+  // One liner
+  // return mixedValuesArray.filter(Boolean);
 
-function bouncer(...args) {
-  return args;
+  function isFalsy(valueToCheck) {
+    return Boolean(valueToCheck);
+  }
+
+  return mixedValuesArray.filter(isFalsy);
 }
 
 export {
