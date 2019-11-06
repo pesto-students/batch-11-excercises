@@ -18,7 +18,7 @@
             "completed": false
         },
         "counter-factory": {
-            "completed": false
+            "completed": true
         },
         "limit-function-call-count": {
             "completed": false
@@ -27,7 +27,7 @@
             "completed": true
         },
         "apply-operator": {
-            "completed": false
+            "completed": true
         },
         "boo-who": {
             "completed": true
