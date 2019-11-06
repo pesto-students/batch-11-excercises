@@ -1,6 +1,6 @@
 
-function yourName() {
-  return 'Mohammad';
+function yourName(...args) {
+  return args;
 }
 
 export {
