@@ -13,7 +13,7 @@ class Stack {
   }
 
   push(item) {
-    this.items.push(item);
+    this.items.unshift(item);
     this.count = this.count + 1;
   }
 
