@@ -46,4 +46,34 @@ describe('stack test', () => {
 
     expect(actual).toEqual(expected);
   });
+
+  test('should pop element from the stack in proper order', () => {
+    const actual = myStack.pop();
+    const expected = 3;
+
+    const actualArray = myStack.items;
+    const expectedArray = [1,2]
+
+    expect(actual).toEqual(expected);
+    expect(actualArray).toEqual(expectedArray);
+
+  });
+
+  test('should peek element from stack ', () => {
+    const actual = myStack.peek();
+    const expected = 3;
+
+    const actualArray = myStack.items;
+    const expectedArray = [1,2,3]
+
+    expect(actual).toEqual(expected);
+    expect(actualArray).toEqual(expectedArray);
+  });
+
+  test('should get the length of stack', () => {
+    const actual = myStack.getLength();
+    const expected = 3;
+
+    expect(actual).toEqual(expected);
+  });
 });
