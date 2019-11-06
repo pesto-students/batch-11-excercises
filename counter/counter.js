@@ -1,6 +1,10 @@
+function counter() {
+  let count = 0;
 
-function counter(...args) {
-  return args;
+  return function increment() {
+    count += 1;
+    return count;
+  };
 }
 
 export {
