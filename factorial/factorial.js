@@ -1,12 +1,12 @@
 
-function factorial(...args) {
-  let fact = 1;
+function factorial(number) {
+  let factorialValue = 1;
   let i = 1;
-  while (i <= args) {
-    fact *= i;
+  while (i <= number) {
+    factorialValue *= i;
     i += 1;
   }
-  return fact;
+  return factorialValue;
 }
 
 export {
