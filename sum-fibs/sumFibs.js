@@ -1,22 +1,24 @@
 
-function sumFibs(...args) {
+function sumFibs(range) {
   let i = 2;
-  let sum = 0;
+  let sumOfOddFibonnaciNumbers = 0;
 
-  const fibo = [];
-  fibo.push(0);
-  fibo.push(1);
+  const fibonnaciValues = [];
+  fibonnaciValues.push(0);
+  fibonnaciValues.push(1);
 
-  while (i <= args) {
-    fibo[i] = fibo[i - 1] + fibo[i - 2];
+  while (i <= range) {
+    fibonnaciValues[i] = fibonnaciValues[i - 1] + fibonnaciValues[i - 2];
     i += 1;
   }
 
-  fibo.forEach((ele) => {
-    if (ele % 2 !== 0 && ele < args) sum += ele;
+  fibonnaciValues.forEach((fibonnaciValue) => {
+    if (fibonnaciValue % 2 !== 0 && fibonnaciValue < range) {
+      sumOfOddFibonnaciNumbers += fibonnaciValue;
+    }
   });
 
-  return sum;
+  return sumOfOddFibonnaciNumbers;
 }
 
 export {
