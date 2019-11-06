@@ -10,11 +10,8 @@ function applyOperator(operator, ...operands) {
       return operands.reduce((result, element) => result - element, 0);
     case '*':
       return operands.reduce((result, element) => result * element, 1);
-    case '/': {
-      const highDecimalPlaces = operands.reduce((result, element) => result / element, 1);
-      const precisionOfTwo = Number.parseFloat(Number.parseFloat(highDecimalPlaces).toPrecision(2));
-      return precisionOfTwo;
-    }
+    case '/':
+      return operands.reduce((result, element) => result / element, 1);
     case '%':
       return operands.reduce((result, element) => result % element);
     default:
