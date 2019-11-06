@@ -24,7 +24,7 @@
             "completed": false
         },
         "cache-function": {
-            "completed": false
+            "completed": true
         },
         "apply-operator": {
             "completed": false
@@ -39,10 +39,10 @@
             "completed": false
         },
         "rectangle-diagonal": {
-            "completed": false
+            "completed": true
         },
         "three-sum": {
-            "completed": false
+            "completed": true
         },
         "sum-of-perfect-squares": {
             "completed": false
