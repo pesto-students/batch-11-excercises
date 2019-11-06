@@ -1,8 +1,7 @@
 
-function isEven(...val) {
+function isEven(checkNumber) {
 
-  
-  return (val / 2) * 2 == val
+return Boolean(checkNumber & 1 !== 1);
 
 }
 
