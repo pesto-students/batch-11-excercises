@@ -1,61 +1,28 @@
-function applyOperator(...args) {
-  let result = 0;
-  const passedArgs = [].concat(args);
-  passedArgs.splice(0, 1);
-  if (args[0] !== '+' && args[0] !== '-' && args[0] !== '/' && args[0] !== '%' && args[0] !== '%') {
-    result = 0;
-  } else {
-    throw Error('Operator Is Not Specified');
-  }
-  switch (args[0]) {
+function applyOperator(operator, ...listOfOperands) {
+  if (!operator) throw new Error('An operator is required to perform the operation.Provide any of these operator +,-,*,/,%');
+  if (listOfOperands.length === 0) return 0;
+  let operatedValue = 0;
+  switch (operator) {
     case '+':
-      passedArgs.map((el) => {
-        result += el;
-        return null;
-      });
+      operatedValue = listOfOperands.reduce((alreadyAddedTotalNumber, currentNumber) => alreadyAddedTotalNumber + currentNumber, 0);
       break;
     case '-':
-      passedArgs.map((el) => {
-        result -= el;
-        return 0;
-      });
+      operatedValue = listOfOperands.reduce((alreadySubstractedTotalNumber, currentNumber) => alreadySubstractedTotalNumber - currentNumber, 0);
       break;
     case '*':
-      passedArgs.map((el, index) => {
-        if (index === 0) {
-          result = el;
-        } else {
-          result *= el;
-        }
-        return 0;
-      });
+      operatedValue = listOfOperands.reduce((alreadyMultipliedTotalNumber, currentNumber) => alreadyMultipliedTotalNumber * currentNumber, 1);
       break;
     case '/':
-      passedArgs.map((el, index) => {
-        if (index === 0) {
-          result = el;
-        } else {
-          result /= el;
-        }
-        return 0;
-      });
-      result = parseFloat(result.toFixed(4));
+      operatedValue = listOfOperands.reduce((alreadyDividedTotalNumber, currentNumber) => alreadyDividedTotalNumber / currentNumber, 1);
+      operatedValue = parseFloat(operatedValue.toFixed(4));
       break;
     case '%':
-      passedArgs.map((el, index) => {
-        if (index === 0) {
-          result = el;
-        } else {
-          result /= el;
-        }
-        return 0;
-      });
-      result = Math.ceil(result);
+      operatedValue = listOfOperands.reduce((alreadyModuledTotalNumber, currentNumber) => alreadyModuledTotalNumber % currentNumber);
       break;
     default:
-      throw new Error('No Operator');
+      throw new Error('Invalid Operator Has Been Provided. Please check if your operator is one of these : + , -, *, /, %');
   }
-  return result;
+  return operatedValue;
 }
 export {
   applyOperator,
