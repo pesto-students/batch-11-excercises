@@ -1,7 +1,7 @@
 
 function isEven(checkNumber) {
 
-return Boolean(checkNumber & 1 !== 1);
+return !Boolean(checkNumber & 1 === 1);
 
 }
 
