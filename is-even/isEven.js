@@ -1,6 +1,6 @@
 
 function isEven(...args) {
-  return args;
+  return Number.isInteger(args[0] / 2);
 }
 
 export {
