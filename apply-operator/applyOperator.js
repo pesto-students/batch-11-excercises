@@ -1,7 +1,6 @@
 
-function applyOperator(...args) {
+function applyOperator(operator, ...operands) {
   let answer;
-  const [operator, ...operands] = args;
   if (operator === undefined) {
     throw new Error('Please specify one of the mentioned operators : +, -, *, /, %');
   }
