@@ -1,8 +1,10 @@
-let functionCallCount = 0;
-
 function counter() {
-  functionCallCount += 1;
-  return functionCallCount;
+  let count = 0;
+  function incrementCount() {
+    count += 1;
+    return count;
+  }
+  return incrementCount;
 }
 
 export {
