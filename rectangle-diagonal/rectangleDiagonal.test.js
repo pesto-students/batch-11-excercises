@@ -1,7 +1,7 @@
-import { rectangleDiagonal } from './rectangleDiagonal';
+import { calculateDiagonalLength } from './rectangleDiagonal';
 
 describe('rectangleBlock', () => {
   it('calculates rectangle diagonal', () => {
-    expect(rectangleDiagonal(3, 4)).toBe(5);
+    expect(calculateDiagonalLength(3, 4)).toBe(5);
   });
 });
