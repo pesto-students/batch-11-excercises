@@ -2,7 +2,8 @@
 function isEven(...args) {
   
   var value = args[0];
-  if(value %2 === 0){
+  var divideby2 = parseInt(args[0]/2)
+  if(divideby2 * 2 === value){
     return true
   }else {
     return false
