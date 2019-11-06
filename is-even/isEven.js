@@ -1,8 +1,5 @@
-
-function isEven(...args) {
+function isEven(args) {
   return args;
 }
 
-export {
-  isEven,
-};
+export { isEven };

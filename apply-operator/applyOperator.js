@@ -1,8 +1,5 @@
-
 function applyOperator(...args) {
   return args;
 }
 
-export {
-  applyOperator,
-};
+export { applyOperator };
