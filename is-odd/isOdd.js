@@ -1,8 +1,7 @@
 
-function isOdd(...args) {
-  let flag = false;
-  if (args % 2 !== 0) flag = true;
-  return flag;
+function isOdd(number) {
+  // eslint-disable-next-line no-bitwise
+  return ((number & 1) === 1);
 }
 
 export {
