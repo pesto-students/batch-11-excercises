@@ -1,6 +1,6 @@
 
 function isEven(...args) {
-  return args;
+  return /^-?\d*[02468]$/.test(args);
 }
 
 export {
