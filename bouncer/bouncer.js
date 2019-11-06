@@ -1,6 +1,7 @@
 
-function bouncer(...args) {
-  return args;
+function bouncer(toBeTruthifyArray) {
+  if (!toBeTruthifyArray) return [];
+  return toBeTruthifyArray.filter((toBeTruthifyValue) => toBeTruthifyValue);
 }
 
 export {
