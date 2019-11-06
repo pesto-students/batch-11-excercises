@@ -1,6 +1,7 @@
 
-function reverseString(...args) {
-  return args;
+function reverseString(string) {
+  const reversedString = string.split('').reverse().join('');
+  return reversedString;
 }
 
 export {
