@@ -1,6 +1,8 @@
 
 function dropElements(...args) {
-  return args;
+  const [numbers, predicate] = args;
+  const filteredArray = numbers.filter(predicate);
+  return filteredArray;
 }
 
 export {
