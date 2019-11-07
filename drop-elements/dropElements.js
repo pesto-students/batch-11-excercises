@@ -1,9 +1,9 @@
 
-function dropElements(numArray,shouldRemoveElement) {
+function dropElements(numArray,shouldNotRemoveElement) {
   var filteredArray = [];
-  
+
   numArray.forEach(element => {
-    if(shouldRemoveElement(element)){
+    if(shouldNotRemoveElement(element)){
       filteredArray.push(element);
     }
   });
