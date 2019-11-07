@@ -1,6 +1,6 @@
 
-function updateInventory(...args) {
-  return args;
+function updateInventory(currentInventory, inboundInventory) {
+  
 }
 
 export {

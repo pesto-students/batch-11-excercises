@@ -1,5 +1,5 @@
 
-function slasher(...args) {
+function slasher(list, ) {
   return args;
 }
 

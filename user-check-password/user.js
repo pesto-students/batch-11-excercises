@@ -3,6 +3,10 @@
 // Follow the instructions and fill in the blank sections.
 function User() {
   // set a username and password property on the user object that is created
+  const user = {
+    userName: 'yash',
+    password: '********',
+  };
 }
 
 // create a method on User called `checkPassword`
