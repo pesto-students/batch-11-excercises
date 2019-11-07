@@ -1,6 +1,12 @@
 
-function objectPairs(...args) {
-  return args;
+function objectPairs(inputObject) {
+  var objectPairArray = [];
+
+  Object.keys(inputObject).forEach(key => {
+    objectPairArray.push([key,inputObject[key]])
+  })
+
+  return objectPairArray;
 }
 
 export {

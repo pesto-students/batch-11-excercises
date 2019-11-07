@@ -1,6 +1,6 @@
 
-function objectValues(...args) {
-  return args;
+function objectValues(inputObject) {
+  return Object.values(inputObject);
 }
 
 export {
