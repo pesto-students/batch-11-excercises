@@ -1,15 +1,10 @@
 function objectKeys(object) {
-  const properties = [];
-  const invlaidProperties = [null, undefined, 0, ""];
+  const keys = [];
+
   for (let key in object) {
-    const property = object[key];
-    if (invlaidProperties.includes(property)) {
-      properties.push(key.toString());
-    } else {
-      properties.push(property.toString());
-    }
+    keys.push(key.toString());
   }
-  return properties;
+  return keys;
 }
 
 export { objectKeys };
