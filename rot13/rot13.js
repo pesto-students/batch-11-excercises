@@ -3,7 +3,7 @@ function rot13(...args) {
   const alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const encodedString = args[0];
   let decodedString = '';
-  const nonAlphabeticPattern = /[_ !,.]/;
+  const nonAlphabeticPattern = /[ !,.]/gi;
   for (let i = 0; i < encodedString.length; i++) {
     const encodedChar = encodedString[i];
     if (nonAlphabeticPattern.test(encodedChar)) continue;
