@@ -1,8 +1,12 @@
+function objectInvert(object) {
+  const inverted = {};
+  for (let key in object) {
+    let value = object[key]
+    inverted[value] = key;
+  }
 
-function objectInvert(...args) {
-  return args;
+  return inverted;
 }
+console.log(objectInvert({ x: 25 }));
 
-export {
-  objectInvert,
-};
+// export { objectInvert };
