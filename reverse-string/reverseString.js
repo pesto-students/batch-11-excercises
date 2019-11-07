@@ -1,6 +1,9 @@
+/* eslint-disable indent */
 
 function reverseString(string) {
-  const reversedString = string.split('').reverse().join('');
+  const reversedString = string.split('')
+                                .reverse()
+                                .join('');
   return reversedString;
 }
 
