@@ -1,6 +1,6 @@
 
-function curry(...args) {
-  return args;
+function curry(fn) {
+  console.log(fn.arguments);
 }
 
 export {
