@@ -1,6 +1,14 @@
 
-function dropElements(...args) {
-  return args;
+function dropElements(numArray,shouldRemoveElement) {
+  var filteredArray = [];
+  
+  numArray.forEach(element => {
+    if(shouldRemoveElement(element)){
+      filteredArray.push(element);
+    }
+  });
+    
+  return filteredArray;
 }
 
 export {
