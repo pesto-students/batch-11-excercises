@@ -1,9 +1,10 @@
 
 function findElement(array, truthTest) {
-  const result = array.filter(truthTest);
-  if (result.length === 0) {
+  const passedValues = array.filter(truthTest);
+  if (passedValues.length === 0) {
     return undefined;
   }
+  const result = passedValues[0];
   return result;
 }
 
