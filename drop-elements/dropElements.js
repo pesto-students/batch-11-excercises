@@ -1,6 +1,6 @@
 
-function dropElements(...args) {
-  return args;
+function dropElements(unsanitizedArray, condition) {
+  return unsanitizedArray.filter(condition);
 }
 
 export {
