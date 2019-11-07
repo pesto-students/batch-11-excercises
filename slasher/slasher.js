@@ -1,6 +1,6 @@
 
-function slasher(...args) {
-  return args;
+function slasher(values, pivot) {
+  return values.splice(pivot);
 }
 
 export {
