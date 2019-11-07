@@ -9,4 +9,8 @@ describe('squareNumbersArray', () => {
     const myArray = [1, 2, 4];
     expect(() => squareNumbersArray(...myArray)).toBe([1, 4, 16]);
   });
+  test('should return square array', () => {
+    const myArray = [];
+    expect(() => squareNumbersArray(...myArray)).toBe(-1);
+  });
 });
