@@ -1,7 +1,7 @@
 
 function createMapInventory(inventory) {
-  return inventory.reduce((accumulator, itemInfoArray, index) => {
-    const name = itemInfoArray[1];
+  return inventory.reduce((accumulator, itemDetails, index) => {
+    const name = itemDetails[1];
     accumulator[name] = index.toString();
     return accumulator;
   }, {});
@@ -23,9 +23,9 @@ function sortInventory(inventory) {
 
 function updateInventory(currentInventory, newInventory) {
   const currentInventoryMap = createMapInventory(currentInventory);
-  newInventory.forEach((itemInfoArray) => {
-    const name = itemInfoArray[1];
-    const quantity = itemInfoArray[0];
+  newInventory.forEach((itemDetails) => {
+    const name = itemDetails[1];
+    const quantity = itemDetails[0];
     const indexOfCurrentItemInMap = currentInventoryMap[name];
     if (indexOfCurrentItemInMap) {
       const itemInCurrentInventory = currentInventory[parseInt(indexOfCurrentItemInMap, 10)];
@@ -33,7 +33,7 @@ function updateInventory(currentInventory, newInventory) {
       currentItemQuantity += quantity;
       itemInCurrentInventory[0] = currentItemQuantity;
     } else {
-      currentInventory.push(itemInfoArray);
+      currentInventory.push(itemDetails);
     }
   });
   return sortInventory(currentInventory);
