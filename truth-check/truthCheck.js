@@ -1,6 +1,6 @@
 
-function truthCheck(objectArray, propertyToBeChecked) {
-  return objectArray.filter((object) => object[propertyToBeChecked]).length === objectArray.length;
+function truthCheck(objects, propertyToBeChecked) {
+  return objects.filter((object) => object[propertyToBeChecked]).length === objects.length;
 }
 
 export {
