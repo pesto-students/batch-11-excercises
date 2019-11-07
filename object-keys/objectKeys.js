@@ -1,6 +1,11 @@
+/* eslint-disable guard-for-in */
 
-function objectKeys(...args) {
-  return args;
+function objectKeys(object) {
+  const keys = [];
+  for (const key in object) {
+    keys.push(key);
+  }
+  return keys;
 }
 
 export {

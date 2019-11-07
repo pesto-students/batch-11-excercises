@@ -1,6 +1,6 @@
 
-function truthCheck(...args) {
-  return args;
+function truthCheck(collection, predicate) {
+  
 }
 
 export {
