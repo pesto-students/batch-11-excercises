@@ -1,13 +1,13 @@
 
 function getArrayDifference(firstArrayToCompare, secondArrayToCompare) {
-  const arrayWithDifference = [];
+  const listWithDifferences = [];
   firstArrayToCompare.forEach((arrayItem) => {
-    if (!secondArrayToCompare.includes(arrayItem)) arrayWithDifference.push(arrayItem);
+    if (!secondArrayToCompare.includes(arrayItem)) listWithDifferences.push(arrayItem);
   });
   secondArrayToCompare.forEach((arrayItem) => {
-    if (!firstArrayToCompare.includes(arrayItem)) arrayWithDifference.push(arrayItem);
+    if (!firstArrayToCompare.includes(arrayItem)) listWithDifferences.push(arrayItem);
   });
-  return arrayWithDifference;
+  return listWithDifferences;
 }
 
 export {
