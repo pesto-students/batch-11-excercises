@@ -1,9 +1,9 @@
 
-function findElement(numbers,checkCondition) {
+function findElement(numbers,shouldReturnNumber) {
   var resultNumber;
 
   for(var i=0;i<numbers.length;i++){
-    if(checkCondition(numbers[i])){
+    if(shouldReturnNumber(numbers[i])){
       resultNumber =  numbers[i];
       break;
     }
