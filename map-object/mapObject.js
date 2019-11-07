@@ -1,6 +1,6 @@
 
-function mapObject(...args) {
-  return args;
+function mapObject(objectToBeMapped, mapperFunction) {
+  return objectToBeMapped.map(mapperFunction);
 }
 
 export {
