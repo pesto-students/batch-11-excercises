@@ -1,14 +1,14 @@
 
 function squareNumbersArray(numberArray) {
-  
-  numberArray.forEach(element => {
-      if(typeof element !== 'number'){
-        throw new CustomError('My custom error');
-      }
-  })
 
-  let squaredArray = numberArray.map((elementValue) => {
-    return Math.pow(elementValue,2);
+  let squaredArray = [];
+  
+  numberArray.forEach((element) => {
+      if(typeof element !== 'number'){
+        throw new Error('My custom error');
+      }else{
+        squaredArray.push(Math.pow(element,2));
+      }
   });
 
   return squaredArray;
