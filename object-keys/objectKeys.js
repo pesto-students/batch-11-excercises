@@ -1,6 +1,6 @@
 
-function objectKeys(...args) {
-  return args;
+function objectKeys(inputObject) {
+  return Object.keys(inputObject);
 }
 
 export {
