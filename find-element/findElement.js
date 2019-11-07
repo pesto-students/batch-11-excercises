@@ -1,16 +1,8 @@
 
-function findElement(numberArray) {
+function findElement(numberArray,EliminateUncondtionalNumbers) {
 
-  let FoundedElement;
-
-  numberArray.filter((checkNumber) => {
-
-       if(checkNumber % 2 === 0){
-          FoundedElement = checkNumber;
-       }
-  });
-
-  return FoundedElement;
+  const [firstElementFound] = [...numberArray.filter(EliminateUncondtionalNumbers)];
+  return firstElementFound;
 }
 
 export {
