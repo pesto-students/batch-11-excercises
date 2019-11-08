@@ -26,7 +26,7 @@ function sumOfBankBalances() {
   const { bankBalances } = accountDataset;
   let totalAmount = 0;
   bankBalances.map((item) => {
-    totalAmount += Math.round(parseInt(item['amount'])).toFixed(2)
+    totalAmount += (parseFloat(item['amount']));
     return item;
   })
   return parseFloat(totalAmount.toFixed(2));
@@ -34,24 +34,30 @@ function sumOfBankBalances() {
 
 function sumOfInterests() {
   const { bankBalances } = accountDataset;
-  const totalPrincipalAmount = bankBalances.reduce((currentSumTotal, bankBalance) => {
-    const totalSum = currentSumTotal + parseInt(bankBalance.amount, 10);
-    return totalSum;
-  }, 0);
+  const totalPrincipalAmount = sumOfBankBalances();
   const totalSumInterest = totalPrincipalAmount * 18.9;
   return totalSumInterest;
 }
 
 function higherStateSums() {
-  // console.log(jsonData);
   const { bankBalances } = accountDataset;
   let totalHigherStateSum = 0;
-  const totalSumStatewise = {};
-  const result = bankBalances.map((item) => {
-        totalSumStatewise[item] =item.amount;
-      return item;
-  });
-  return result;
+  const sumAmountBystateObj  = bankBalances.reduce((states, account) => {
+    if (account.state in states) {
+      states[account.state] += parseFloat(account.amount);
+    } else {
+      states[account.state] = parseFloat(account.amount);
+    }
+    return states;
+  }, {});
+
+  Object.keys(sumAmountBystateObj).forEach(state=>{   
+    if (sumAmountBystateObj[state] > 1000000) {
+    totalHigherStateSum += sumAmountBystateObj[state];
+    }
+    });
+    
+    return totalHigherStateSum;
 }
 
 export {
