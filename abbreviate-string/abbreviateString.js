@@ -1,6 +1,6 @@
 
 function abbreviateString(fullString) {
-  
+
   if (typeof fullString !== 'string') {
     throw new Error('Input parameter should be a string')
   }
