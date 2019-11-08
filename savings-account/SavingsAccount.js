@@ -48,23 +48,23 @@ function SavingsAccount(...accountInformation) {
   };
 
   this.getAccountNumber = () => {
-    return this.accountNumber;
+    return this.information.accountNumber;
   };
 
   this.getEmail = () => {
-    return this.email;
+    return this.information.email;
   };
 
   this.getFirstName = () => {
-    return this.firstName;
+    return this.information.firstName;
   };
 
   this.getLastName = () => {
-    return this.lastName;
+    return this.information.lastName;
   };
 
   this.getProducts = () => {
-    return this.products;
+    return this.information.products;
   };
 
   if (this.isValidInformation()) {
