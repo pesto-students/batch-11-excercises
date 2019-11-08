@@ -1,6 +1,6 @@
 
-function throwErrors(...args) {
-  return args;
+function throwErrors() {
+  throw Error();
 }
 
 export {
