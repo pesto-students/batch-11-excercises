@@ -1,6 +1,6 @@
 
-function boolean(...args) {
-  return args;
+function boolean(isThisBoolean) {
+  return Boolean(isThisBoolean);
 }
 
 export {
