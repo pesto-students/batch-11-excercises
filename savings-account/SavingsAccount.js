@@ -67,9 +67,7 @@ function SavingsAccount(...accountInformation) {
     return this.information.products;
   };
 
-  if (this.isValidInformation()) {
-    return this.information;
-  }
+  this.isValidInformation();
 }
 
 export {
