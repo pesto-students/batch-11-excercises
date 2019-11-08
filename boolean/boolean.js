@@ -1,6 +1,5 @@
-
-function boolean(...args) {
-  return args;
+function boolean(input) {
+  return typeof input === 'boolean' ? typeof input === 'boolean' : false;
 }
 
 export {
