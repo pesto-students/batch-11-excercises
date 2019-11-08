@@ -1,6 +1,10 @@
 
-function findElement(...args) {
-  return args;
+function findElement(elements, filter) {
+  for (let element of elements) {
+    if (filter(element)) {
+      return element;
+    }
+  }
 }
 
 export {
