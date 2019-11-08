@@ -1,12 +1,5 @@
 
 import accountDataset from './dataset.json';
-// function accountDataset(...args) {
-//   return args;
-// }
-
-// export {
-//   accountDataset,
-// };
 function hundredThousandairs() {
   const { bankBalances } = accountDataset;
   const result = bankBalances.filter((key) => parseInt(key['amount']) > 100000);
