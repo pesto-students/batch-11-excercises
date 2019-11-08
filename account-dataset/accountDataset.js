@@ -35,9 +35,25 @@ function sumOfInterests() {
   const {
     bankBalances
   } = accountDataset;
-  const totalPrincipalAmount = sumOfBankBalances();
-  const totalSumInterest = totalPrincipalAmount * 18.9;
-  return totalSumInterest;
+  // Wisconsin, 
+  // Illinois
+  // Wyoming
+  // Ohio
+  // Georgia
+  // Delaware
+  const selectedStates = ['WI', 'IL', 'WY', 'OH', 'GE', 'DL'];
+  const filterAccount = (account) => selectedStates.includes(account.state);
+  const filteredStates = bankBalances.filter(filterAccount);
+  // let totalSumAmountOfFilteredStates = 0;
+  filteredStates.map((account) => {
+    const addInterest = parseFloat(account.amount) * 18.9;
+    account.amount = addInterest;
+     return account;
+     })
+  const totalSumInterest = filteredStates.reduce(( accumulator, currentValue ) => accumulator + currentValue.amount,
+  0);
+  // const totalSumInterest = totalSumAmountOfFilteredStates + (totalSumAmountOfFilteredStates * 18.9 / 100);
+  return parseFloat(totalSumInterest.toFixed(2));
 }
 
 function higherStateSums() {
