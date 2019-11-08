@@ -1,6 +1,10 @@
 
-function mathFns(...args) {
-  return args;
+function mathFns() {
+
+  Math.pow();
+  Math.round();
+  Math.sqrt();
+
 }
 
 export {
