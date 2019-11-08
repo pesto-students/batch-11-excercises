@@ -32,6 +32,16 @@ describe('requestValidator', () => {
     expect(() => requestValidator(request)).toThrow('Invalid request header: Invalid Message');
   });
 
+  test('should throw error if version is invalid', () => {
+    const request = {
+      method: 'GET',
+      uri: 'google.com',
+      version: 'HTTP/1.9',
+      message: 'test'
+    };
+    expect(() => requestValidator(request)).toThrow('Invalid request header: Invalid Version');
+  });
+
   test('should return the request object as is if it is a valid request body', () => {
     const actual = requestValidator(validRequest);
     expect(validRequest).toBe(actual);

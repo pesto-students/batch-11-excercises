@@ -3,6 +3,9 @@ import { curry } from './curry';
 describe('curry', () => {
   test('curries the function at least once', () => {
     const add = curry((a, b) => {
+      console.log(a);
+      console.log(b);
+
       return a + b;
     });
     expect(add(1)(2)).toBe(3);
