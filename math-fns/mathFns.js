@@ -1,6 +1,4 @@
 
-function mathFns(){
-
   function sqrt(inputValue){ 
     return Math.sqrt(inputValue);
   };
@@ -10,11 +8,11 @@ function mathFns(){
   }
 
   function round(inputValue){ 
-    return Math.round(inputValue)
+    return Math.round(inputValue);
   }
-  
-}
 
 export {
-  mathFns,
+  sqrt,
+  power,
+  round,
 };
