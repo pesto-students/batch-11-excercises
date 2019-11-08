@@ -1,7 +1,7 @@
 
 function abbreviateString(sentence) {
   if (typeof sentence !== 'string') {
-    throw Error('Input must be a string');
+    throw Error(`Input must be a string, but ${typeof sentence} is given`);
   }
   const words = sentence.split(' ');
   const numberOfWords = words.length;
