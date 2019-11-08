@@ -5,11 +5,10 @@ function abbreviateString(string) {
   }
   const words = string.split(' ');
   const firstName = words[0];
-  const lastInitial = words[words.length - 1].split('').splice(0, 1).join('');
-  const lastInitialCapitalized = lastInitial.toUpperCase();
+  const lastNameInitialCapitalized = words[words.length - 1][0].toUpperCase();
   const period = '.';
   const space = ' ';
-  return firstName + space + lastInitialCapitalized + period;
+  return firstName + space + lastNameInitialCapitalized + period;
 }
 
 export {
