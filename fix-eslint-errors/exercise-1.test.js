@@ -24,7 +24,7 @@ describe('Promise.each', function () {
     it('should return the array\'s values mapped', function () {
         var a = [promised(1), promised(2), promised(3)];
         var b = [];
-        return Promise.resolve(a).mapSeries(function (val) {
+        return Promise.resolve(a).then(function (val) {
             b.push(3 - val);
             return val + 2;
         }).then(function (ret) {
@@ -37,7 +37,7 @@ describe('Promise.each', function () {
     it('takes value, index and length', function () {
         var a = [promised(1), promised(2), promised(3)];
         var b = [];
-        return Promise.resolve(a).each(function (value, index, length) {
+        return Promise.resolve(a).then(function (value, index, length) {
             b.push(value, index, length);
         }).then(function (ret) {
             assert.deepEqual(b, [1, 0, 3, 2, 1, 3, 3, 2, 3]);
