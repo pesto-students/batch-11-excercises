@@ -4,8 +4,8 @@ function alternatingCharacters(strings) {
 
   strings.forEach(string => {
     var deletedCount = 0;
-    for(var i=0;i< string.length; i++ ){
-      if(string.charAt(i-1) === string.charAt(i)){
+    for (var i = 0; i < string.length; i++) {
+      if (string.charAt(i - 1) === string.charAt(i)) {
         deletedCount++;
       }
     }

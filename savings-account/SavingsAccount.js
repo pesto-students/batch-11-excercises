@@ -18,7 +18,7 @@ class SavingsAccount {
   }
 
   set accountNumber(accountNumber) {
-    if(validateAccountNumber(accountNumber)){
+    if (validateAccountNumber(accountNumber)) {
       this._accountNumber = accountNumber;
     }
   }
@@ -28,7 +28,7 @@ class SavingsAccount {
   }
 
   set email(email) {
-    if(validateEmail(email)){
+    if (validateEmail(email)) {
       this._email = email;
     }
   }
@@ -38,7 +38,7 @@ class SavingsAccount {
   }
 
   set firstName(firstName) {
-    if(validateName(firstName)){
+    if (validateName(firstName)) {
       this._firstName = firstName;
     }
   }
@@ -48,7 +48,7 @@ class SavingsAccount {
   }
 
   set lastName(lastName) {
-    if(validateName(lastName)){
+    if (validateName(lastName)) {
       this._lastName = lastName;
     }
   }

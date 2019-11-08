@@ -5,7 +5,7 @@ function squareNumbersArray(numbers) {
     if (typeof number !== 'number') {
       throw new Error("Array should have only numbers");
     }
-    squareOfNumbers.push(number*number);
+    squareOfNumbers.push(number * number);
   });
 
   return squareOfNumbers;
