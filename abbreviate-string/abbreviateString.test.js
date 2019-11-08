@@ -8,9 +8,9 @@ describe('abbreviateString', () => {
   });
 
   it('throws error on invalid parameters', () => {
-    expect(() => abbreviateString(123)).toThrow();
-    expect(() => abbreviateString([])).toThrow();
-    expect(() => abbreviateString({})).toThrow();
-    expect(() => abbreviateString(null)).toThrow();
+    expect(() => abbreviateString(123)).toThrow('Input parameter should be a string');
+    expect(() => abbreviateString([])).toThrow('Input parameter should be a string');
+    expect(() => abbreviateString({})).toThrow('Input parameter should be a string');
+    expect(() => abbreviateString(null)).toThrow('Input parameter should be a string');
   });
 });
