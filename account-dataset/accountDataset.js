@@ -1,13 +1,17 @@
-
 import accountDataset from './dataset.json';
+
 function hundredThousandairs() {
-  const { bankBalances } = accountDataset;
+  const {
+    bankBalances
+  } = accountDataset;
   const result = bankBalances.filter((key) => parseInt(key['amount']) > 100000);
   return result;
 }
 
 function datasetWithRoundedDollar() {
-  const { bankBalances } = accountDataset;
+  const {
+    bankBalances
+  } = accountDataset;
   const result = bankBalances.map((item) => {
     item['rounded'] = Math.round(parseInt(item['amount']))
     return item;
@@ -16,7 +20,9 @@ function datasetWithRoundedDollar() {
 }
 
 function sumOfBankBalances() {
-  const { bankBalances } = accountDataset;
+  const {
+    bankBalances
+  } = accountDataset;
   let totalAmount = 0;
   bankBalances.map((item) => {
     totalAmount += (parseFloat(item['amount']));
@@ -26,16 +32,20 @@ function sumOfBankBalances() {
 }
 
 function sumOfInterests() {
-  const { bankBalances } = accountDataset;
+  const {
+    bankBalances
+  } = accountDataset;
   const totalPrincipalAmount = sumOfBankBalances();
   const totalSumInterest = totalPrincipalAmount * 18.9;
   return totalSumInterest;
 }
 
 function higherStateSums() {
-  const { bankBalances } = accountDataset;
+  const {
+    bankBalances
+  } = accountDataset;
   let totalHigherStateSum = 0;
-  const sumAmountBystateObj  = bankBalances.reduce((states, account) => {
+  const sumAmountBystateObj = bankBalances.reduce((states, account) => {
     if (account.state in states) {
       states[account.state] += parseFloat(account.amount);
     } else {
@@ -44,13 +54,13 @@ function higherStateSums() {
     return states;
   }, {});
 
-  Object.keys(sumAmountBystateObj).forEach(state=>{   
+  Object.keys(sumAmountBystateObj).forEach(state => {
     if (sumAmountBystateObj[state] > 1000000) {
-    totalHigherStateSum += sumAmountBystateObj[state];
+      totalHigherStateSum += sumAmountBystateObj[state];
     }
-    });
-    
-    return totalHigherStateSum;
+  });
+
+  return totalHigherStateSum;
 }
 
 export {
