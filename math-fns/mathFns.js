@@ -1,10 +1,18 @@
 
-function mathFns() {
+function mathFns(){
 
-  Math.pow();
-  Math.round();
-  Math.sqrt();
+  function sqrt(inputValue){ 
+    return Math.sqrt(inputValue);
+  };
 
+  function power(inputValue,powerValue){ 
+    return inputValue ** powerValue;
+  }
+
+  function round(inputValue){ 
+    return Math.round(inputValue)
+  }
+  
 }
 
 export {

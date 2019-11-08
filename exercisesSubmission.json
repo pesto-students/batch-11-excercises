@@ -9,13 +9,13 @@
             "completed": true
         },
         "json-parse": {
-            "completed": false
+            "completed": true
         },
         "lowercase-keys": {
             "completed": false
         },
         "math-fns": {
-            "completed": false
+            "completed": true
         },
         "parse-ms": {
             "completed": false
