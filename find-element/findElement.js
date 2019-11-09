@@ -1,6 +1,6 @@
 
-function findElement(...args) {
-  return args;
+function findElement(numbers, truthTest) {
+  return numbers.find(truthTest);
 }
 
 export {
