@@ -27,7 +27,7 @@
             "completed": false
         },
         "object-keys": {
-            "completed": false
+            "completed": true
         },
         "object-values": {
             "completed": true
@@ -42,7 +42,7 @@
             "completed": true
         },
         "object-defaults": {
-            "completed": false
+            "completed": true
         },
         "user-check-password": {
             "completed": true
