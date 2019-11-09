@@ -1,6 +1,7 @@
 
 function isEven(number) {
-  return number % 2 === 0;
+  // eslint-disable-next-line no-bitwise
+  return (number & 1) === 0;
 }
 
 export {
