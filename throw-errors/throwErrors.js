@@ -1,8 +1,9 @@
-
-function throwErrors(...args) {
-  return args;
+function throwErrors() {
+  try {
+    errorGenerator();
+  } catch (error) {
+    return error.name;
+  }
 }
 
-export {
-  throwErrors,
-};
+export { throwErrors };
