@@ -1,8 +1,20 @@
+function abbreviateString(value) {
+  const isString = typeof value === "string";
 
-function abbreviateString(...args) {
-  return args;
+  if (!isString) {
+    throw new Error("Expected String as an argument");
+  }
+
+  const splitString = value.trim().split(" ");
+  const firstWord = splitString[0];
+
+  if (splitString.length > 1) {
+    const lastWord = splitString[splitString.length - 1];
+    const abbreviatedLastWord = lastWord.toUpperCase().charAt(0);
+    return firstWord + " " + abbreviatedLastWord + ".";
+  }
+
+  return firstWord;
 }
 
-export {
-  abbreviateString,
-};
+export { abbreviateString };
