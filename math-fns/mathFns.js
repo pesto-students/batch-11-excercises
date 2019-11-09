@@ -1,8 +1,25 @@
+function sqrt(number) {
+  let index = 1;
+  while (index * index <= number) {
+    if (index * index === number) {
+      return index;
+    }
+    index += 1;
+  }
+  return -1;
+}
 
-function mathFns(...args) {
-  return args;
+function power(number, toThePower) {
+  const powerArray = Array.from(Array(toThePower).keys());
+  return powerArray.reduce((accumulator) => accumulator * number, 1);
+}
+
+function round(number) {
+  return Math.floor(number);
 }
 
 export {
-  mathFns,
+  sqrt,
+  power,
+  round,
 };
