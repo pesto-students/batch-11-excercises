@@ -1,11 +1,11 @@
-function abbreviateString(argument) {
-  const isString = typeof argument === "string";
+function abbreviateString(value) {
+  const isString = typeof value === "string";
 
   if (!isString) {
     throw new Error("Expected String as an argument");
   }
 
-  const splitString = argument.trim().split(" ");
+  const splitString = value.trim().split(" ");
   const firstWord = splitString[0];
 
   if (splitString.length > 1) {

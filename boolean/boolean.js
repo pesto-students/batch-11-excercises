@@ -1,8 +1,6 @@
-
-function boolean(...args) {
-  return args;
+function boolean(value) {
+  const isBoolean = typeof value === "boolean";
+  return isBoolean;
 }
 
-export {
-  boolean,
-};
+export { boolean };
