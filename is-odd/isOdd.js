@@ -1,5 +1,5 @@
 function isOdd(number) {
-  return (number & 1) == 1 ? true : false;
+  return (number & 1) == 1;
 }
 
 export { isOdd };
