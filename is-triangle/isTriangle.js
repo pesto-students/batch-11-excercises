@@ -1,6 +1,6 @@
 
-function isTriangle(...triangleSides) {
-  const [small, medium, large] = triangleSides.sort((a, b) => a - b);
+function isTriangle(...sides) {
+  const [small, medium, large] = sides.sort((a, b) => a - b);
   return small + medium >= large;
 }
 
