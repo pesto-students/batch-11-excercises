@@ -1,7 +1,7 @@
 function threeSum(array, target) {
   let triplet = [];
   if (array.length < 3 || typeof target !== "number") {
-    return new Error("Invalid Inputs");
+    throw new Error("Invalid Inputs");
   }
 
   for (let i = 0; i < array.length; i++) {
