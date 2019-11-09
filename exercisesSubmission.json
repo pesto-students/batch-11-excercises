@@ -36,13 +36,13 @@
             "completed": false
         },
         "sum-primes": {
-            "completed": false
+            "completed": true
         },
         "rectangle-diagonal": {
             "completed": false
         },
         "three-sum": {
-            "completed": false
+            "completed": true
         },
         "sum-of-perfect-squares": {
             "completed": false
