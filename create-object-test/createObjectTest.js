@@ -1,8 +1,10 @@
+function createObjectTest(...values) {
+  const firstName = values[0],
+  const lastName = values[1];
 
-function createObjectTest(...args) {
-  return args;
+  return {
+    fname: firstName,
+    lname: lastName
+  };
 }
-
-export {
-  createObjectTest,
-};
+export { createObjectTest };
