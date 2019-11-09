@@ -1,15 +1,13 @@
 
-function counter(counterIncrementValue) {
-    
-  return counterIncrementFunction(); 
+function counter() {
+  let count = 0;
 
+  function counterIncrementFunction() {
+    count += 1;
+    return count;
+  }
+  return counterIncrementFunction;
 }
-
-function counterIncrementFunction(count){
-  
-  return count + 1;
-}
-
 export {
   counter,
 };
