@@ -1,8 +1,10 @@
+function objectKeys(object) {
+  const keys = [];
 
-function objectKeys(...args) {
-  return args;
+  for (let key in object) {
+    keys.push(key.toString());
+  }
+  return keys;
 }
 
-export {
-  objectKeys,
-};
+export { objectKeys };
