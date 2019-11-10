@@ -1,6 +1,7 @@
 
-function slasher(...args) {
-  return args;
+function slasher(fullArray, chops) {
+  const choppedArray = fullArray.slice(chops);
+  return choppedArray;
 }
 
 export {
