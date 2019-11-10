@@ -1,10 +1,10 @@
 const factorial = (number) => {
+  let numberCopy = number;
   let fact = 1;
-  if (number === 0) return 0;
-  while (number !== 0) {
-    fact *= number;
-    // eslint-disable-next-line
-    --number;
+  if (numberCopy === 0) return 0;
+  while (numberCopy !== 0) {
+    fact *= numberCopy;
+    numberCopy -= 1;
   }
   return fact;
 };

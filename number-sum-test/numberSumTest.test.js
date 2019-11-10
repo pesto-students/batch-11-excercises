@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-
 const numberSum = (a, b) => a + b;
 
 describe('numberSum test', () => {
