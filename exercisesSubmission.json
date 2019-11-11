@@ -18,13 +18,13 @@
             "completed": true
         },
         "instructor": {
-            "completed": false
+            "completed": true
         },
         "join-arrays": {
             "completed": true
         },
         "map-filter-and-reduce": {
-            "completed": false
+            "completed": true
         },
         "place-in-middle": {
             "completed": true
