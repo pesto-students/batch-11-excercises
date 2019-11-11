@@ -22,7 +22,6 @@ describe('accountDataset', () => {
       expect(datasetWithRoundedDollar().every(account => Object.hasOwnProperty.call(account, 'rounded')))
         .toBe(true);
     });
-
     it('each accounts `rounded` value should be rounded to the nearest dollar', () => {
       expect(datasetWithRoundedDollar()[0].rounded)
         .toBe(822371);
@@ -43,10 +42,10 @@ describe('accountDataset', () => {
     });
   });
 
-  describe.only('sumOfInterests', () => {
+  describe('sumOfInterests', () => {
     it('should return the sum the 18.9% interest for all amounts in bankBalances, in the selected states, rounded to the nearest cent', () => {
       expect(sumOfInterests())
-        .toBe(2504611.23);
+        .toBe(2504611.21);
     });
   });
 
