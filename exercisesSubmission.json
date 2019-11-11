@@ -6,28 +6,28 @@
             "completed": true
         },
         "block-scoping": {
-            "completed": false
+            "completed": true
         },
         "const-immutable": {
-            "completed": false
+            "completed": true
         },
         "create-student": {
             "completed": false
         },
         "double-odd-numbers": {
-            "completed": false
+            "completed": true
         },
         "instructor": {
             "completed": false
         },
         "join-arrays": {
-            "completed": false
+            "completed": true
         },
         "map-filter-and-reduce": {
-            "completed": false
+            "completed": true
         },
         "place-in-middle": {
-            "completed": false
+            "completed": true
         },
         "print-full-name": {
             "completed": false

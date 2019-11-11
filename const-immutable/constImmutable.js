@@ -1,6 +1,16 @@
+function constImmutable() {
+  const account = {
+    username: 'pesto',
+    password: 'initialPassword',
+  };
+  Object.freeze(account);
+  try {
+    account.password = 's3cret';
+  } catch (exception) {
+    console.log(exception);
+  }
 
-function constImmutable(...args) {
-  return args;
+  return account.password;
 }
 
 export {
