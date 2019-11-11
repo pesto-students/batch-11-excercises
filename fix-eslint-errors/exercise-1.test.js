@@ -1,8 +1,8 @@
 var assert = require('assert');
 
 function promised(val) {
-    return new Promise(function (f) {
-        setTimeout(function () {
+    return new Promise((f) =>  {
+        setTimeout(() => {
             f(val);
         }, 1);
     });
@@ -10,8 +10,8 @@ function promised(val) {
 
 function thenabled(val, arr) {
     return {
-        then: function (f) {
-            setTimeout(function () {
+        then(f) {
+            setTimeout( () => {
                 if (arr) arr.push(val);
                 f(val);
             }, 1);
@@ -19,15 +19,15 @@ function thenabled(val, arr) {
     };
 }
 
-describe('Promise.each', function () {
+describe('Promise.each', () => {
 
-    it('should return the array\'s values mapped', function () {
-        var a = [promised(1), promised(2), promised(3)];
-        var b = [];
-        return Promise.resolve(a).then(function (val) {
+    it('should return the array\'s values mapped', () => {
+        const a = [promised(1), promised(2), promised(3)];
+        const b = [];
+        return Promise.resolve(a).mapSeries((val) => {
             b.push(3 - val);
             return val + 2;
-        }).then(function (ret) {
+        }).then( (ret) => {
             assert.deepEqual(ret, [3, 4, 5]);
             assert.deepEqual(b, [2, 1, 0]);
         });
