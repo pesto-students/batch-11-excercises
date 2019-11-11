@@ -10,6 +10,12 @@ function allOfConditions(...predicates) {
   };
 }
 
+// functional implementation
+// TODO: Check this
+// function allOfConditions(...predicates) {
+//   return (input) => predicates.reduce((acc, predicate) => acc && predicate(input), true);
+// }
+
 export {
   allOfConditions,
 };
