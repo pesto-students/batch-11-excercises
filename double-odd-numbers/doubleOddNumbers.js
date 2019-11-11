@@ -1,12 +1,7 @@
+/* eslint-disable no-param-reassign */
 
 function doubleOddNumbers(numbers) {
-  const oddNumberDoubled = [];
-  for (const number of numbers) {
-    if (number % 2 !== 0) {
-      oddNumberDoubled.push(number * 2);
-    }
-  }
-  return oddNumberDoubled;
+  return numbers.filter((number) => number % 2 !== 0).map((number) => number * 2);
 }
 
 export {
