@@ -5,9 +5,7 @@ function squareNumbersArray(...items) {
       throw new Error('Invalid Type: Array items should be a number');
     }
   });
-  const squares = items.map((item) => {
-    return item ** 2;
-  });
+  const squares = items.map((item) => item ** 2);
   return squares;
 }
 
