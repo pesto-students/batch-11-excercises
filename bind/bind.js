@@ -1,6 +1,6 @@
 
 function bind(fn, thisBinding, ...numbers) {
-  return function bindedFn(...arg) {
+  return function boundFn(...arg) {
     return fn.call(thisBinding, ...numbers, ...arg);
   };
 }
