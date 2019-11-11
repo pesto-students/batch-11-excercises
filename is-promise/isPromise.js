@@ -1,6 +1,6 @@
 
-function isPromise(...args) {
-  return args;
+function isPromise(promiseObj) {
+  return promiseObj instanceof Promise;
 }
 
 export {
