@@ -5,7 +5,7 @@ function mapFilterAndReduce(arrayOfObjects) {
   }) => ({
     ...object,
     [firstName]: firstName.length,
-  }), 1);
+  }), {});
 }
 
 export {
