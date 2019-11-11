@@ -1,11 +1,17 @@
 
 function alphabeticShift(alphabets) {
-  const shiftedAlphabets = [];
-  for (let i = 0; i < alphabets.length; i += 1) {
-    const charCode = alphabets.charCodeAt(i) + 1;
-    shiftedAlphabets.push(String.fromCharCode(charCode));
-  }
-  return shiftedAlphabets.join('');
+  const characters = alphabets.split('');
+  const shiftByOneChar = (char) => {
+    const charCode = char.charCodeAt();
+    if (charCode === 'z'.charCodeAt()) {
+      return 'a';
+    }
+    if (charCode === 'Z'.charCodeAt()) {
+      return 'A';
+    }
+    return String.fromCharCode(charCode + 1);
+  };
+  return characters.map(shiftByOneChar).join('');
 }
 
 export {
