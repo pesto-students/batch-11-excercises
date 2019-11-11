@@ -1,6 +1,6 @@
 function joinArrays(...args) {
-  const result = [];
-  return result.concat(...args);
+  const joinedArrays = [];
+  return joinedArrays.concat(...args);
 }
 
 export {
