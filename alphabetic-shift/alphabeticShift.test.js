@@ -16,5 +16,11 @@ describe('Alphabetic Shift Test Cases', () => {
 
     expect(alphabeticShift('supercalifragilisticexpialidocious'))
       .toEqual('tvqfsdbmjgsbhjmjtujdfyqjbmjepdjpvt');
+
+    expect(alphabeticShift('supercalifragilisticexpialidociouz'))
+      .toEqual('tvqfsdbmjgsbhjmjtujdfyqjbmjepdjpva');
+
+    expect(alphabeticShift('supercalifragilisticexpialidociouZ'))
+      .toEqual('tvqfsdbmjgsbhjmjtujdfyqjbmjepdjpvA');
   });
 });
