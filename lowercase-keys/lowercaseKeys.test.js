@@ -4,5 +4,7 @@ describe('lowercaseKeys', () => {
   test('should convert all keys to lowercase', () => {
     expect(lowercaseKeys({ FOO: true }).foo).toBe(true);
     expect(lowercaseKeys({ FOO: true, bAr: true }).bar).toBe(true);
+    expect(lowercaseKeys({ FOO: true, bAr: true }).bAr).toBeUndefined();
+    expect(lowercaseKeys({ FOO: true, bAr: true }).BAR).toBeUndefined();
   });
 });

@@ -1,6 +1,6 @@
 
-function throwErrors(...args) {
-  return args;
+function throwErrors() {
+  throw new ReferenceError('You referenced the anti-matter universe!');
 }
 
 export {
