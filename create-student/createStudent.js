@@ -1,18 +1,15 @@
 
-function createStudent(filter) {
-  if (filter === undefined) {
-    return 'The student likes JavaScript and ES2015';
-  }
-  if (!filter.likesES2015) {
+function createStudent({ likesES2015, likesJavaScript } = {}) {
+  if (!likesES2015) {
     return 'The student likes JavaScript!';
   }
-  if (!filter.likesJavaScript) {
+  if (!likesJavaScript) {
     return 'The student likes ES2015!';
   }
-  if (!filter.likesES2015 && !filter.likesJavaScript) {
+  if (!likesES2015 && !likesJavaScript) {
     return 'The student does not like much...';
   }
-  return '';
+  return 'The student likes JavaScript and ES2015';
 }
 
 export {
