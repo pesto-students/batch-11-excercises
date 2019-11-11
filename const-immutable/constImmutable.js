@@ -4,9 +4,13 @@ function constImmutable() {
     username: 'pesto',
     password: 'initialPassword',
   };
-  const propertyConfiguration = { writable: false };
-  Object.defineProperties(account, 'password', propertyConfiguration);
-  account.password = 's3cret';
+  const keyConfiguration = { writable: false };
+  Object.defineProperty(account, 'password', keyConfiguration);
+  try {
+    account.password = 's3cret';
+  } catch (error) {
+    console.log(error.name, error.message);
+  }
   return account.password;
 }
 
