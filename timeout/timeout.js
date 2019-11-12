@@ -1,8 +1,9 @@
-
-function timeout(...args) {
-  return args;
-}
-
-export {
-  timeout,
+const timeout = (name) => {
+  return new Promise((resolve) => {
+    setTimeOut(() => {
+      resolve(`Hello ${name}`);
+    });
+  });
 };
+
+export { timeout };
