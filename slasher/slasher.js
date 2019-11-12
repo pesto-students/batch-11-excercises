@@ -1,6 +1,6 @@
 
-function slasher(...args) {
-  return args;
+function slasher(numberArray, number) {
+  return numberArray.splice(number);
 }
 
 export {
