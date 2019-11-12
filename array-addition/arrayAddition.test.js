@@ -10,7 +10,9 @@ describe('arrayAddition', () => {
   });
 
   it('should return addition of 2 arrays as a separate array of length of the bigger array', () => {
-    expect(arrayAddition([0, 1, 0, 4], [100, -200, 200, 400, 0, 99999])).toEqual([100, -199, 200, 404, 0, 99999]);
+    expect(
+      arrayAddition([0, 1, 0, 4], [100, -200, 200, 400, 0, 99999]),
+    ).toEqual([100, -199, 200, 404, 0, 99999]);
   });
 
   it('should throw if one of the array is empty', () => {
