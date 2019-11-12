@@ -4,30 +4,29 @@ class Queue {
   }
 
   enqueue(value) {
-    this.items.unshift(value);
-    return this.items;
+    this.items.push(value);
   }
 
   dequeue() {
     if (this.isEmpty()) {
       return null;
     }
-    return this.items.pop();
+    return this.items.shift();
   }
 
   peek() {
     if (this.isEmpty()) {
       return null;
     }
-    return this.items[this.items.length - 1];
+    return this.items[0];
   }
 
-  toString() {
-    return this.items.reverse().join(',');
+  toString(stringifier = (item) => item.toString()) {
+    return this.items.map((item) => stringifier(item)).join(',');
   }
 
   isEmpty() {
-    return this.items.length > 0;
+    return this.items.length === 0;
   }
 }
 
