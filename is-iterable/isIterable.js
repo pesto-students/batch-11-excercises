@@ -1,7 +1,5 @@
 
-function isIterable(...args) {
-  return args;
-}
+const isIterable = (maybeIterable) => typeof maybeIterable[Symbol.iterator] === 'function';
 
 export {
   isIterable,
