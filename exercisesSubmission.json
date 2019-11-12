@@ -24,7 +24,7 @@
             "completed": true
         },
         "map-filter-and-reduce": {
-            "completed": false
+            "completed": true
         },
         "place-in-middle": {
             "completed": false
@@ -33,7 +33,7 @@
             "completed": true
         },
         "sum-even-args": {
-            "completed": false
+            "completed": true
         },
         "template-literals": {
             "completed": false
@@ -42,7 +42,7 @@
             "completed": false
         },
         "triple-and-filter": {
-            "completed": false
+            "completed": true
         },
         "all-of-conditions": {
             "completed": false
