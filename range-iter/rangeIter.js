@@ -1,5 +1,5 @@
 
-function rangeIter(...args) {
+function rangeIter(args) {
   return args;
 }
 
