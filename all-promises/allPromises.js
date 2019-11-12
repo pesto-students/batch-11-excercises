@@ -1,7 +1,5 @@
 
-function allPromises(...args) {
-  return args;
-}
+const allPromises = (promises) => Promise.all(promises).catch(() => Promise);
 
 export {
   allPromises,
