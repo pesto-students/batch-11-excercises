@@ -8,7 +8,8 @@ class Person {
   addDobDigits() {
     const dob = this.dateOfBirth.split('/').join('');
     const dobDigits = dob.split('').map(Number);
-    return dobDigits.reduce((total, digit) => total + digit, 0);
+    const sumOfDigits = (total, digit) => total + digit;
+    return dobDigits.reduce(sumOfDigits, 0);
   }
 }
 
