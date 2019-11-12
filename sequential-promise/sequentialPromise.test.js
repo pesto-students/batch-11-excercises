@@ -8,13 +8,13 @@ describe('sequentialPromise', () => {
       }, 1000);
     });
 
-    const p2 = dude => new Promise((resolve) => {
+    const p2 = (dude) => new Promise((resolve) => {
       setTimeout(() => {
         resolve(`${dude}, wheres my car`);
       }, 300);
     });
 
-    const p3 = movieName => new Promise((resolve) => {
+    const p3 = (movieName) => new Promise((resolve) => {
       setTimeout(() => {
         resolve(`${movieName} is a terrible movie`);
       }, 0);
@@ -34,7 +34,7 @@ describe('sequentialPromise', () => {
       }, 1000);
     });
 
-    const p2 = movieName => new Promise((resolve) => {
+    const p2 = (movieName) => new Promise((resolve) => {
       setTimeout(() => {
         resolve(`${movieName} is an awesome movie`);
       }, 0);
