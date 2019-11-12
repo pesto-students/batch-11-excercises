@@ -14,18 +14,18 @@ describe('arrayAddition', () => {
   });
 
   it('should throw if one of the array is empty', () => {
-    expect(() => arrayAddition([], [100, -200, 200, 400, 0, 99999])).toThrow();
+    expect(() => arrayAddition([], [100, -200, 200, 400, 0, 99999])).toThrow('Both the arrays should have at-least one character');
   });
 
   it('should throw if parameters are not arrays', () => {
-    expect(() => arrayAddition('a', [100, -200, 200, 400, 0, 99999])).toThrow();
+    expect(() => arrayAddition('a', [100, -200, 200, 400, 0, 99999])).toThrow('Both the number should be array');
   });
 
   it('should throw if parameters are not arrays', () => {
-    expect(() => arrayAddition('a', 1)).toThrow();
+    expect(() => arrayAddition('a', 1)).toThrow('Both the number should be array');
   });
 
   it('should throw error on non strictly numerical arrays', () => {
-    expect(() => arrayAddition(['1', '2', '3', '4'], [2, 'b', 'c'])).toThrow();
+    expect(() => arrayAddition(['1', '2', '3', '4'], [2, 'b', 'c'])).toThrow('All the items in array should be numbers');
   });
 });
