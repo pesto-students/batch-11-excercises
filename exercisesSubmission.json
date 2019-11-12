@@ -12,7 +12,7 @@
             "completed": true
         },
         "create-student": {
-            "completed": false
+            "completed": true
         },
         "double-odd-numbers": {
             "completed": true
@@ -30,19 +30,19 @@
             "completed": true
         },
         "print-full-name": {
-            "completed": false
+            "completed": true
         },
         "sum-even-args": {
-            "completed": false
+            "completed": true
         },
         "template-literals": {
-            "completed": false
+            "completed": true
         },
         "template-tag-function": {
             "completed": false
         },
         "triple-and-filter": {
-            "completed": false
+            "completed": true
         },
         "all-of-conditions": {
             "completed": true

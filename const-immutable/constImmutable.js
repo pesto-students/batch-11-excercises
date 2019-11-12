@@ -7,7 +7,7 @@ function constImmutable() {
   try {
     account.password = 's3cret';
   } catch (exception) {
-    console.log(exception);
+    exception = true;
   }
 
   return account.password;
