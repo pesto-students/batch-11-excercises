@@ -1,9 +1,10 @@
 
 function sequentialPromise(promiseFnList) {
-  const sequentialisePromise = (promiseList) => promiseList.reduce((acc, promiseFn) => acc.then((resolvedAccStr) => promiseFn(resolvedAccStr)), Promise.resolve(''));
+  const concatPromise = (promiseOne, promiseTwo) => promiseOne.then((str) => promiseTwo(str));
+  const sequentialisePromiseList = (promiseList) => promiseList.reduce(concatPromise, Promise.resolve(''));
 
   const resultPromise = new Promise((resolve) => {
-    sequentialisePromise(promiseFnList).then((resolvedString) => {
+    sequentialisePromiseList(promiseFnList).then((resolvedString) => {
       resolve(resolvedString);
     });
   });
