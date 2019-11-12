@@ -1,6 +1,5 @@
-
-function isPromise(...args) {
-  return args;
+function isPromise(value) {
+  return value instanceof Promise;
 }
 
 export {
