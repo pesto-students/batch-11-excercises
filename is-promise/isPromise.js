@@ -1,6 +1,6 @@
 
-function isPromise(...args) {
-  return args;
+function isPromise(maybePromise) {
+  return maybePromise ? typeof maybePromise.then === 'function' : false;
 }
 
 export {
