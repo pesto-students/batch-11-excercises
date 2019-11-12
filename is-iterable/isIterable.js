@@ -1,7 +1,4 @@
-
-function isIterable(...args) {
-  return args;
-}
+const isIterable = (argument) => argument !== null && typeof argument[Symbol.iterator] === 'function';
 
 export {
   isIterable,
