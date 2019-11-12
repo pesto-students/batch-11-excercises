@@ -12,13 +12,13 @@
             "completed": true
         },
         "reject-promise": {
-            "completed": false
+            "completed": true
         },
         "queue": {
             "completed": false
         },
         "person": {
-            "completed": false
+            "completed": true
         },
         "sequential-promise": {
             "completed": false
@@ -30,7 +30,7 @@
             "completed": true
         },
         "promise-all-props": {
-            "completed": false
+            "completed": true
         },
         "sleep-promise": {
             "completed": false
