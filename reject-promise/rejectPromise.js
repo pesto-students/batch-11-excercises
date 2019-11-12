@@ -1,11 +1,7 @@
+/* eslint-disable prefer-promise-reject-errors */
 
-function rejectPromise(input) {
-  return new Promise((resolve, reject) => {
-    if (input === undefined) {
-      resolve('REJECTED!');
-    }
-    reject(new Error('Resolved'));
-  });
+function rejectPromise() {
+  return Promise.reject('REJECTED!');
 }
 
 export {
