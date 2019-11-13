@@ -1,23 +1,22 @@
-const simpleIterable = () => {
-  [Symbol.iterator] = () => {
-    let i = 0;
-    return {
-      next() {
-        i += 1;
-        if (i < 6) {
-          return {
-            done: false,
-            value: i,
-          };
-        }
+const simpleIterable = () => ({
+  [Symbol.iterator]() {
+    this.current = 0;
+    return this;
+  },
 
-        return {
-          done: true,
-        };
-      },
+  next() {
+    if (this.current < 5) {
+      this.current += 1;
+      return {
+        done: false,
+        value: this.current,
+      };
+    }
+    return {
+      done: true,
     };
-  };
-};
+  },
+});
 
 export {
   simpleIterable,
