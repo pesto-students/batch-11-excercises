@@ -18,6 +18,4 @@ const without = (list1, list2) => {
   }, []);
 };
 
-// console.log(without([-0], [0]));
-
 export { without };
