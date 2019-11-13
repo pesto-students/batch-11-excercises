@@ -18,17 +18,17 @@ function negativeIndex(array) {
     },
     set(target, prop, value) {
       if (typeof prop === 'symbol') {
-        return target[prop];
+        return Reflect.set(target, prop, value);
       }
-      const index = Number(prop);
-
+      const index = parseInt(prop, 10);
       if (Number.isNaN(index)) {
         return Reflect.set(target, prop, value);
       }
-
-      target[index < 0 ? target.length + index : index] = value;
-
-      return true;
+      let newIndex = index;
+      if (prop < 0) {
+        newIndex = target.length + index;
+      }
+      return Reflect.set(target, newIndex, value);
     },
   });
 }
