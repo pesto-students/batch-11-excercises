@@ -1,9 +1,9 @@
 
 function knownProp(object) {
   const handler = {
-    get: (target, objectKey) => {
-      if (objectKey in target) {
-        return target[objectKey];
+    get: (target, key) => {
+      if (key in target) {
+        return Reflect.get(target, key);
       }
       throw new TypeError('Unknown property');
     },

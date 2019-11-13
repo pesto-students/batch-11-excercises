@@ -5,7 +5,7 @@ function setDefaultProperty(object, defaultValue) {
       if (!(prop in target)) {
         return defaultValue;
       }
-      return target[prop];
+      return Reflect.get(target, prop);
     },
   };
 
