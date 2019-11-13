@@ -1,29 +1,41 @@
+/* eslint-disable no-restricted-globals */
 
-function negativeIndex(randomArray) {
-  if (!Array.isArray(randomArray)) {
-    throw new TypeError('Only arrays are supported');
+function negativeIndex(array) {
+  if (!Array.isArray(array)) {
+    throw TypeError('Only arrays are supported');
   }
-
-  const handleNegativeIndex = {
-    get(target, prop) {
-      const index = parseInt(prop, 10);
-      if (index < 0) {
-        return Reflect.get(target, target.length + index);
+  const negativeIndexHandler = {
+    get(obj, prop) {
+      if (typeof prop === 'symbol') {
+        return Reflect.get(obj, prop);
       }
-      return Reflect.get(target, index);
-    },
-
-    set(target, prop, value) {
       const index = parseInt(prop, 10);
-      if (index < 0) {
-        return Reflect.set(target, target.length + index, value);
+      if (isNaN(index)) {
+        return Reflect.get(obj, prop);
       }
-      return Reflect.set(target, index, value);
+      let newIndex = index;
+      if (newIndex < 0) {
+        newIndex = obj.length + index;
+      }
+      return Reflect.get(obj, newIndex);
     },
-
+    set(obj, prop, value) {
+      if (typeof prop === 'symbol') {
+        return Reflect.set(obj, prop, value);
+      }
+      const index = parseInt(prop, 10);
+      if (isNaN(index)) {
+        return Reflect.set(obj, prop, value);
+      }
+      let newIndex = index;
+      if (newIndex < 0) {
+        newIndex = obj.length + index;
+      }
+      return Reflect.set(obj, newIndex, value);
+    },
   };
 
-  const proxyArray = new Proxy(randomArray, handleNegativeIndex);
+  const proxyArray = new Proxy(array, negativeIndexHandler);
   return proxyArray;
 }
 
