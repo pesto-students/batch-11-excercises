@@ -1,6 +1,6 @@
 
-function slice(...args) {
-  return args;
+function slice(from, to, items) {
+  return items.slice(from, to);
 }
 
 export {
