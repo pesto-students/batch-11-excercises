@@ -1,5 +1,5 @@
 
-function aperture(...args) {
+function aperture(number, numberArray) {
   return args;
 }
 
