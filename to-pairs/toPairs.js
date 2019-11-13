@@ -1,6 +1,8 @@
 
-function toPairs(...args) {
-  return args;
+function toPairs(object) {
+  const keysOfObject = Object.keys(object);
+  const pair = keysOfObject.map((key) => [key, object[key]]);
+  return pair;
 }
 
 export {
