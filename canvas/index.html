@@ -1,1 +1,45 @@
-Make some complex figures using canvas.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Drawing on Canvas </title>
+    <style>
+        #canvas {
+            border: 2px solid blanchedalmond;
+            background: limegreen;
+            position: absolute;
+            top: 20%;
+            left: 25%;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="600" height="400"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const drawCircle = (x, y, r, startAngle, endAngle, fillStyle, strokeStyle) => {
+          const center = [x, y];
+          ctx.beginPath();
+          ctx.arc(...center, r, startAngle, endAngle);
+          if (fillStyle) {
+            ctx.fillStyle = fillStyle;
+            ctx.fill();
+          }
+          ctx.lineWidth = 5;
+          ctx.strokeStyle = strokeStyle;
+          ctx.stroke();
+        };
+        const writeText = (text, x, y, font) => {
+            ctx.font = font;
+            ctx.fillText(text, x, y);
+        };
+      drawCircle(canvas.width / 2, canvas.height / 2, 100, 0, 2 * Math.PI, 'limegreen', 'green');
+      drawCircle(canvas.width / 2 - 40, canvas.height / 2 - 40, 10, 0, 2 * Math.PI, 'green', 'green');
+      drawCircle(canvas.width / 2 + 40, canvas.height / 2 - 40, 10, 0, 2 * Math.PI, 'green', 'green');
+      drawCircle(canvas.width / 2, canvas.height / 2 + 10, 60, 0, Math.PI, null, 'green');
+      writeText('Javascript is Love :p', canvas.width / 6, canvas.height / 6, '40px Arial');
+    </script>
+</body>
+</html>
