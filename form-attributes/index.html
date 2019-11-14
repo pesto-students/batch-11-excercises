@@ -1,21 +1,21 @@
-<!-- Exercise:
-Disable the input field. -->
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Form Attributes </title>
+</head>
 
 <body>
-
-  <form>
-    First name: <input type="text" name="firstname" value="John" id="firstname">
-    <input type="submit">
-  </form>
-  <script>
-    function disableInputField() {
-      document.getElementById("firstname").disabled = true;
-    }
-    window.onload = disableInputField;
-  </script>
+  <div class="form-container">
+    <form>
+      <label>First name: </label>
+      <input type="text" name="firstname" value="John" id="firstname" disabled>
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
 </body>
 
 </html>
