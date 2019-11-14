@@ -15,7 +15,7 @@
             "completed": true
         },
         "set-default-property": {
-            "completed": false
+            "completed": true
         },
         "private-props": {
             "completed": true
@@ -30,7 +30,7 @@
             "completed": false
         },
         "values": {
-            "completed": false
+            "completed": true
         }
     }
 }
