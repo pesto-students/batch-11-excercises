@@ -17,9 +17,9 @@ describe('splitEvery', () => {
   });
 
   it('throws if first argument is not positive', () => {
-    expect(() => { splitEvery(0, []); }).toThrow();
-    expect(() => { splitEvery(0, ''); }).toThrow();
-    expect(() => { splitEvery(-1, []); }).toThrow();
-    expect(() => { splitEvery(-1, ''); }).toThrow();
+    expect(() => { splitEvery(0, []); }).toThrow('First Argument cannot be zero or negative');
+    expect(() => { splitEvery(0, ''); }).toThrow('First Argument cannot be zero or negative');
+    expect(() => { splitEvery(-1, []); }).toThrow('First Argument cannot be zero or negative');
+    expect(() => { splitEvery(-1, ''); }).toThrow('First Argument cannot be zero or negative');
   });
 });
