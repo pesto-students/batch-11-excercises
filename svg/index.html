@@ -1,14 +1,28 @@
-<!-- Make a star using svg. -->
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Star SVG</title>
+    <style>
+      #star {
+        position: relative;
+        left: 10%;
+        -webkit-transform: translateX(-20%);
+        -ms-transform: translateX(-20%);
+        transform: translateX(-20%);
+      }
+    </style>
+  </head>
+  <body>
+    <svg
+      id="star"
+      width="300"
+      height="300"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <polygon points="100,10 40,180 190,60 10,60 160,180" fill="blue" />
+    </svg>
+  </body>
 </html>
