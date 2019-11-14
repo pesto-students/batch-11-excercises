@@ -7,12 +7,10 @@
 
 <!DOCTYPE html>
 <html>
-<body>
-
-<form>
-  Quantity (between 1 and 5):
-  <input type="submit">
-</form>
-
-</body>
+  <body>
+    <form>
+      <label for="number-input">(between 1 and 5):</label>
+      <input type="number" id="number-input" pattern="^[1-5]$" />
+    </form>
+  </body>
 </html>
