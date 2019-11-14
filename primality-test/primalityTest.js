@@ -6,7 +6,9 @@ function primeFactorization(number) {
     if (dividend % divisor === 0) {
       factors.push(divisor);
       dividend /= divisor;
-    } else divisor += 1;
+    } else {
+      divisor += 1;
+    }
   }
   return factors;
 }
