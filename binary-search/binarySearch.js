@@ -4,13 +4,13 @@ function search(array, left, right, target) {
   if (array[mid] === target) {
     return mid;
   }
-  if (left === array.length || right === 0) {
-    return -1;
+  if (target < array[mid]) {
+    return search(array, left, mid - 1, target);
   }
   if (target > array[mid]) {
     return search(array, mid + 1, right, target);
   }
-  return search(array, left, mid - 1, target);
+  return -1;
 }
 
 function binarySearch(array, target, comparator) {
