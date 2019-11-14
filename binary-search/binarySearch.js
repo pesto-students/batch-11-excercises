@@ -1,26 +1,24 @@
 
-function binarySearch(numberArray, searchElement) {
-  let low = 0;
-  let high = numberArray.length - 1;
-  let mid = Math.floor((low + high) / 2);
-  console.log(mid);
+function binarySearch(numberArray,searchElement) {
+  let mid = Math.floor(numberArray.length / 2);
 
-  if (numberArray.length === 0) {
-    return -1;
-  }
-  if (searchElement === numberArray[mid]) {
-    return numberArray.indexOf(searchElement);
-  }
-
-  if(searchElement > numberArray[low]) {
-    low = mid + 1;
-    binarySearch(numberArray.slice(low), searchElement);
-  }else{
-    high = mid - 1;
-    binarySearch(numberArray.slice(low, high + 1), searchElement);
+  console.log(numberArray[mid], searchElement);
+  
+  if (numberArray[mid] === searchElement) {
+      console.log('match', numberArray[mid], searchElement);
+      return mid;
+  } else if (numberArray[mid] < searchElement && numberArray.length > 1) {
+      console.log('mid lower', numberArray[mid], searchElement);
+      return binarySearch(numberArray.splice(mid, Number.MAX_VALUE), searchElement);
+  } else if (numberArray[mid] > searchElement && numberArray.length > 1) {
+      console.log('mid higher', numberArray[mid], searchElement);
+      return binarySearch(numberArray.splice(0, mid), searchElement);
+  } else {
+      console.log('not here', searchElement);
+      return -1;
   }
 }
-
+  
 export {
   binarySearch,
 };
