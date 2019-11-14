@@ -17,6 +17,7 @@ describe('binarySearch', () => {
     const sortedArrayOfObjects = [
       { key: 1, value: 'value1' },
       { key: 2, value: 'value2' },
+      { key: 4, value: 'value4' },
       { key: 3, value: 'value3' },
     ];
 
@@ -26,7 +27,7 @@ describe('binarySearch', () => {
     };
 
     expect(binarySearch([], { key: 1 }, comparator)).toBe(-1);
-    expect(binarySearch(sortedArrayOfObjects, { key: 4 }, comparator)).toBe(-1);
+    expect(binarySearch(sortedArrayOfObjects, { key: 4 }, comparator)).toBe(3);
     expect(binarySearch(sortedArrayOfObjects, { key: 1 }, comparator)).toBe(0);
     expect(binarySearch(sortedArrayOfObjects, { key: 2 }, comparator)).toBe(1);
     expect(binarySearch(sortedArrayOfObjects, { key: 3 }, comparator)).toBe(2);
