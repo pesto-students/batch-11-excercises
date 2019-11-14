@@ -1,7 +1,6 @@
 
-function bind(...args) {
-  return args;
-}
+const bind = (unboundFunction, object, ...args) => unboundFunction
+  .bind(object, ...args);
 
 export {
   bind,
