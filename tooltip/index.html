@@ -1,9 +1,48 @@
 <!-- Add a tooltip to the paragraph below with the text "About Pesto". -->
 <!DOCTYPE html>
 <html>
+
+<head>
+    <style>
+        .container {
+            margin: auto;
+            text-align: center;
+        }
+
+        .pesto {
+            display: inline-block;
+            border-bottom: 1px dotted black;
+            margin: 0;
+            position: absolute;
+            top: 30%;
+        }
+
+        .pesto .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            top: 100%;
+            left: 50%;
+            margin-left: -60px;
+        }
+
+        .pesto:hover .tooltiptext {
+            visibility: visible;
+        }
+    </style>
+</head>
+
 <body>
-
-<p>Pesto is awesome</p>
-
+    <div class="container">
+        <p class="pesto">Pesto is awesome.<span class="tooltiptext">Tooltip text</span></p>
+    </div>
 </body>
+</body>
+
 </html>
