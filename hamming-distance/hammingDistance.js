@@ -4,7 +4,7 @@ function hammingDistance(string1, string2) {
   }
   return [...string1].reduce((acc, val, index) => {
     if (val !== string2[index]) {
-      acc += 1;
+      return acc + 1;
     }
     return acc;
   }, 0);
