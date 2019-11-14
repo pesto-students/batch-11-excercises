@@ -7,7 +7,7 @@ function constImmutable() {
   Object.defineProperty(account, 'password', {
     writable: false,
   });
-  account.password = 's3cret';
+  // account.password = 's3cret'; throws TypeError so commented out
   return account.password;
 }
 
