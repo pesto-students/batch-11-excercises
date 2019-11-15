@@ -1,7 +1,5 @@
 
-function slice(...args) {
-  return args;
-}
+const slice = (lowerBound, upperBound, iterable) => iterable.slice(lowerBound, upperBound);
 
 export {
   slice,
