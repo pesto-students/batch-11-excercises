@@ -22,4 +22,12 @@ describe('deepCopyObject', () => {
     expect(deepCopyObject(true)).toBe(true);
     expect(deepCopyObject(null)).toBeNull();
   });
+  // it('returns copy of array', () => {
+  //   const array = [1, 2, 3, 4, 5];
+  //   const array2 = deepCopyObject(array);
+  //   array2[0] = 'a';
+  //   array2[2] = 'b';
+  //   expect(array[0].toEqual(1));
+  //   expect(array[2].toEqual(3));
+  // });
 });
