@@ -1,13 +1,10 @@
 
-const calculateCartesianProduct = (firstSet, secondSet) => {
-  const result = [];
-  for (const elementOfFirstSet of firstSet) {
-    for (const elementOfSecondSet of secondSet) {
-      result.push([elementOfFirstSet, elementOfSecondSet]);
-    }
-  }
-  return result;
-};
+const calculateCartesianProduct = (firstSet, secondSet) => firstSet
+  .reduce((resultantSet, firstSetElement) => [
+    ...resultantSet,
+    ...secondSet
+      .map((secondSetElement) => [firstSetElement, secondSetElement]),
+  ], []);
 
 const cartesianProduct = (firstSet, secondSet) => {
   if (!(Array.isArray(firstSet) && Array.isArray(secondSet))) {
