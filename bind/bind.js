@@ -1,7 +1,5 @@
 
-function bind(...args) {
-  return args;
-}
+const bind = (fn, context, ...args) => fn.bind(context, ...args);
 
 export {
   bind,
