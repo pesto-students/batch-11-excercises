@@ -1,39 +1,35 @@
-/* eslint-disable no-else-return */
-/* eslint-disable max-len */
+/* eslint-disable operator-linebreak */
+/* eslint-disable quotes */
 
-function threeSum(numbersArray, target) {
-  if (numbersArray.length < 3) {
-    throw new Error('There must be atleast 3 values inside the array.');
-  }
-  if (typeof target !== 'number') {
-    throw new Error('The specified target must be a positive numeric value.');
+function threeSum(numbers, target) {
+  if (numbers.length < 3) {
+    throw new Error("Given array should contain at least 3 numbers");
   }
 
-  let i = 0;
-  const triplets = [];
+  if (typeof target !== "number") {
+    throw new Error("Target sum should be a number");
+  }
 
-  while (i < numbersArray.length - 2) {
-    let leftPointer = i + 1;
-    let rightPointer = numbersArray.length - 1;
-
-    while (leftPointer < rightPointer) {
-      if (numbersArray[i] + numbersArray[leftPointer] + numbersArray[rightPointer] === target) {
-        triplets.push(numbersArray[i]);
-        triplets.push(numbersArray[leftPointer]);
-        triplets.push(numbersArray[rightPointer]);
-        return triplets;
-      } else if (numbersArray[i] + numbersArray[leftPointer] + numbersArray[rightPointer] < target) {
-        leftPointer += 1;
-      } else {
-        rightPointer -= 1;
+  function loopThroughArray() {
+    for (const [firstLoopIndex, firstLoopValue] of numbers.entries()) {
+      for (const [secondLoopIndex, secondLoopValue] of numbers.entries()) {
+        for (const [thirdLoopIndex, thirdLoopValue] of numbers.entries()) {
+          if (
+            firstLoopIndex !== secondLoopIndex &&
+            secondLoopIndex !== thirdLoopIndex &&
+            firstLoopIndex !== thirdLoopIndex
+          ) {
+            if (firstLoopValue + secondLoopValue + thirdLoopValue === target) {
+              return [firstLoopValue, secondLoopValue, thirdLoopValue];
+            }
+          }
+        }
       }
     }
-
-    i += 1;
+    return null;
   }
-  return null;
+
+  return loopThroughArray() || null;
 }
 
-export {
-  threeSum,
-};
+export { threeSum };
