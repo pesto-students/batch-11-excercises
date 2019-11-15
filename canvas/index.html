@@ -1,1 +1,73 @@
-Make some complex figures using canvas.
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas example</title>
+
+    <script>
+        function drawOnCanvas() {
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            drawRectangle(ctx);
+            drawCircle(ctx);
+            drawRhombus(ctx);
+            drawHuman(ctx);
+        }
+
+        function drawRectangle(ctx) {
+            ctx.fillRect(15,15,100,100);
+        }
+
+        function drawCircle(ctx) {
+            ctx.beginPath();
+            ctx.arc(200, 70, 50, 0, 2 * Math.PI);
+            ctx.stroke();
+        }
+
+        function drawRhombus(ctx) {
+            ctx.beginPath();
+            ctx.moveTo(320, 25);
+            ctx.lineTo(370, 75);
+            ctx.lineTo(320, 125);
+            ctx.lineTo(270, 75);
+            ctx.lineTo(320, 25);
+
+            ctx.stroke();
+        }
+
+        function drawHuman(ctx) {
+            ctx.beginPath();
+            ctx.arc(200, 200, 30, 0, 2 * Math.PI); //Head
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.moveTo(200, 200);
+            ctx.lineTo(200, 300); //Body
+
+            ctx.lineTo(250,350); //Leg
+            ctx.moveTo(200, 300);
+            ctx.lineTo(150, 350);
+
+            ctx.moveTo(200,250); //Hand
+            ctx.lineTo(250,240);
+            ctx.moveTo(200,250);
+            ctx.lineTo(150,240);
+
+            ctx.stroke();
+        }
+
+        document.addEventListener("DOMContentLoaded", function (event) {
+            drawOnCanvas();
+        });
+    </script>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="400" height="400" style="border:1px solid #000000;">
+    </canvas>
+</body>
+
+</html>
