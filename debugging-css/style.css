@@ -29,9 +29,9 @@ pli {
 /* header and footer */
 
 header, footer {
-  background-colour: teal;
+  background-color: teal;
   height: 10em;
-  padding: 2em;
+  padding: 8em;
 }
 
 h1, footer p {
@@ -40,7 +40,7 @@ h1, footer p {
 
 h1 {
   text-align: center;
-  padding: 0.5em 0;
+  padding: 1.5em 0;
 }
 
 /* main content */
@@ -54,6 +54,7 @@ main p, main li {
 }
 
 img {
-  float: right
-  margin: 1.2em 2em;
+  float: right;
+  margin: 0em;
+  padding: 2em;
 }
