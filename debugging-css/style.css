@@ -24,12 +24,10 @@ pli {
   font-size: 1.7em;
 }
 
-/*+++ more specific section styles +++*/
-
 /* header and footer */
 
 header, footer {
-  background-colour: teal;
+  background-color: teal;
   height: 10em;
   padding: 2em;
 }
@@ -54,6 +52,6 @@ main p, main li {
 }
 
 img {
-  float: right
-  margin: 1.2em 2em;
+  float: right;
+  margin: 0 2em;
 }

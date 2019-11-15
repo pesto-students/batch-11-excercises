@@ -2,4 +2,7 @@ html {
   font-family: sans-serif;
 }
 
-/* Your CSS below here */
+.box {
+  margin: 20px auto;
+  padding: 20px;
+}
