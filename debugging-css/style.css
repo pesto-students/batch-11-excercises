@@ -1,4 +1,4 @@
-/* General styles */
+
 
 html {
   font-family: 'Helvetica neue', Arial, 'sans serif';
@@ -6,12 +6,13 @@ html {
 }
 
 body {
-  width: 80em;
+  width: 64em;
   margin: 0 auto;
 }
 
-/* Typography */
-
+.main-container {
+  /* padding: 0rem 5rem 0rem 5rem; */
+}
 h1 {
   font-size: 4em;
 }
@@ -20,22 +21,20 @@ h2 {
   font-size: 3.2em;
 }
 
-pli {
+p li {
   font-size: 1.7em;
 }
 
-/*+++ more specific section styles +++*/
-
-/* header and footer */
 
 header, footer {
-  background-colour: teal;
-  height: 10em;
-  padding: 2em;
+  background-color: teal;
+  padding: 1em;
 }
 
+
+
 h1, footer p {
-  margin: -70px;
+
 }
 
 h1 {
@@ -43,17 +42,17 @@ h1 {
   padding: 0.5em 0;
 }
 
-/* main content */
 
 main {
-  padding: 2em;
+  padding: 1em;
 }
 
 main p, main li {
   line-height: 2;
+  font-size: 12px;
 }
 
 img {
-  float: right
+  float: right;
   margin: 1.2em 2em;
 }
