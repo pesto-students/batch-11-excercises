@@ -3,7 +3,7 @@
     "segmentName": "segment-2",
     "exercises": {
         "power-set": {
-            "completed": false
+            "completed": true
         },
         "longest-common-subsequnce": {
             "completed": false
