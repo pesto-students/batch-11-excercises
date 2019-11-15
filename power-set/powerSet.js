@@ -1,7 +1,11 @@
-
-function powerSet(...args) {
-  return args;
-}
+const powerSet = (originalSet) => originalSet.reduce(
+  (subsets, value) => subsets.concat(
+    subsets.map((set) => [...set, value]),
+  ),
+  [
+    [],
+  ],
+);
 
 export {
   powerSet,
