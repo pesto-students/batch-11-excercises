@@ -2,4 +2,16 @@ html {
   font-family: sans-serif;
 }
 
+.coolbox {
+  border: 1px solid red;
+  width: 20%;
+  text-align: center;
+  background: red;
+  border-radius: 5px;
+  color: #fff;
+  box-shadow: 3px 4px rgb(158, 147, 147);
+  text-shadow: 1px 1px rgb(158, 147, 147);
+  font-size: 20px;
+}
+
 /* Your CSS below here */
