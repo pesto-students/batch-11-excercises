@@ -1,5 +1,5 @@
 
-const flatten = (array) => array.reduce((flattened, element) => flattened.concat(element), []);
+const flatten = (array) => array.reduce((flattened, element) => [...flattened, ...element], []);
 
 const searchSortedMatrix = (sortedMatrix) => {
   const { search, matrix } = sortedMatrix;
