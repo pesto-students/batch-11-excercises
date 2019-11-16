@@ -7,68 +7,31 @@ class Cycled {
     // this.nextNumberIterator = this.getNextIterable()[Symbol.iterator]();
     // this.previousNumberIterator = this.getPreviousIterable()[Symbol.iterator]();
     this.stepperIterator = this.getStepperIterable()[Symbol.iterator]();
+    this[Symbol.iterator] = this[Symbol.iterator].bind(this);
   }
 
-  // // eslint-disable-next-line class-methods-use-this
-  // getNextIterable() {
-  //   return {
-  //     [Symbol.iterator]() {
-  //       return {
-  //         next() {
-  //           this.pointer += 1;
-  //           if (this.pointer >= this.numbers.length) {
-  //             this.pointer = 0;
-  //           }
-  //           return {
-  //             value: this.numbers[this.pointer],
-  //             done: false,
-  //           };
-  //         },
-  //       };
-  //     },
-  //   };
-  // }
-
-  // // eslint-disable-next-line class-methods-use-this
-  // getPreviousIterable() {
-  //   return {
-  //     [Symbol.iterator]() {
-  //       return {
-  //         next() {
-  //           this.pointer -= 1;
-  //           if (this.pointer < 0) {
-  //             this.pointer = this.pointer + this.numbers.length;
-  //           }
-  //           return {
-  //             value: this.numbers[this.pointer],
-  //             done: false,
-  //           };
-  //         },
-  //       };
-  //     },
-  //   };
-  // }
-
   // eslint-disable-next-line class-methods-use-this
-  getStepperIterable() {
+  [Symbol.iterator]() {
     return {
-      [Symbol.iterator]() {
+      next(step) {
+        this.pointer += step;
+        if (this.pointer < 0) {
+          this.pointer = this.pointer + this.numbers.length;
+        }
+        if (this.pointer >= this.numbers.length) {
+          this.pointer = 0;
+        }
         return {
-          next(step) {
-            this.pointer += step;
-            if (this.pointer < 0) {
-              this.pointer = this.pointer + this.numbers.length;
-            }
-            if (this.pointer >= this.numbers.length) {
-              this.pointer = 0;
-            }
-            return {
-              value: this.numbers[this.pointer],
-              done: false,
-            };
-          },
+          value: this.numbers[this.pointer],
+          done: false,
         };
       },
+    };
+  }
+
+  getStepperIterable() {
+    return {
+      [Symbol.iterator]: this[Symbol.iterator],
     };
   }
 
@@ -98,22 +61,18 @@ class Cycled {
     return this.pointer;
   }
 
+  indexOf(searchValue) {
+    return this.numbers.indexOf(searchValue);
+  }
 
   // eslint-disable-next-line class-methods-use-this
   reversed() {
-    this.reversedObject = {
-      step(byNumber) {
-        return this.stepperIterator.next.call(this, -1 * byNumber).value;
-      },
-      next() {
-        return this.stepperIterator.next.call(this, -1).value;
-      },
-      previous() {
-        return this.stepperIterator.next.call(this, 1).value;
-      },
+    const reversedObject = {
+      step: (byNumber) => this.stepperIterator.next.call(this, byNumber).value,
+      next: () => this.stepperIterator.next.call(this, -1),
+      previous: () => this.stepperIterator.next.call(this, 1),
     };
-    this.reversedObject.next = this.reversedObject.next.bind(this);
-    return this.reversedObject;
+    return reversedObject;
   }
 }
 
