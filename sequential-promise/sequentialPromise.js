@@ -1,10 +1,7 @@
-
-function sequentialPromise(tasks) {
-  let result = Promise.resolve();
-  tasks.forEach((task) => {
-    result = result.then((value) => task(value));
-  });
-  return result;
+function sequentialPromise(array) {
+  return array.reduce((previousPromise, currentPromise) => previousPromise
+    .then(currentPromise),
+  Promise.resolve());
 }
 
 export {
