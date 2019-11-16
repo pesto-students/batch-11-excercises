@@ -24,10 +24,10 @@
             "completed": false
         },
         "range-iter": {
-            "completed": false
+            "completed": true
         },
         "simple-iterable": {
-            "completed": false
+            "completed": true
         }
     }
 }
