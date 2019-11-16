@@ -4,56 +4,116 @@ class Cycled {
     // console.log(numbers);
     this.numbers = numbers;
     this.pointer = 0;
+    // this.nextNumberIterator = this.getNextIterable()[Symbol.iterator]();
+    // this.previousNumberIterator = this.getPreviousIterable()[Symbol.iterator]();
+    this.stepperIterator = this.getStepperIterable()[Symbol.iterator]();
   }
 
-  get index() {
-    return this.pointer;
-  }
+  // // eslint-disable-next-line class-methods-use-this
+  // getNextIterable() {
+  //   return {
+  //     [Symbol.iterator]() {
+  //       return {
+  //         next() {
+  //           this.pointer += 1;
+  //           if (this.pointer >= this.numbers.length) {
+  //             this.pointer = 0;
+  //           }
+  //           return {
+  //             value: this.numbers[this.pointer],
+  //             done: false,
+  //           };
+  //         },
+  //       };
+  //     },
+  //   };
+  // }
+
+  // // eslint-disable-next-line class-methods-use-this
+  // getPreviousIterable() {
+  //   return {
+  //     [Symbol.iterator]() {
+  //       return {
+  //         next() {
+  //           this.pointer -= 1;
+  //           if (this.pointer < 0) {
+  //             this.pointer = this.pointer + this.numbers.length;
+  //           }
+  //           return {
+  //             value: this.numbers[this.pointer],
+  //             done: false,
+  //           };
+  //         },
+  //       };
+  //     },
+  //   };
+  // }
 
   // eslint-disable-next-line class-methods-use-this
-  set index(param) {
-    console.log(param);
+  getStepperIterable() {
+    return {
+      [Symbol.iterator]() {
+        return {
+          next(step) {
+            this.pointer += step;
+            if (this.pointer < 0) {
+              this.pointer = this.pointer + this.numbers.length;
+            }
+            if (this.pointer >= this.numbers.length) {
+              this.pointer = 0;
+            }
+            return {
+              value: this.numbers[this.pointer],
+              done: false,
+            };
+          },
+        };
+      },
+    };
+  }
+
+  step(byNumber) {
+    return this.stepperIterator.next.call(this, byNumber).value;
+  }
+
+  next() {
+    return this.stepperIterator.next.call(this, 1).value;
+  }
+
+  previous() {
+    return this.stepperIterator.next.call(this, -1).value;
   }
 
   current() {
     return this.numbers[this.pointer];
   }
 
-  next() {
-    this.pointer = (this.pointer + 1) % this.numbers.length;
-    return this.numbers[this.pointer];
-  }
-
-  previous() {
-    this.pointer = (this.pointer - 1 + this.numbers.length) % this.numbers.length;
-    return this.numbers[this.pointer];
-  }
-  // Cycled.prototype.stepBackwards = function step(number) {
-  //   const numbers = new Array(Math.abs(number));
-  //   numbers.forEach(() => {
-  //       this.previous();
-  //   });
-  //   return this.current();
-  // };
-
-  step(number) {
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < Math.abs(number); i++) {
-      if (Math.sign(number) === -1) {
-        this.previous();
-      }
-      this.next();
+  set index(indexValue) {
+    if (indexValue < this.numbers.length && indexValue >= 0) {
+      this.pointer = indexValue;
     }
-    // numbers.forEach(() => {
-    //   console.log('in the loop');
-    //   if (Math.sign(number) === -1) {
-    //     // this.previous();
-    //     console.log(this.previous());
-    //   } else {
-    //     console.log(this.next());
-    //   }
-    // }, this);
-    return this.current();
+  }
+
+  get index() {
+    return this.pointer;
+  }
+
+
+  // eslint-disable-next-line class-methods-use-this
+  reversed() {
+    this.reversedObject = {
+      step(byNumber) {
+        return this.stepperIterator.next.call(this, -1 * byNumber).value;
+      },
+      next() {
+        return this.stepperIterator.next.call(this, -1).value;
+      },
+      previous() {
+        return this.stepperIterator.next.call(this, 1).value;
+      },
+    };
+    this.reversedObject.next = this.reversedObject.next.bind(this);
+    return this.reversedObject;
   }
 }
 
