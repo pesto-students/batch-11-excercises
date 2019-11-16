@@ -1,5 +1,6 @@
 const factorial = (number) => {
   let fact = 1;
+
   while (number !== 0) {
     fact *= number;
     // eslint-disable-next-line
@@ -19,6 +20,7 @@ describe('factorial test', () => {
 
   test('should find factorial of 0', () => {
     // delete next line and replace it with proper test
-    expect(true).toEqual(false);
+
+    expect(factorial(1)).toEqual(1);
   });
 });
