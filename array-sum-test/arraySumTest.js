@@ -1,8 +1,5 @@
-
-function arraySumTest(...args) {
-  return args;
+function arraySumTest(numbers) {
+  return numbers.reduce((x, y) => x + y);
 }
 
-export {
-  arraySumTest,
-};
+export { arraySumTest };
