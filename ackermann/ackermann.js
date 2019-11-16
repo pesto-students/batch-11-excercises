@@ -1,8 +1,7 @@
-function ackermann(object) {
-  const {
-    m,
-    n,
-  } = object;
+function ackermann({
+  m,
+  n,
+}) {
   if (n === 0 && m > 0) {
     return ackermann({
       m: m - 1,
