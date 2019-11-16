@@ -1,0 +1,56 @@
+#container {
+    position: relative;
+    width: 50%;
+    height: 50%;
+    max-width: 400px;
+    max-height: 400px;;
+    display: -webkit-box;;
+    display: -ms-flexbox;;
+    display: flex;
+}
+
+figure {
+    position: relative;
+    width: 50%;
+    height: 50%;
+    max-width: 400px;
+    max-height: 400px;;
+    display: -webkit-box;;
+    display: -ms-flexbox;;
+    display: flex;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+figcaption {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    font-size: 8vw;
+    font-style: bold;
+    font-weight: 600;
+}
+
+#coveredTextContainer {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#coveredText {
+    text-align: center;
+    color: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    font-size: 8vw;
+    font-style: bold;
+    font-weight: 600;
+}
