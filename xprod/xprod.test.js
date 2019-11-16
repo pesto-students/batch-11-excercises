@@ -10,7 +10,13 @@ describe('xprod', () => {
   });
 
   it('creates the collection of all cross-product pairs of its parameters', () => {
-    expect(xprod(a, b)).toEqual([[1, 'a'], [1, 'b'], [1, 'c'], [2, 'a'], [2, 'b'], [2, 'c']]);
+    expect(xprod(a, b)).toEqual([
+      [1, 'a'],
+      [1, 'b'],
+      [1, 'c'],
+      [2, 'a'],
+      [2, 'b'],
+      [2, 'c'],
+    ]);
   });
 });
-
