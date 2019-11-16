@@ -2,4 +2,14 @@ html {
   font-family: sans-serif;
 }
 
-/* Your CSS below here */
+#coolBoxContainer {
+  padding: 5px 100px;
+  border: 2px solid #9f2a23;
+  border-radius: 20px;
+  box-shadow: 5px 5px 8px 0px black, inset 3px 3px 6px white, inset -2px -2px 10px black;
+  font-size: 35px;
+  color: #e93f36;
+  text-shadow: 3px 3px 5px black;
+  display: inline-block;
+  background-color: #c1332b;
+}
