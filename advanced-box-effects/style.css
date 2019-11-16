@@ -1,0 +1,29 @@
+#text-over-image {
+    position: relative;
+    float: left;
+}
+#text-over-image p {
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    font-size: 60px;
+    font-weight: bold;
+    top: 40px;
+    left: 40px;
+}
+#image-behind-text {
+    position: relative;
+    float: left;
+}
+#image-behind-text p {
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    font-size: 60px;
+    font-weight: bold;
+    top: 40px;
+    left: 40px;
+    color: transparent;
+    background-image: url(./colorful-heart.png);
+    background-size: cover;
+    -webkit-background-clip: text;
+            background-clip: text;
+}
