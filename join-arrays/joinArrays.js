@@ -1,6 +1,7 @@
 
-function joinArrays(...args) {
-  return args;
+function joinArrays(...numberArrays) {
+  const concat = (numbers, numberArray) => numbers.concat(numberArray);
+  return numberArrays.reduce(concat);
 }
 
 export {
