@@ -1,8 +1,14 @@
+function knownProp(object) {
+  const proxy = new Proxy(object, {
+    get(target, property) {
+      if (!(property in target)) {
+        throw TypeError('Unknown Property');
+      }
+      return target[property];
+    },
+  });
 
-function knownProp(...args) {
-  return args;
+  return proxy;
 }
 
-export {
-  knownProp,
-};
+export { knownProp };
