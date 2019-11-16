@@ -1,7 +1,5 @@
 
-function isPromise(...args) {
-  return args;
-}
+const isPromise = promise => promise instanceof Promise;
 
 export {
   isPromise,
