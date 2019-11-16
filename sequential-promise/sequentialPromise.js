@@ -1,6 +1,7 @@
-
-function sequentialPromise(...args) {
-  return args;
+function sequentialPromise(array) {
+  return array.reduce((previousPromise, currentPromise) => previousPromise
+    .then(currentPromise),
+  Promise.resolve());
 }
 
 export {
