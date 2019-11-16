@@ -2,4 +2,18 @@ html {
   font-family: sans-serif;
 }
 
-/* Your CSS below here */
+p {
+  background-color: red;
+  color: red;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  text-shadow: 1px 1px 2px black;
+  text-align: center;
+  font-size: 2em;
+  margin: 16px 36px;
+  border-style: outset;
+  border-color: red;
+  border-radius: 8px;
+  border-width: 2px;
+  box-shadow: 2px 2px 8px black;
+}
