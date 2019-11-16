@@ -1,8 +1,11 @@
+const valuesIn = (object) => {
+  const list = [];
+  // eslint-disable-next-line
+  for (const key in object) {
+    list.push(object[key]);
+  }
 
-function valuesIn(...args) {
-  return args;
-}
-
-export {
-  valuesIn,
+  return list.sort();
 };
+
+export { valuesIn };
