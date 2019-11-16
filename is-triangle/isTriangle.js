@@ -1,11 +1,9 @@
-
 function isTriangle(...sideofTriangle) {
+  const [smallTriangleside, mediumTriangleside, largeTriangleside] = [
+    ...sideofTriangle
+  ].sort();
 
-  let [smallTriangleside,mediumTriangleside,largeTriangleside] = [...sideofTriangle].sort();
-
-  return smallTriangleside + mediumTriangleside > largeTriangleside
+  return smallTriangleside + mediumTriangleside > largeTriangleside;
 }
 
-export {
-  isTriangle,
-};
+export { isTriangle };
