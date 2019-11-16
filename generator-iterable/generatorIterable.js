@@ -1,6 +1,14 @@
 
-function generatorIterable(...args) {
-  return args;
+function *generatorIterable() {
+  yield *generator();
+}
+
+function * generator(){
+    let i = 0;
+    while (i < 5) {
+        i++;
+      yield i;
+    }
 }
 
 export {
