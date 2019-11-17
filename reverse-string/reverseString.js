@@ -1,16 +1,12 @@
-
 function reverseString(OriginalString) {
+  const ReverseString = [];
 
-  let ReverseString = [];
+  const SplittedStringArray = OriginalString.split("");
 
-  let SplittedStringArray = OriginalString.split('');
-
-  for(let i = SplittedStringArray.length - 1; i >= 0;i--){
-          ReverseString.push(SplittedStringArray[i]);
+  for (let i = SplittedStringArray.length - 1; i >= 0; i -= 1) {
+    ReverseString.push(SplittedStringArray[i]);
   }
-    return ReverseString.join('');
+  return ReverseString.join("");
 }
 
-export {
-  reverseString,
-};
+export { reverseString };

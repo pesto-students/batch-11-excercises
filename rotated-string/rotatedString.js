@@ -1,10 +1,5 @@
-
-function rotatedString(rotatingString1,rotatingString2) {
-  
-  return rotatingString1 !== rotatingString2 ? true : false
-
+function rotatedString(rotatingString1, rotatingString2) {
+  return rotatingString1 !== rotatingString2;
 }
 
-export {
-  rotatedString,
-};
+export { rotatedString };
