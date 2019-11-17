@@ -8,12 +8,12 @@ describe('arrayCubeRootToJson', () => {
   });
 
   it('throw cases', () => {
-    expect(() => { arrayCubeRootToJson({}) }).toThrow();
-    expect(() => { arrayCubeRootToJson(true) }).toThrow();
-    expect(() => { arrayCubeRootToJson([null, false]) }).toThrow();
-    expect(() => { arrayCubeRootToJson(false) }).toThrow();
-    expect(() => { arrayCubeRootToJson(undefined) }).toThrow();
-    expect(() => { arrayCubeRootToJson([1, 2, 4, 'abc']) }).toThrow();
-    expect(() => { arrayCubeRootToJson([1, 2.12, 4.44, 'abc']) }).toThrow();
+    expect(() => { arrayCubeRootToJson({}) }).toThrow('argument must be an array');
+    expect(() => { arrayCubeRootToJson(true) }).toThrow('argument must be an array');
+    expect(() => { arrayCubeRootToJson([null, false]) }).toThrow('Array must contain numbers only');
+    expect(() => { arrayCubeRootToJson(false) }).toThrow('argument must be an array');
+    expect(() => { arrayCubeRootToJson(undefined) }).toThrow('argument must be an array');
+    expect(() => { arrayCubeRootToJson([1, 2, 4, 'abc']) }).toThrow('Array must contain numbers only');
+    expect(() => { arrayCubeRootToJson([1, 2.12, 4.44, 'abc']) }).toThrow('Array must contain numbers only');
   });
 });
