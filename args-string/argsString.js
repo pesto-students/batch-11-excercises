@@ -1,6 +1,6 @@
 
-function argsString(...args) {
-  return args;
+function argsString(targetString, wordsToReplace) {
+  return wordsToReplace.reduce((acc, word) => acc.replace(/{}/, word), targetString);
 }
 
 export {

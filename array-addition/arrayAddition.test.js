@@ -14,18 +14,18 @@ describe('arrayAddition', () => {
   });
 
   it('should throw if one of the array is empty', () => {
-    expect(() => arrayAddition([], [100, -200, 200, 400, 0, 99999])).toThrow();
+    expect(() => arrayAddition([], [100, -200, 200, 400, 0, 99999])).toThrow('Arrays cannot be empty!');
   });
 
   it('should throw if parameters are not arrays', () => {
-    expect(() => arrayAddition('a', [100, -200, 200, 400, 0, 99999])).toThrow();
+    expect(() => arrayAddition('a', [100, -200, 200, 400, 0, 99999])).toThrow('Inputs can only be arrays!');
   });
 
   it('should throw if parameters are not arrays', () => {
-    expect(() => arrayAddition('a', 1)).toThrow();
+    expect(() => arrayAddition('a', 1)).toThrow('Inputs can only be arrays!');
   });
 
   it('should throw error on non strictly numerical arrays', () => {
-    expect(() => arrayAddition(['1', '2', '3', '4'], [2, 'b', 'c'])).toThrow();
+    expect(() => arrayAddition(['1', '2', '3', '4'], [2, 'b', 'c'])).toThrow('Arrays can only contain numbers!');
   });
 });
