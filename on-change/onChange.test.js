@@ -52,6 +52,7 @@ describe('onChange', () => {
 
     const array = onChange(fixture, () => {
       callCount += 1;
+      console.log(callCount);
     });
 
     array[0] = 'a';
