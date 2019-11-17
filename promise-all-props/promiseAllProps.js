@@ -1,6 +1,15 @@
+function promiseAllProps(propObj) {
+  const resultObj = Object.keys(propObj).reduce((acc, current) => {
+    propObj[current].then((msg) => {
+      acc[current] = msg;
+    });
+    return acc;
+  }, {});
 
-function promiseAllProps(...args) {
-  return args;
+  const resultPromise = new Promise((resolve) => {
+    Promise.all(Object.values(propObj)).then(() => resolve(resultObj));
+  });
+  return resultPromise;
 }
 
 export {
