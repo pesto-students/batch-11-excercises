@@ -1,6 +1,6 @@
 
-function sequentialPromise(...args) {
-  return args;
+function sequentialPromise(promises) {
+  return promises.reduce((accumulator, promise) => accumulator.then(promise), Promise.resolve());
 }
 
 export {

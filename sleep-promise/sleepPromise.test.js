@@ -28,6 +28,7 @@ test('promise chain sleeping', async () => {
   return Promise.resolve()
     .then(sleep(20))
     .then(() => {
+      console.log(performance.now(), start);
       expect(performance.now() - start).toBeGreaterThanOrEqual(19);
     });
 });
