@@ -1,6 +1,6 @@
 
-function isIterableEmpty(...args) {
-  return args;
+function isIterableEmpty(iterObj) {
+  return [...iterObj].length === 0;
 }
 
 export {
