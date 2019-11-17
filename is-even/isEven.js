@@ -1,6 +1,6 @@
 
 function isEven(...args) {
-  return args;
+  return (n & 1) === 1 ? false : true;
 }
 
 export {
