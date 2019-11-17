@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.banner {
+    text-align: center;
+    background-color: rgb(130, 15, 134);
+    color: white;
+    padding: 1em;
+    margin-top: 0;
+}
+
+article {
+    background-color: aqua;
+    margin: 0.5em;
+    flex: 1;
+}
+
+article>header {
+    padding: 0.5em;
+}
+
+article>header>p {
+    padding: 0.5em;
+}
+
+.specialBox {
+    background-color: aqua;
+    flex: 2;
+}
+
+.buttons {
+    padding-top: 1em;
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons>button {
+    font-size: 1em;
+}
+
+.specialBox>p {
+    padding-bottom: 2em;
+    padding-left: 1em;
+}
