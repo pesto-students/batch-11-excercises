@@ -6,7 +6,7 @@
             "completed": true
         },
         "all-promises": {
-            "completed": false
+            "completed": true
         },
         "greet": {
             "completed": true
@@ -30,7 +30,7 @@
             "completed": true
         },
         "promise-all-props": {
-            "completed": false
+            "completed": true
         },
         "sleep-promise": {
             "completed": true
