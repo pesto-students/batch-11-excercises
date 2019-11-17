@@ -1,0 +1,49 @@
+.arcLoader {
+    border: 2px solid #000;
+    width: 50px;
+    min-height: 50px;
+    border-radius: 50%;
+    border-bottom: none;
+    border-right: none;
+    border-left: none; 
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+
+}
+
+
+/* @-moz-keyframes spin {  . . . } */
+
+
+/* @-ms-keyframes spin {  . . . } */
+
+
+/* @-o-keyframes spin { . . . } */
+
+@-webkit-keyframes spin {
+    from {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1);
+    }
+
+    to {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1);
+    }
+
+    to {
+        transform: rotate(360deg) scale(1);
+    }
+}
