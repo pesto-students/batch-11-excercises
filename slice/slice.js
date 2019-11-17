@@ -1,8 +1,3 @@
+const slice = (fromIndex, toIndex, value) => value.slice(fromIndex, toIndex);
 
-function slice(...args) {
-  return args;
-}
-
-export {
-  slice,
-};
+export { slice };
