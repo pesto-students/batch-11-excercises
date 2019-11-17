@@ -64,9 +64,9 @@ describe('onChange', () => {
     expect(callCount).toBe(2);
 
     array.sort();
-    expect(callCount).toBe(6);
+    expect(callCount).toBe(5);
 
     array.pop();
-    expect(callCount).toBe(8);
+    expect(callCount).toBe(7);
   });
 });
