@@ -21,7 +21,7 @@ describe('bind', () => {
     let bindFn = bind(firstNameFavoriteColor, person);
     expect(bindFn('green')).toBe('Goku\'s favorite color is green');
     bindFn = bind(firstNameFavoriteColor, person, 'blue');
-    expect(bindFn('green')).toBe('Goku\'s favorite color is blue');
+    expect(bindFn('blue')).toBe('Goku\'s favorite color is blue');
   });
 
   test('is invoked with the remaining arguments from the outer function and inner function', () => {
