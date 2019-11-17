@@ -31,35 +31,42 @@ function calcMod(arr) {
   return mod;
 }
 
-function applyOperator(...args) {
-  if (args.length === 0) {
-    throw new Error();
+function applyOperator(operator, ...operands) {
+  const operators = ['+', '-', '*', '/', '%'];
+  if ((!operator) || (operator in operators)) {
+    throw new Error('No/Invalid operator specified. Try "+", "-", "*", "/" or "%"');
   }
-  if (args.length === 1) {
+
+  if (operands.length === 0) {
     return 0;
   }
-  if (args.length === 2) {
-    if (args[0] === '-') {
-      return -1 * args[1];
+
+  if (operands.filter((operand) => typeof operand !== 'number').length > 0) {
+    throw new Error('Non-number operand received. Please verify.');
+  }
+
+  if (operands.length === 1) {
+    if (operator === '-') {
+      return -1 * operands[0];
     }
-    return args[1];
+    return operands[0];
   }
-  if (args[0] === '+') {
-    return calcSum(args.slice(1));
+  if (operator === '+') {
+    return calcSum(operands);
   }
-  if (args[0] === '-') {
-    return calcDiff(args.slice(1));
+  if (operator === '-') {
+    return calcDiff(operands);
   }
-  if (args[0] === '*') {
-    return calcProd(args.slice(1));
+  if (operator === '*') {
+    return calcProd(operands);
   }
-  if (args[0] === '/') {
-    return calcDiv(args.slice(1));
+  if (operator === '/') {
+    return calcDiv(operands);
   }
-  if (args[0] === '%') {
-    return calcMod(args.slice(1));
+  if (operator === '%') {
+    return calcMod(operands);
   }
-  return args;
+  return operands;
 }
 
 export {
