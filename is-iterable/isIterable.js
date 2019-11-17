@@ -1,8 +1,3 @@
+const isIterable = (value) => typeof value[Symbol.iterator] === 'function';
 
-function isIterable(...args) {
-  return args;
-}
-
-export {
-  isIterable,
-};
+export { isIterable };
