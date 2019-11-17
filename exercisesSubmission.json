@@ -18,10 +18,10 @@
             "completed": true
         },
         "private-props": {
-            "completed": false
+            "completed": true
         },
         "xprod": {
-            "completed": false
+            "completed": true
         },
         "without": {
             "completed": false
@@ -30,7 +30,7 @@
             "completed": false
         },
         "values": {
-            "completed": false
+            "completed": true
         }
     }
 }
