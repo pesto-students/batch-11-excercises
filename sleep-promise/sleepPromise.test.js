@@ -1,4 +1,4 @@
-import { sleep } from './sleepPromise';
+import { sleepPromise as sleep } from './sleepPromise';
 
 const { performance } = require('perf_hooks');
 
