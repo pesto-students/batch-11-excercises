@@ -2,17 +2,26 @@
 get the value of the href, hreflang, rel, target, and type attributes of the specified link -->
 
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset=utf-8 />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="script.js"></script>
+  <title>HREF Attributes</title>
 </head>
-
 <body>
-  <p>
-    <a id="w3r" type="text/html" hreflang="en-us" rel="nofollow" target="_self" href="https://pesto.tech/">Pesto</a>
-  </p>
-  <button onclick="getAttributes()">Click here to get attributes value</button>
-</body>
-
+    <p>
+      <a id="w3r" type="text/html" hreflang="en-us" rel="nofollow" target="_self" href="https://pesto.tech/">Pesto</a>
+    </p>
+    <button onclick="getAttributes()">Click here to get attributes value</button>
+    <fieldset>
+      <legend>Value Obtained From HREF Link</legend>
+      <p id="type">HREF Type : Not Fetched</p>
+      <p id="hrefLang">Href Language : Not Fetched</p>
+      <p id="hrefRelation">Href Relation : Not Fetched</p>
+      <p id="target">Href Target : Not Fetched</p>
+      <p id="href">Href Will Redirect To : Not Fetched</p>
+    </fieldset>
+  </body>
 </html>
