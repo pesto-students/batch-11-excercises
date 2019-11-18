@@ -1,10 +1,10 @@
-import { instructor } from './instructor';
+import { instruct } from './instructor';
 
 describe('instructor', () => {
   test('should change this.firstName to Ram', () => {
-    instructor.sayHi();
+    instruct.sayHi();
     setTimeout(() => {
-      expect(instructor.firstName).toBe('Ram');
+      expect(instruct.firstName).toBe('Ram');
     }, 1000);
   });
 });

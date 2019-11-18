@@ -1,6 +1,6 @@
 
-function placeInMiddle(...args) {
-  return args;
+function placeInMiddle(...numbers) {
+  return [].concat(...numbers).sort((x, y) => x - y);
 }
 
 export {
