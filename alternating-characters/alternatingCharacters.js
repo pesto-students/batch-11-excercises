@@ -1,22 +1,18 @@
 function alternatingCharacters(patternArray) {
-
-  const removedCountsArray = [] ;
+  const removedCountsArray = [];
 
   patternArray.forEach(element => {
-
-    const characters = element.split('');
+    const characters = element.split("");
     let removedCharacterCount = 0;
 
-    for(let i = 0; i <= characters.length - 1; i++){
-      if(characters[i] === characters[i+1]){
+    for (let i = 0; i <= characters.length - 1; i += 1) {
+      if (characters[i] === characters[i + 1]) {
         removedCharacterCount += 1;
       }
     }
     removedCountsArray.push(removedCharacterCount);
   });
-    return removedCountsArray;
+  return removedCountsArray;
 }
 
-export {
-  alternatingCharacters,
-};
+export { alternatingCharacters };
