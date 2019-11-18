@@ -1,17 +1,30 @@
 function theatre(theatreQueue) {
-  let balance = 0;
-  for (let i = 0; i < theatreQueue.length; i += 1) {
-    const ele = theatreQueue[i];
-    if (ele > 10) {
-      if ((ele - 10) <= balance) {
-        balance -= ele - 10;
+  let tens = 0; let twenties = 0; let fifties = 0;
+  for (const ele of theatreQueue) {
+    if (ele === 10) {
+      tens += 1;
+    } else if (ele === 20) {
+      if (tens >= 1) {
+        twenties += 1;
+        tens -= 1;
       } else {
         return false;
       }
     } else {
-      balance += ele;
+      if (twenties >= 2) {
+        twenties -= 2;
+        fifties += 1;
+      } else if (twenties === 1 && tens >= 2) {
+        fifties += 1;
+        tens -= 2;
+        twenties -= 1;
+      } else if (tens >= 4) {
+        fifties += 1;
+        tens -= 4;
+      } else {
+        return false;
+      }
     }
-    console.log(balance);
   }
   return true;
 }
