@@ -1,6 +1,6 @@
 
-function promiseAllProps(...args) {
-  return args;
+function promiseAllProps(promisesObj) {
+  return Promise.all(promisesObj);
 }
 
 export {
