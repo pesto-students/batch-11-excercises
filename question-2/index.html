@@ -1,19 +1,27 @@
-<!-- Write a JavaScript function to get the values of First and Last name of the following form -->
-
 <!DOCTYPE html>
 <html>
 
 <head>
-  <meta charset=utf-8 />
-  <title>Return first and last name from a form</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Javascript dom styling</title>
+  <script>
+    function getFormvalue() {
+      let fname = document.getElementById('fname').value;
+      let lname = document.getElementById('lname').value;
+
+      alert(`First name is ${fname} and Second name is ${lname}`);
+    }
+  </script>
 </head>
 
 <body>
   <form id="form1" onsubmit="getFormvalue()">
-    First name:
-    <input type="text" name="fname" value="David">
-    <br> Last name:
-    <input type="text" name="lname" value="Beckham">
+    <label for="fname">First name:</label>
+    <input type="text" name="fname" value="David" id="fname">
+    <br>  <label for="lname">Last name:</label>
+    <input type="text" name="lname" value="Beckham" id="lname">
     <br>
     <input type="submit" value="Submit">
   </form>
