@@ -1,16 +1,24 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
   <meta charset=utf-8 />
-  <title>JS DOM paragraph style</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> JS DOM paragraph style </title>
+  <script>
+    function js_style() {
+      const para = document.getElementById('text').style;
+      para['background-color'] = 'green';
+      para['font-size'] = '5em';
+      para['width'] = '50vw';
+      para['color'] = 'white';
+      para['padding'] = '10px';
+    }
+  </script>
 </head>
-
 <body>
-  <p id='text'>JavaScript Exercises</p>
+  <p id='text'> JavaScript Exercises </p>
   <div>
-    <button id="jsstyle" onclick="js_style()">Style</button>
+    <button id="jsstyle" onclick="js_style()"> Style </button>
   </div>
 </body>
-
 </html>
