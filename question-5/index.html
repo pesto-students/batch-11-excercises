@@ -1,32 +1,45 @@
-<!-- Write a JavaScript function that accept row, column, (to identify a particular cell)
-  and a string to update the content of that cell. -->
-
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset=utf-8 />
-  <title>Change the content of a cell</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js"></script>
+  <title>Table Exercise</title>
 </head>
-
 <body>
-  <table id="myTable" border="1">
-    <tr>
-      <td>Row1 cell1</td>
-      <td>Row1 cell2</td>
-    </tr>
-    <tr>
-      <td>Row2 cell1</td>
-      <td>Row2 cell2</td>
-    </tr>
-    <tr>
-      <td>Row3 cell1</td>
-      <td>Row3 cell2</td>
-    </tr>
-  </table>
-  <form>
-    <input type="button" onclick="changeContent()" value="Change content">
-  </form>
+    <table id="myTable">
+      <thead>
+        <tr> 
+          <td>Column 1</td>
+          <td>Column 2</td>
+        </tr>
+      </thead>
+        <tr>
+          <td>Row1 cell1</td>
+          <td>Row1 cell2</td>
+        </tr>
+        <tr>
+          <td>Row2 cell1</td>
+          <td>Row2 cell2</td>
+        </tr>
+        <tr>
+          <td>Row3 cell1</td>
+          <td>Row3 cell2</td>
+        </tr>
+      </table>
+      <form>
+        <fieldset>
+          <legend>Value Edit Form</legend>
+        <label for="rowValue"> Row Number </label>
+        <input type="number" id="rowValue" aria-label="Put Column Number" min=1>
+        <label for="columnValue"> Column Number </label>
+        <input type="number" id="columnValue" aria-label="Put Specific Cell Number" min=1>
+        <label for="replaceValue"> Replacement Value </label>
+        <input type="text" id="replaceValue" aria-label="Provide replacement Value" min=1>
+        <input type="button" onclick="changeContent()" value="Change content" aria-label="Change Content">
+        </fieldset>
+      </form>
 </body>
-
 </html>

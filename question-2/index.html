@@ -1,22 +1,30 @@
-<!-- Write a JavaScript function to get the values of First and Last name of the following form -->
-
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset=utf-8 />
-  <title>Return first and last name from a form</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Javascript From </title>
 </head>
-
 <body>
-  <form id="form1" onsubmit="getFormvalue()">
-    First name:
-    <input type="text" name="fname" value="David">
-    <br> Last name:
-    <input type="text" name="lname" value="Beckham">
-    <br>
-    <input type="submit" value="Submit">
-  </form>
-</body>
-
+    <form id="form1" onsubmit="getFormvalue()" aria-label="Your details">
+      <fieldset>
+        <legend>Personal Details</legend>
+      <label for="fname"> First Name : </label>
+      <input type="text" name="fname" value="" id="fname" aria-label="Your first name" required />
+      <label for="lname"> Last Name : </label>
+      <input type="text" name="lname" value="" id="lname" aria-label="Your last name" required />
+      <input type="submit" name="submit" id="submit" aria-label="Submit your details"/>
+      </fieldset>
+    </form>
+    <fieldset id="result">
+      <legend>Fetched Values</legend>
+      <p id="firstName"></p>
+      <p id="lastName"></p>
+    </fieldset>
+  </body>
+  <footer>
+      <script src="script.js"></script>
+  </footer>
 </html>
