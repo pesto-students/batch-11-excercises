@@ -23,11 +23,13 @@
     </table>
 
     <form>
-      <input
-        type="button"
-        onclick="changeContent(1, 2, 'updated cell 2 of row 1')"
-        value="Change content"
-      />
+      <label for="row">Enter row:</label>
+      <input type="number" id="row" />
+      <label for="cell">Enter cell:</label>
+      <input type="number" id="cell" />
+      <label for="message">Enter message:</label>
+      <input type="text" id="message" />
+      <input type="button" onclick="changeContent()" value="Change content" />
     </form>
     <script src="./index.js" type="text/javascript" />
   </body>
