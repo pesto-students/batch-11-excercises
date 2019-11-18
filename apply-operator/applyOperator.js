@@ -1,32 +1,32 @@
-function calcSum(arr) {
+function calcSum(operands) {
   let sum = 0;
-  for (let i = 0; i < arr.length; i += 1) {
-    sum += arr[i];
+  for (let i = 0; i < operands.length; i += 1) {
+    sum += operands[i];
   }
   return sum;
 }
 
-function calcDiff(arr) {
-  return -1 * calcSum(arr);
+function calcDiff(operands) {
+  return -1 * calcSum(operands);
 }
 
-function calcProd(arr) {
-  let prod = 1;
-  for (let i = 0; i < arr.length; i += 1) {
-    prod *= arr[i];
+function calcProd(operands) {
+  let product = 1;
+  for (let i = 0; i < operands.length; i += 1) {
+    product *= operands[i];
   }
-  return prod;
+  return product;
 }
 
-function calcDiv(arr) {
-  const result = 1 / calcProd(arr);
+function calcDiv(operands) {
+  const result = 1 / calcProd(operands);
   return parseFloat(result.toPrecision(2));
 }
 
-function calcMod(arr) {
-  let mod = arr[0];
-  for (let i = 1; i < arr.length; i += 1) {
-    mod %= arr[i];
+function calcMod(operands) {
+  let mod = operands[0];
+  for (let i = 1; i < operands.length; i += 1) {
+    mod %= operands[i];
   }
   return mod;
 }
