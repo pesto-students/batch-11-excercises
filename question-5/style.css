@@ -1,0 +1,18 @@
+td {
+    border: 1px solid black;;
+}
+table {
+    border: 1px solid black;
+}
+form {
+    margin: 10px;
+    width: 40vw;
+}
+form input,label {
+    display: block;
+    margin: 10px;
+}
+input[type=button] {
+    background-color: green;
+    color: white;
+}
