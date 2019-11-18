@@ -1,8 +1,9 @@
-
-function curry(...args) {
-  return args;
+function curry(randomFunction) {
+  return function(firstParameter) {
+    return function(secondParameter) {
+      return firstParameter + secondParameter;
+    };
+  };
 }
 
-export {
-  curry,
-};
+export { curry };
