@@ -1,18 +1,13 @@
+function sqrt(inputValue) {
+  return Math.sqrt(inputValue);
+}
 
-  function sqrt(inputValue){ 
-    return Math.sqrt(inputValue);
-  };
+function power(inputValue, powerValue) {
+  return inputValue ** powerValue;
+}
 
-  function power(inputValue,powerValue){ 
-    return inputValue ** powerValue;
-  }
+function round(inputValue) {
+  return Math.round(inputValue);
+}
 
-  function round(inputValue){ 
-    return Math.round(inputValue);
-  }
-
-export {
-  sqrt,
-  power,
-  round,
-};
+export { sqrt, power, round };
