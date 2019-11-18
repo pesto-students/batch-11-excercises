@@ -1,16 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset=utf-8 />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>JS DOM paragraph style</title>
+  <style>
+    body {
+      margin: 0px;
+    }
+
+    .container {
+      margin: auto;
+      width: 50%;
+      padding: 10px;
+      text-align: center;
+
+    }
+
+    .container p {
+      display: inline-block;
+      background-color: #0074d9;
+      height: 100px;
+      width: 100px;
+      color: white;
+      text-align: center;
+      opacity: .7;
+      font-family: Verdana, sans-serif;
+      border: 3px solid rgba(0, 0, 0, .3);
+      margin-bottom: 30px;
+
+    }
+  </style>
 </head>
 
 <body>
-  <p id='text'>JavaScript Exercises</p>
-  <div>
-    <button id="jsstyle" onclick="js_style()">Style</button>
+  <div class="container">
+    <p id='text'>JavaScript Exercises</p>
+    <div>
+      <button id="jsstyle" onclick="js_style()">Style</button>
+    </div>
   </div>
+  <script>
+    const js_style = () => {
+      const jsstyle = document.getElementById('text');
+      jsstyle.style.transform = 'rotateZ(45deg)';
+      jsstyle.style.animation = 'three 2s infinite';
+      jsstyle.style.animationDirection = 'alternate';
+      jsstyle.style.backgroundColor = '#439772';
+
+    }
+  </script>
 </body>
 
 </html>
