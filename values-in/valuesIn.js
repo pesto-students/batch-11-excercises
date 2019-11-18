@@ -1,6 +1,10 @@
 
-function valuesIn(...args) {
-  return args;
+function valuesIn(obj) {
+  const resultArray = [];
+  for (const prop in obj) {
+      resultArray.push(obj[prop]);
+  }
+  return resultArray;
 }
 
 export {
