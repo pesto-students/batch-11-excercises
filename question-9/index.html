@@ -1,17 +1,24 @@
-<!-- Write a JavaScript program to highlight the bold words of the following paragraph, on mouse over a certain link. Go to the editor -->
-
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bold Words Highlighter</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-
-<body>
-
-</body>
-
+  <body>
+      <p id="boldParagraph">
+          A <strong>paragraph</strong> is a series of related sentences developing a
+          central idea, called the topic. <p>Try to think about
+          <strong>paragraphs</strong> in terms of thematic unity: a
+          <strong>paragraph</strong> is a sentence or a group of sentences that
+          supports one central, unified idea.</p> <strong>Paragraphs</strong> add one
+          idea at a time to
+          <a href="" id="alink" onmouseover="highlightText()" onmouseout="removeHighlight()"
+            >your broader argument.</a
+          >
+        </>
+        <script type="text/javascript" src="./index.js"></script>
+  </body>
 </html>
