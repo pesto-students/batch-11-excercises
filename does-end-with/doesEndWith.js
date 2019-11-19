@@ -1,8 +1,5 @@
-
-function doesEndWith(...args) {
-  return args;
+function doesEndWith(lastLetter, stringVal) {
+  return lastLetter === stringVal[stringVal.length - 1];
 }
 
-export {
-  doesEndWith,
-};
+export { doesEndWith };
