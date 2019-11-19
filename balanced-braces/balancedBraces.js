@@ -1,6 +1,6 @@
 
 // not made for objects
-// simple mostly for charactes
+// simple will work for bracket
 class Stack {
   constructor() {
     this.list = [];
