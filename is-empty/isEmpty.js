@@ -1,8 +1,5 @@
-
-function isEmpty(...args) {
-  return args;
+function isEmpty(value) {
+  return value;
 }
 
-export {
-  isEmpty,
-};
+export { isEmpty };
