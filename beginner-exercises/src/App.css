@@ -23,4 +23,5 @@ ul {
 .movie-list {
   list-style: none;
   color: black;
+  background-color: aqua;
 }
