@@ -12,7 +12,7 @@
             "completed": false
         },
         "isomorphic": {
-            "completed": false
+            "completed": true
         },
         "is-empty": {
             "completed": true
