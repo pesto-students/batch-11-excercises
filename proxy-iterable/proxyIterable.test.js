@@ -4,14 +4,12 @@ describe('proxyIterable', () => {
   test('main', () => {
     let i = 0;
 
-    const createFixture = () => {
-      return {
-        increment(value) {
-          i += value;
-          return i;
-        },
-      };
-    };
+    const createFixture = () => ({
+      increment(value) {
+        i += value;
+        return i;
+      },
+    });
 
     const array = [
       createFixture(),
@@ -43,11 +41,9 @@ describe('proxyIterable', () => {
   });
 
   test('does not work on heterogeneous iterable', () => {
-    const createFixture = () => {
-      return {
-        foo() {},
-      };
-    };
+    const createFixture = () => ({
+      foo() { },
+    });
 
     const array = [
       createFixture(),
