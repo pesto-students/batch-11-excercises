@@ -30,8 +30,9 @@ const App = () => (
         </li>
       </ul>
       <hr />
-      {routes.map(route => (
+      {routes.map((route, index) => (
         <Route
+         key={index}
           path={route.path}
           render={props => (
             <route.component {...props} routes={route.routes} />
