@@ -1,15 +1,21 @@
-function checkIfSubList(list, subList) {
-  if (list[list.length - 1] === subList[0]) {
-    return true;
+function shouldEndWith(source, toCompare) {
+  let count = source.length - 1;
+  let flag = true;
+  for (let i = toCompare.length - 1; i >= 0; i -= 1) {
+    if (toCompare[i] !== source[count]) {
+      flag = false;
+    } else {
+      count -= 1;
+    }
   }
-  return false;
+  return flag;
 }
 
-function doesEndWith(belongsToSource, source) {
-  if (Array.isArray(source)) {
-    return checkIfSubList(source, belongsToSource);
+function doesEndWith(toCompare, source) {
+  if (!Array.isArray(source)) {
+    return shouldEndWith(source.split(""), toCompare.split(""));
   }
-  return checkIfSubList(source.split(""), belongsToSource);
+  return shouldEndWith(source, toCompare);
 }
 
 export { doesEndWith };
