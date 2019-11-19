@@ -24,3 +24,11 @@ ul {
   list-style: none;
   color: black;
 }
+
+.selected-grocery-listItem {
+  color: red;
+}
+
+.unselected-grocery-listItem {
+  color: black;
+}
