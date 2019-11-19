@@ -37,13 +37,14 @@ class GroceryList extends React.Component {
       Below you can see how to pass properties to child components.
       We have defined a `grocery` property for each `GroceryListItem`.
     */
-    const groceriesComponents = groceries.map(item => ( // eslint-disable-line no-unused-vars
-      <GroceryListItem grocery={item} />
-    ));
+    const groceriesComponents = <ul> {groceries.map((item, index) => ( // eslint-disable-line no-unused-vars
+      <GroceryListItem grocery={item} index={index} key={index}/>
+    ))}</ul>
     // Hint: Don't forget about putting items into `ul`
     return (
       <div>
-        Put your code here
+        {groceriesComponents}
+        <input type="text" name="groceryname"  />
       </div>
     );
   }
@@ -60,7 +61,7 @@ class GroceryListItem extends React.Component {
   render() {
     return (
       <li>
-        Put your code here.
+        {this.props.grocery.name}
       </li>
     );
   }
