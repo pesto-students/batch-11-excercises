@@ -3,22 +3,22 @@
   "segmentName": "segment-1",
   "exercises": {
     "balanced-braces": {
-      "completed": false
+      "completed": true
     },
     "duplicate-letters": {
-      "completed": false
+      "completed": true
     },
     "does-end-with": {
-      "completed": false
+      "completed": true
     },
     "isomorphic": {
-      "completed": false
+      "completed": true
     },
     "is-empty": {
-      "completed": false
+      "completed": true
     },
     "beginner-exercises": {
-      "completed": false
+      "completed": true
     }
   }
 }
