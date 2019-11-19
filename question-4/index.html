@@ -1,11 +1,21 @@
-<!-- Write a JavaScript function to add rows to a table -->
-
 <!DOCTYPE html>
 <html>
 
 <head>
-  <meta charset=utf-8 />
-  <title>Insert row in a table</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Javascript Table row insert</title>
+  <script>
+    function insert_Row() {
+      let table = document.getElementById('sampleTable');
+      let newRowNumber = table.getElementsByTagName('tr').length + 1;
+
+      let newRow = table.insertRow();
+      newRow.insertCell().innerText = `Row${newRowNumber} cell1`;
+      newRow.insertCell().innerText = `Row${newRowNumber} cell2`;
+    }
+  </script>
 </head>
 
 <body>
