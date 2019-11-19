@@ -14,10 +14,14 @@ class FavoriteMovie extends Component {
   render() {
     return (
       <div>
-        <p>
-          My favorite movie is{" "}
-          <span style={{ color: "blue" }}>{this.state.movie}</span>
-        </p>
+        {this.state.movie === "" ? (
+          <p>Please enter your favorite movie</p>
+        ) : (
+          <p>
+            My favorite movie is{" "}
+            <span style={{ color: "blue" }}>{this.state.movie}</span>
+          </p>
+        )}
         <input type="text" name="name" onChange={this.onMovieChange} />
       </div>
     );
