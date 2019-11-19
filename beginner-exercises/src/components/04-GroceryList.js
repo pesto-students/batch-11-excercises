@@ -33,13 +33,11 @@ class GroceryList extends React.Component {
   render() {
     const { groceries } = this.state;
     const groceriesComponents = groceries.map((item, index) => (
-      <ul>
-        <GroceryListItem grocery={item} key={index} />
-      </ul>
+      <GroceryListItem grocery={item} index={index} />
     ));
     return (
       <div>
-        {groceriesComponents}
+        <ul>{groceriesComponents}</ul>
         <label htmlFor="addGroceryItem">Enter grocery item: </label>
         <input
           type="text"
