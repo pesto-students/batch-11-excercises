@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /*
   In this exercises, you'll will make a reactive grocery list.
@@ -24,6 +25,7 @@ class GroceryList extends React.Component {
     super(props);
     this.state = {
       groceries: [{ name: 'Apples' }, { name: 'KitKat' }, { name: 'Red Bull' }],
+      currentItem: '',
     };
   }
 
@@ -38,12 +40,24 @@ class GroceryList extends React.Component {
       We have defined a `grocery` property for each `GroceryListItem`.
     */
     const groceriesComponents = groceries.map(item => ( // eslint-disable-line no-unused-vars
-      <GroceryListItem grocery={item} />
+      <GroceryListItem grocery={item} key={item.name} />
     ));
     // Hint: Don't forget about putting items into `ul`
+    const addItemToState = (event) => {
+      this.setState({ currentItem: event.target.value });
+    };
+    const addItemToList = () => {
+      const newGroceries = this.state.groceries.slice();
+      newGroceries.push({ name: this.state.currentItem });
+      this.setState({ groceries: newGroceries, currentItem: '' });
+    };
     return (
       <div>
-        Put your code here
+        <input name="groceryName" type="text" aria-label="Add Grocery Name" onChange={addItemToState} value={this.state.currentItem}/>
+        <button onClick={addItemToList}> Add In List </button>
+        <ul>
+          {groceriesComponents}
+        </ul>
       </div>
     );
   }
@@ -59,13 +73,13 @@ class GroceryListItem extends React.Component {
 
   render() {
     return (
-      <li>
-        Put your code here.
-      </li>
+      <li>{this.props.grocery.name}</li>
     );
   }
 }
-
+GroceryListItem.propTypes = {
+  grocery: PropTypes.object,
+};
 // Do prop validation here using the package `prop-types`
 
 export default GroceryList;
