@@ -1,10 +1,10 @@
 const insertRow = () => {
   const table = document.querySelector("#sampleTable");
-  var newRow = table.insertRow();
-  var newCell1 = newRow.insertCell(0);
-  var newCell2 = newRow.insertCell(1);
-  var newText1 = document.createTextNode("New row 1");
-  var newText2 = document.createTextNode("New row 2");
+  const newRow = table.insertRow(table.rows.length);
+  const newCell1 = newRow.insertCell(0);
+  const newCell2 = newRow.insertCell(1);
+  const newText1 = document.createTextNode(`Row${table.rows.length} Cell1`);
+  const newText2 = document.createTextNode(`Row${table.rows.length} Cell2`);
   newCell1.appendChild(newText1);
   newCell2.appendChild(newText2);
 };
