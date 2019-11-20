@@ -49,19 +49,13 @@ describe('proxyIterable', () => {
       };
     };
 
-    const array = [
-      createFixture(),
-      createFixture(),
-      {},
-      createFixture(),
-    ];
+    const array = [createFixture(), createFixture(), {}, createFixture()];
 
     const proxyArray = proxyIterable(array);
 
     expect(() => {
       proxyArray.foo();
-    })
-      .toThrowError(/Item 3 of the iterable is missing the foo\(\) method/);
+    }).toThrowError(/Item 3 of the iterable is missing the foo\(\) method/);
   });
 
   test('should work on array of non-objects', () => {

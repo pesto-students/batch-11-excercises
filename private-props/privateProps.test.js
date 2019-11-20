@@ -3,9 +3,8 @@ import { privateProps } from './privateProps';
 describe('privateProps', () => {
   let myProxy;
   beforeAll(() => {
-    const privacyFilter = (prop) => {
-      return prop.indexOf('_') === 0;
-    };
+    const privacyFilter = (prop) => prop.indexOf('_') === 0;
+
     const myObj = {
       _private: 'secret',
       public: 'hello',
