@@ -21,26 +21,43 @@ import PropTypes from 'prop-types';
 
 class RadioGroup extends React.Component {
   static propTypes = {
-    // defaultValue: PropTypes.string,                UN-COMMENT THIS LINE
+    defaultValue: PropTypes.string,                //UN-COMMENT THIS LINE
     children: PropTypes.shape().isRequired,
   };
+
+  constructor(props) {
+    super(props);
+    this.state = { selected: undefined };
+    this.onChange = this.onChange.bind(this);
+  }
+
+  onChange(selectedValue) {
+    this.setState({ selected: selectedValue });
+    this.props.onChange(selectedValue);
+  }
+
   render() {
     return (
-      <div>{this.props.children}</div>
+      <div>{React.Children.map(this.props.children, child => {
+        if ((this.state.selected === undefined && child.props.value === this.props.defaultValue) || (this.state.selected === child.props.value  )) {
+          return React.cloneElement(child, { isSelected: true, onChange: this.onChange });
+        }
+        return React.cloneElement(child, {onChange: this.onChange, isSelected: false});
+      })}</div>
     );
   }
 }
 
 class RadioOption extends React.Component {
   static propTypes = {
-    // value: PropTypes.string,                       UN-COMMENT THIS LINE
+    value: PropTypes.string,                       //UN-COMMENT THIS LINE
     children: PropTypes.shape().isRequired,
   };
 
   render() {
     return (
-      <div>
-        <RadioIcon isSelected={false} /> {this.props.children}
+      <div onClick={() => this.props.onChange(this.props.value)}>
+        <RadioIcon isSelected={this.props.isSelected}/> {this.props.children}
       </div>
     );
   }
@@ -62,7 +79,7 @@ class RadioIcon extends React.Component {
           width: 16,
           display: 'inline-block',
           cursor: 'pointer',
-          background: this.props.isSelected ? 'rgba(0, 0, 0, 0.05)' : '',
+          background: this.props.isSelected ? 'rgba(0, 0, 0, 0.55)' : '',
         }}
       />
     );
@@ -75,7 +92,7 @@ class CompoundComponents extends React.Component {
       <div>
         <h1>♬ It is about time that we all turned off the radio ♫</h1>
 
-        <RadioGroup defaultValue="fm">
+        <RadioGroup defaultValue="fm" onChange={(selectedValue) => console.log(selectedValue)}>
           <RadioOption value="am">AM</RadioOption>
           <RadioOption value="fm">FM</RadioOption>
           <RadioOption value="tape">Tape</RadioOption>
