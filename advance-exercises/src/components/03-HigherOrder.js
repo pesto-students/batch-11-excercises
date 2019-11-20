@@ -1,18 +1,25 @@
-/*
-  Exercise:
-
-  Make `withMouse` a "higher-order component" that sends the mouse position
-  to the component as props (hint: use `event.clientX` and `event.clientY`).
-
-*/
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function withMouse(Component) {
-  return Component;
+function withMouse(App) {
+  return function captureMouse() {
+    const [x, setX] = React.useState(0);
+    const [y, setY] = React.useState(0);
+
+    function onMouseMove(event) {
+      setX(event.clientX);
+      setY(event.clientY);
+    }
+
+    return (
+      <div onMouseMove={onMouseMove}>
+        <App mouse={{ x, y }} />
+      </div>
+    );
+  };
 }
 
-class App extends React.Component {
+class App extends React.PureComponent {
   render() {
     const { mouse } = this.props;
 
