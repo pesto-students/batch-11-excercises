@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
-// import axios from 'axios';
+import axios from 'axios';
 
 /**
  * Axios is a promise based HTTP client for the browser and node.js.
@@ -23,7 +23,7 @@ import React, { Component } from 'react';
 const GithubRepos = ({ repos }) => {
   return (
     <ul>
-      {/* Task: The list of repos here */}
+      {repos.map((repo, index) => <li key={index}>{repo}</li>)}
     </ul>
   );
 }
@@ -42,22 +42,37 @@ class UsernameForm extends Component {
     this.state = {
       username: '',
       repos: [],
+      reqStatus: true,
+      error: ''
     };
+    this.getRepos = this.getRepos.bind(this);
   }
+
+  getRepos() {
+    if (this.state.username !== '') {
+      axios.get(`https://api.github.com/users/${this.state.username}/repos`)
+        .then(function (response) {
+          const responseTxt = response.data;
+          const repos = responseTxt.reduce((acc, current) => acc.concat(current.name), []);
+          this.setState({ repos, error: '', reqStatus: true, });
+        }.bind(this))
+        .catch(function (error) {
+          this.setState({ reqStatus: false, error: error.response.statusText, repos: [] });
+        }.bind(this))
+    }
+  }
+
   render() {
     return (
       <div>
         <input
           type="text"
           name="username"
+          onChange={(event) => { this.setState({ username: event.target.value }) }}
         />
-        <button
-          onClick={() => {}}
-        >
-          Get Repos
-        </button>
-        {/* Task: Display the results here. Use GithubRepos Component.
-          It should be a list of repos of the user entered */}
+        <button onClick={this.getRepos}> Get Repos</button>
+        <GithubRepos repos={this.state.repos} />
+        {this.state.reqStatus ? '' : <p>{this.state.error}</p>}
       </div>
     );
   }

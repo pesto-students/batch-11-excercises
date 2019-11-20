@@ -18,9 +18,46 @@ import React, { Component } from 'react';
 */
 
 class StopWatch extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { isTimerRunning: false, time: 0, currentIntervalObj: undefined };
+  }
+
+  startTimer = () => {
+    this.setState({ isTimerRunning: true });
+    let currentIntervalObj = setInterval(() => {
+      this.setState({ time: this.state.time + 1 });
+    }, 1);
+    this.setState({currentIntervalObj})
+  }
+
+  stopTimer = () => {
+    this.setState({ isTimerRunning: false })
+    if (this.state.currentIntervalObj !== undefined) {
+      clearInterval(this.state.currentIntervalObj);
+    }
+  }
+
+  clearTimer = () => {
+    this.stopTimer();
+    this.setState({ time: 0 });
+  }
+
   render() {
+    const getButton = () => {
+      if (this.state.isTimerRunning) {
+        return (<button onClick={this.stopTimer}>Stop</button>);
+      }
+      return (<button onClick={this.startTimer}>Start</button>);
+    };
     return (
-      <div>Stop Watch</div>
+      <div>
+        <p>Stop Watch</p>
+        <p>{this.state.time} ms</p>
+        {getButton()}
+        <button onClick={() => this.clearTimer()}>Clear</button>
+      </div>
     );
   }
 }
