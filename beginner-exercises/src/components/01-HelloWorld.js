@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Task: Render "Hello World" text.
-class HelloWorld extends Component {
+class HelloWorld extends Component{
   // All components *must* have a `render` method defined.
 
   // To define a component's render method, we use syntax called JSX. As you
@@ -10,7 +10,7 @@ class HelloWorld extends Component {
 
   render() {
     return (
-      <h1>Fill this h1 tag with your heading!</h1>
+    <h1>Hello World!</h1>
     );
   }
 }
