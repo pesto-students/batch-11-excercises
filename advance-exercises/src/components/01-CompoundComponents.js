@@ -92,7 +92,7 @@ class RadioIcon extends React.Component {
           width: 16,
           display: 'inline-block',
           cursor: 'pointer',
-          background: this.props.selected ? 'rgba(0, 0, 0, 0.05)' : '',
+          background: this.props.selected ? 'rgba(0, 0, 0, 0.28)' : '',
         }} onClick={this.props.handleOptionChange}
         />
     );
