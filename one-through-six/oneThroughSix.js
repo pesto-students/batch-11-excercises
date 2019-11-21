@@ -1,8 +1,5 @@
-
-function oneThroughSix(...args) {
-  return args;
+function oneThroughSix(number) {
+  return number;
 }
 
-export {
-  oneThroughSix,
-};
+export { oneThroughSix };
