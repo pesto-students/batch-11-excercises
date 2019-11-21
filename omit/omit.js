@@ -1,11 +1,11 @@
 function omit(toOmit, object) {
-  const omitted = {};
+  const notOmitted = {};
   for (const key in object) {
     if (!toOmit.includes(key)) {
-      omitted[key] = object[key];
+      notOmitted[key] = object[key];
     }
   }
-  return omitted;
+  return notOmitted;
 }
 
 export { omit };
