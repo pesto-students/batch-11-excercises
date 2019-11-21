@@ -1,8 +1,14 @@
+const mergeAll = (listOfObjects) => {
+  const merged = listOfObjects.reduce((acc, val) => {
+    const keys = Object.keys(val);
+    for (const key of keys) {
+      acc[key] = val[key];
+    }
 
-function mergeAll(...args) {
-  return args;
-}
+    return acc;
+  }, {});
 
-export {
-  mergeAll,
+  return merged;
 };
+
+export { mergeAll };
