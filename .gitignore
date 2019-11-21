@@ -62,3 +62,13 @@ typings/
 
 # next.js build output
 .next
+.idea/.gitignore
+.idea/batch-11-exercises.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/codeStyles/codeStyleConfig.xml
+.idea/codeStyles/Project.xml
+.idea/inspectionProfiles/Project_Default.xml
+github-repos/src/store/reducer.js
+.idea/jsLibraryMappings.xml
