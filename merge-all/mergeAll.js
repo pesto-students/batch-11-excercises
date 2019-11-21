@@ -1,16 +1,12 @@
 /* eslint-disable arrow-parens */
 function mergeAll(objects) {
-  const mergedObject = {};
-  objects.forEach(object => {
+  const mergedObject = objects.reduce((acc, object) => {
     const keys = Object.keys(object);
     for (const key of keys) {
-      if (!mergedObject[key]) {
-        mergedObject[key] = object[key];
-      } else {
-        mergedObject[key] = object[key];
-      }
+      acc[key] = object[key];
     }
-  });
+    return acc;
+  }, {});
   return mergedObject;
 }
 
