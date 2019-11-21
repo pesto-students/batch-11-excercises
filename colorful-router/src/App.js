@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-// import { Switch, Route, Redirect, Link } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import './styles/App.css';
 import ColorList from './components/ColorList';
-// import Color from './components/Color';
-// import NewColor from './components/NewColor';
+import Color from './components/Color';
+import NewColor from './components/NewColor';
 
 class App extends Component {
   constructor(props) {
@@ -31,14 +31,35 @@ class App extends Component {
   handleAdd(newColor) {
     this.setState({ colors: [newColor, ...this.state.colors] });
   }
-
   render() {
-    const colorListComponent = () => (
-      <ColorList colors={this.state.colors} />
-    );
-
     return (
-      colorListComponent()
+      <Switch>
+        <Route
+          path='/colors/new'
+          render={(props) => (
+            <NewColor
+              {...props}
+              addColor={(newColor) => this.handleAdd(newColor)}
+            />
+          )}
+        />
+        <Route
+          path='/colors:id'
+          render={(props) => {
+            const colorPassByParams = props.match.params.id.replace(':', '');
+            const color = this.state.colors.find((i) => {
+              return i.name === colorPassByParams;
+            });
+            return <Color color={color} />;
+          }}
+        />
+
+        <Route
+          path='/'
+          exact
+          render={() => <ColorList colors={this.state.colors} />}
+        />
+      </Switch>
     );
   }
 }
