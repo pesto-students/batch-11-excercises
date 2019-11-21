@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import '../styles/Color.css';
 
 const Color = (props) => {
+  console.log(props)
   const { color } = props;
   return (
     <div className="Color" style={{ backgroundColor: color.hex }}>
