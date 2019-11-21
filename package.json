@@ -15,7 +15,8 @@
     "chalk": "*",
     "dotenv": "*",
     "graphql-request": "*",
-    "node-fetch": "*"
+    "node-fetch": "*",
+    "react-router-dom": "^5.1.2"
   },
   "devDependencies": {
     "@babel/core": "*",
@@ -37,6 +38,8 @@
     }
   },
   "lint-staged": {
-    "!(*.test).js": ["eslint"]
+    "!(*.test).js": [
+      "eslint"
+    ]
   }
 }
