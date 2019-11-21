@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 function withMouse(Componen) {
 
-   return class WithMouse extends Componen {
+   return class WithMouse extends Component {
 
     state = {
       mouse: {x: undefined , y: undefined}
@@ -19,7 +19,7 @@ function withMouse(Componen) {
     render() {
         return (
           <div className ="mouse" onMouseMove={this.onMouseMovement}>
-           <Componen mouse={this.state.mouse} {...this.props} />
+           <Component mouse={this.state.mouse} {...this.props} />
            </div>
         )
     }
