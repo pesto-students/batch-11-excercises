@@ -19,8 +19,5 @@ const pathSatisfies = (predicate, pathList, object) => {
   }
   return isPathSatisfy;
 };
-// const isPositive = (n) => n > 0;
-// console.log(
-//   pathSatisfies(isPositive, ['x', 1, 'y'], { x: [{ y: -1 }, { y: 1 }] }),
-// );
+
 export { pathSatisfies };
