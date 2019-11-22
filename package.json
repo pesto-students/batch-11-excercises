@@ -18,6 +18,7 @@
     "node-fetch": "*"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.3",
     "@babel/core": "*",
     "@babel/preset-env": "*",
     "babel-core": "^7.0.0-bridge",
