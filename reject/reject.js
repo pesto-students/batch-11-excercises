@@ -1,6 +1,4 @@
 function reject(conditionForRejection, list) {
-
-
   if (Array.isArray(list)) {
     const filter = list.filter(conditionForRejection);
     const rejectedArray = [];
