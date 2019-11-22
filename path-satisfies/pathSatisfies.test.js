@@ -18,4 +18,8 @@ describe('pathSatisfies', () => {
   it('returns false otherwise', () => {
     expect(pathSatisfies(isPositive, ['x', 'y'], { x: { y: 0 } })).toBe(false);
   });
+
+  it('returns true if the specified object path satisfies the given predicate', () => {
+    expect(pathSatisfies(isPositive, ['x', 'y'], { x: { y: 1 } })).toBe(true);
+  });
 });
