@@ -21,6 +21,7 @@
     "@babel/core": "*",
     "@babel/preset-env": "*",
     "babel-core": "^7.0.0-bridge",
+    "babel-eslint": "^10.0.3",
     "babel-jest": "*",
     "eslint": "*",
     "eslint-config-airbnb": "*",
@@ -37,6 +38,8 @@
     }
   },
   "lint-staged": {
-    "!(*.test).js": ["eslint"]
+    "!(*.test).js": [
+      "eslint"
+    ]
   }
 }
