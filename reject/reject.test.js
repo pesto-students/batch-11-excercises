@@ -22,4 +22,13 @@ describe('4 reject', () => {
   it('returns an empty array if asked to filter an empty array', () => {
     expect(reject(x => x > 100, [])).toEqual([]);
   });
+
+  it('returns an empty array if asked to filter an empty array', () => {
+    expect(reject(even, {
+      a: 1,
+      b: 2,
+      c: 3,
+      d: 4,
+    })).toEqual({ a: 1, c: 3 });
+  });
 });
