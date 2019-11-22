@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import './styles/App.css';
+import "./styles/App.css";
 
 /* eslint-disable react/no-multi-comp, react/no-unused-state */
 class App extends Component {
   state = {
     on: false,
-    input: '',
-    mainColor: 'blue',
-  }
+    input: "",
+    mainColor: "blue"
+  };
   render() {
     return (
-      <div className="App">
-        Welcome to React
-      </div>
+      <>
+        <div className="App">Welcome to React</div>
+      </>
     );
   }
 }
