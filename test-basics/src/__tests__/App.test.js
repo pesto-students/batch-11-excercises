@@ -57,6 +57,7 @@ describe('<App /> mount rendering', () => {
   });
 });
 
+
 describe('<Link />', () => {
   it('link component accepts address prop', () => {
     const wrapper = shallow(<Link address="www.google.com" />);
