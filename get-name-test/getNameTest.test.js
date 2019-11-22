@@ -1,13 +1,13 @@
 function getName(name) {
   if (typeof name === 'string') return `You entered: ${name}`;
-  throw new Error('name should be of type string');
+  throw new Error('there was an error');
 }
 
 
 describe('throwError test', () => {
   test('should return string with given name', () => {
     const actual = getName('Martin Garrix');
-    const expected = /Ramu/;
+    const expected = 'Martin Garrix';
     expect(actual).toMatch(expected);
   });
 

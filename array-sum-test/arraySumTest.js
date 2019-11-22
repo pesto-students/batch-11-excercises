@@ -1,7 +1,5 @@
 
-function arraySumTest(...args) {
-  return args;
-}
+const arraySumTest = (array) => array.reduce((sum, number) => sum + number);
 
 export {
   arraySumTest,
