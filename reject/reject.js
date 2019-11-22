@@ -2,10 +2,7 @@ function reject(predicate, values) {
   if (!Array.isArray(values) || values.length === 0) {
     return [];
   }
-  const predicateFilter = values.filter(predicate);
-  const filteredValues = values.filter(
-    value => !predicateFilter.includes(value)
-  );
+  const filteredValues = values.filter(value => !predicate(value));
   return filteredValues;
 }
 
