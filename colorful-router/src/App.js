@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 // import { Switch, Route, Redirect, Link } from 'react-router-dom';
 
-import './styles/App.css';
-import ColorList from './components/ColorList';
+import "./styles/App.css";
+import ColorList from "./components/ColorList";
 // import Color from './components/Color';
 // import NewColor from './components/NewColor';
 
@@ -12,18 +12,18 @@ class App extends Component {
     this.state = {
       colors: [
         {
-          name: 'red',
-          hex: '#FF0000',
+          name: "red",
+          hex: "#FF0000"
         },
         {
-          name: 'green',
-          hex: '#00FF00',
+          name: "green",
+          hex: "#00FF00"
         },
         {
-          name: 'blue',
-          hex: '#0000FF',
-        },
-      ],
+          name: "blue",
+          hex: "#0000FF"
+        }
+      ]
     };
     this.handleAdd = this.handleAdd.bind(this);
   }
@@ -33,13 +33,9 @@ class App extends Component {
   }
 
   render() {
-    const colorListComponent = () => (
-      <ColorList colors={this.state.colors} />
-    );
+    const colorListComponent = () => <ColorList colors={this.state.colors} />;
 
-    return (
-      colorListComponent()
-    );
+    return <>colorListComponent()</>;
   }
 }
 
