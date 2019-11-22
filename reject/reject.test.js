@@ -22,4 +22,8 @@ describe('4 reject', () => {
   it('returns an empty array if asked to filter an empty array', () => {
     expect(reject(x => x > 100, [])).toEqual([]);
   });
+
+  it('returns an empty array if asked to filter an empty array', () => {
+    expect(reject((n) => n % 2 === 1, {a: 1, b: 2, c: 3, d: 4})).toEqual({b: 2, d: 4});
+  });
 });
