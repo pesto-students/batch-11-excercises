@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> shallow rendering matches the snapshot 1`] = `
+<div
+  className="blue"
+>
+  <h1
+    className="App"
+  >
+    Welcome to React
+  </h1>
+  <h2 />
+  <p
+    className="button-state"
+  >
+     
+    No!
+  </p>
+  <input
+    onChange={[Function]}
+    placeholder="Write new title"
+    type="text"
+  />
+  <button
+    onClick={[Function]}
+  >
+     Click to Change State 
+  </button>
+</div>
+`;
