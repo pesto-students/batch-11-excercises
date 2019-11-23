@@ -2,7 +2,8 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import App, { Link } from '../App';
+import App from '../App';
+import Link from '../component/Link';
 
 describe('<App /> shallow rendering', () => {
   it('h1 contains correct text', () => {
@@ -27,9 +28,9 @@ describe('<App /> shallow rendering', () => {
   it('on button click changes p text', () => {
     const wrapper = shallow(<App />);
     const button = wrapper.find('button');
-    expect(wrapper.find('.button-state').text()).toBe('No!');
+    expect(wrapper.find('.button-state').text()).toBe(' No!');
     button.simulate('click');
-    expect(wrapper.find('.button-state').text()).toBe('Yes!');
+    expect(wrapper.find('.button-state').text()).toBe(' Yes!');
   });
 
   it('on input change, title changes text', () => {
