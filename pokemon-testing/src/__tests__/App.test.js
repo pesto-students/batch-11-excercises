@@ -16,9 +16,15 @@ describe('Pokemon component ', () => {
 });
 
 describe('Search Component', () => {
-  const wrapper = shallow(<Search onChange={function () {}} />);
+  const onChange = jest.fn();
+  const wrapper = shallow(<Search onChange={onChange} />);
   it('should contain function to handle input', () => {
     expect(typeof wrapper.prop('onChange')).toBe('function');
+  });
+
+  it('should call onChange when input changes', () => {
+    wrapper.find('input').simulate('change', { target: { value: 'pik' } });
+    expect(onChange).toHaveBeenCalled();
   });
 });
 
