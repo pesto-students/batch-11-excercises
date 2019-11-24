@@ -68,11 +68,11 @@ describe('Integration Tests for Page and Search', () => {
 
     const component = mount(<Page {...props} />);
     const searchComponent = component.find(Search);
-    // expect(searchComponent.find('input')).toHaveLength(0);
-    searchComponent.find('input').simulate('change', {
+    const input = searchComponent.find('input');
+    expect(input.length).toBe(1);
+    input.simulate('change', {
       target: { value: 'pikachu' }
     });
-    // expect(searchComponent.find('input').props().value).toEqual('pikachu');
-    expect(filterPokemons).toHaveBeenCalled();
+    expect(filterPokemons).toHaveBeenCalledWith('pikachu');
   });
 });
