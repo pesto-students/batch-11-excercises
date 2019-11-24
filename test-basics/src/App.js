@@ -7,20 +7,20 @@ class App extends Component {
   state = {
     on: false,
     input: '',
-    btnText: 'No!',
     mainColor: 'blue',
   };
   handleStrings(text) {
     return Boolean(text);
   }
   render() {
-    const { mainColor, btnText, input } = this.state;
+    const { mainColor, on, input } = this.state;
     return (
       <div className="App">
         <h1 className={mainColor}>Welcome to React</h1>
-        <button className="button-state" onClick={() => this.setState({ btnText: 'Yes!' })}>{btnText}</button>
+        <button onClick={() => this.setState({ on: true })}>Click Me</button>
+        <p className="button-state">{on ? 'Yes!' : 'No!'}</p> 
         <h2>{input}</h2>
-        <input type="text" value={input} onChange={() => this.setState({ input: 'Pesto' })} />
+        <input type="text" onChange={() => this.setState({ input: 'Pesto' })} />
       </div>
     );
   }
