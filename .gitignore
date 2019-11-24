@@ -62,3 +62,8 @@ typings/
 
 # next.js build output
 .next
+.idea/batch-11-exercises.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+pokemon-testing/.idea
