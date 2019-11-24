@@ -1,18 +1,39 @@
-import { createStore, combineReducers } from 'redux';
+import { combineReducers, createStore } from 'redux';
 
-// Implement the actions addTodo, removeTodo, handleNewTodo, handleRemoveTodo
+export const addTodo = todo => ({
+  type: 'ADD_TODO',
+  payload: todo,
+});
 
-export const addTodo = () => {};
-
-export const removeTodo = () => {};
+export const removeTodo = id => ({
+  type: 'REMOVE_TODO',
+  payload: id,
+});
 
 const initialState = {
   todos: [],
 };
 
-const handleNewTodo = () => {};
+const handleNewTodo = (state, action) => {
+  switch (action.type) {
+    case 'ADD_TODO':
+      return { todos: [...state.todos, action.payload] };
+    default:
+      return state;
+  }
+};
 
-const handleRemoveTodo = () => {};
+const handleRemoveTodo = (state, action) => {
+  switch (action.type) {
+    case 'REMOVE_TODO': {
+      const todosCopy = [...state.todos];
+      todosCopy.splice(action.payload, 1);
+      return { toods: todosCopy };
+    }
+    default:
+      return state;
+  }
+};
 
 const currentList = (state = initialState, action) => {
   const handlers = {
