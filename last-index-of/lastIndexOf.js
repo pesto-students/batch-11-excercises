@@ -1,8 +1,6 @@
-
-function lastIndexOf(...args) {
-  return args;
+function lastIndexOf(input, list) {
+  return list.lastIndexOf(input);
 }
-
 export {
   lastIndexOf,
 };
