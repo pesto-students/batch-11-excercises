@@ -23,5 +23,4 @@ const curry = (main) => {
 };
 
 const updateObject = curry(modifier);
-// console.log(updateObject(-5, 4, [0, 1, 2, 3]));
 export { updateObject };
