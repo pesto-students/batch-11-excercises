@@ -1,6 +1,5 @@
 
-function updateObject(...args) {
-  return args;
+function updateObject(index,element,object) {
 }
 
 export {
