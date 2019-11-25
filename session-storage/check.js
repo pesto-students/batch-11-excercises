@@ -7,5 +7,18 @@ window.setInterval(() => {
   } else {
     document.getElementsByClassName('status')[0].innerText = 'Value add successful';
   }
+  let storageString = '';
+  for (let key in sessionStorage) {
+    if (sessionStorage.hasOwnProperty(key)) {
+      storageString += key + " : " + sessionStorage.getItem(key) + "\n";
+    }
+  }
+  document.getElementById('sessionData').innerText = storageString;
 }, 200);
+
+function addItemToLocalStorage() {
+  let key = document.getElementById('key').value;
+  let value = document.getElementById('value').value;
+  sessionStorage.setItem(key, value)
+}
 
