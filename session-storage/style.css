@@ -33,3 +33,8 @@ form {
   background-color: #212121;
   color: white;
 }
+.status {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+}
