@@ -39,7 +39,7 @@
             "completed": false
         },
         "valid-filename": {
-            "completed": false
+            "completed": true
         }
     }
 }
