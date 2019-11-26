@@ -1,6 +1,9 @@
+const path = require('path');
 
-function stripPath(...args) {
-  return args;
+function stripPath(originalPath, input) {
+  path.parse(originalPath);
+  const trimedPath = originalPath.replace(input, '');
+  return path.normalize(trimedPath);
 }
 
 export {
