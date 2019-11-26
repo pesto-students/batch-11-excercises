@@ -9,13 +9,13 @@
       "completed": false
     },
     "http-server": {
-      "completed": false
+      "completed": true
     },
     "is-stream": {
       "completed": false
     },
     "json-response-server": {
-      "completed": false
+      "completed": true
     },
     "lines-in-file": {
       "completed": false
@@ -24,7 +24,7 @@
       "completed": false
     },
     "node-event": {
-      "completed": false
+      "completed": true
     },
     "slug-url": {
       "completed": false
@@ -39,7 +39,7 @@
       "completed": false
     },
     "valid-filename": {
-      "completed": false
+      "completed": true
     }
   }
 }
