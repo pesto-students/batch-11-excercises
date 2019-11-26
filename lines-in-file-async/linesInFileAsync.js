@@ -1,8 +1,10 @@
+import fs from "fs";
 
-function linesInFileAsync(...args) {
-  return args;
-}
-
-export {
-  linesInFileAsync,
+const linesInFileAsync = path => {
+  const text = fs.readFileSync(path).toString();
+  const lines = text.split("\n");
+  const count = lines.length - 1;
+  return count;
 };
+
+export { linesInFileAsync };
