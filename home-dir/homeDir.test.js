@@ -1,7 +1,7 @@
 import { homeDir } from './homeDir';
 
-describe('Template Test', () => {
-  test('Template Test', () => {
-    // Write your own test case
+describe('Home Dir', () => {
+  test('It should return the home directory', () => {
+    expect(homeDir()).toBe('/home/koushik');
   });
 });
