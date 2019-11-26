@@ -9,13 +9,13 @@
             "completed": true
         },
         "http-server": {
-            "completed": false
+            "completed": true
         },
         "is-stream": {
             "completed": false
         },
         "json-response-server": {
-            "completed": false
+            "completed": true
         },
         "lines-in-file": {
             "completed": false
