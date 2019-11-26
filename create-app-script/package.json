@@ -1,0 +1,12 @@
+{
+  "name": "create-app-script",
+  "version": "1.0.0",
+  "description": "Create an npm script that creates a boilerplate for React/Redux project similar to the one used for our React/Redux exercises.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pesto-react-boilerplate":"node boilerplate-creator"
+  },
+  "author": "",
+  "license": "ISC"
+}

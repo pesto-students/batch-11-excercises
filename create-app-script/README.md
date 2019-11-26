@@ -35,3 +35,11 @@ Create an npm script that creates a boilerplate for React/Redux project similar 
 
 
 The best way to do this would be to prompt the user with all the questions at once in the beginning and then installing everything required in one go. All the best :)
+-----------------------------------
+Solution steps
+1) create js script
+2) link script to npm using scripts key in package,json
+3) js script
+3.1) initialize global array of packages to install
+3.2) Take prompts from user and push it on array depending on answer from user (module to use->readline)
+3.3) npm install programmatically by creating child process from current running process(module to use=-> child process)
