@@ -11,20 +11,35 @@
 </head>
 
 <body>
-
   <h1 class='heading'>Session Storage Editor</h1>
-
   <form>
     Key:
     <input type="text" name="firstname" class="input" id="key"> Value:
     <input type="text" name="lastname" class="input" id="value">
-
-    <input type="submit" value="Submit" class="btn">
+    <input type="submit" value="Submit" class="btn" onclick="clickHandler()">
   </form>
-
-  <!-- Do not remove the below div -->
-  <div class='status'></div>
+  <div class='status'></div> <br>
+  <p> Live View </p> <br>
+  <div id="view"></div>
+  <script>
+    const sessionStorage = window.sessionStorage;
+    function clickHandler() {
+      const fname = document.getElementById('key').value;
+      const lname = document.getElementById('value').value;
+      sessionStorage.setItem(fname, lname);
+      sessionStorage.setItem('world', `${fname} ${lname}`)
+    }
+    function showLiveView() {
+      for (let key in sessionStorage) {
+        const br = document.createElement('br');
+        if (sessionStorage.hasOwnProperty(key)) {
+          document.getElementById("view").innerHTML += key + ' --> ' + sessionStorage.getItem(key);
+          document.getElementById("view").appendChild(br);
+        }
+      }
+    }
+    showLiveView();
+  </script>
   <script src="check.js"></script>
 </body>
-
 </html>
