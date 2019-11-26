@@ -1,8 +1,7 @@
+import os from "os";
 
-function homeDir(...args) {
-  return args;
-}
-
-export {
-  homeDir,
+const homeDir = () => {
+  return os.homedir();
 };
+
+export { homeDir };
