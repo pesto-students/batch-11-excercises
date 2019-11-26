@@ -26,4 +26,9 @@ describe('csvToJson', () => {
     const actual = await csvToJson(csvFile);
     expect(actual).toEqual(fixture);
   });
+  // test('should throw error,if invalid file url provided', async () => {
+  //   expect(await csvToJson()).toThrow();
+  //   expect(await csvToJson(null)).toThrow();
+  //   expect(await csvToJson('.txt')).toThrow();
+  // });
 });
