@@ -1,7 +1,8 @@
 import { homeDir } from './homeDir';
 
-describe('Template Test', () => {
-  test('Template Test', () => {
-    // Write your own test case
+describe('Home directory', () => {
+  test('should be of length greater than zero', () => {
+    const dir = homeDir();
+    expect(dir.length).toBeGreaterThan(0);
   });
 });
