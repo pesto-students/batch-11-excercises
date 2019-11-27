@@ -5,7 +5,9 @@ const app = require('./index');
 
 describe('Test the / path', () => {
     test('It should response the GET method', (done) => {
-        request(app).get('/').then((response) => {
+        request(app)
+        .get('/')
+        .then((response) => {
             expect(response.statusCode).toBe(200);
             done();
         });
