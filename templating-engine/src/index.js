@@ -1,13 +1,15 @@
-const express = require('express');
+const express = require("express");
 
 const app = express();
+const PORT = 3000;
+const languages = ["JavaScript", "Haskell", "Python"];
 
-const languages = ['JavaScript', 'Haskell', 'Python'];
+app.set("view engine", "ejs");
 
-app.get('/', (req, res) => {
-  return res.send(`Hello ${languages[0]}`); // Use res.render() to render the ejs file instead of sending text response
+app.get("/", (req, res) => {
+  return res.render("index", { languages });
 });
 
-app.listen(3000, () => {
-  console.log('Server is listening on port 3000');
+app.listen(PORT, () => {
+  console.log("Server is listening on port 3000");
 });
