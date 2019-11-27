@@ -1,9 +1,22 @@
 const express = require('express');
+const http = require('http');
+const movieRouter = require('./routes/movieRouter');
 
+const hostname = 'localhost';
+const port = 3000;
 const app = express();
 
-// 1) Create Routes
+app.use('/movie', movieRouter);
 
-// 2) Start server on port 3000
+app.use((req, res) => {
+  res.setHeader('Content-Type', 'text/html');
+  res.statusCode = 200;
+  res.end('Hey, I am server response');
+});
+
+const server = http.createServer(app);
+server.listen(port, hostname, () => {
+  console.log(`Server is started at ${hostname} on port ${port}`);
+});
 
 module.exports = app;
