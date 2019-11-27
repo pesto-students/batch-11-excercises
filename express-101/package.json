@@ -2,10 +2,10 @@
   "name": "pesto-testing-boilerplate",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Arfat Salman <giney.paradise@gmail.com>",
+  "author": "Nitin Pawar <nitinpawarme@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": ""
+    "start": "nodemon app.js"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
