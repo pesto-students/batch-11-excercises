@@ -12,7 +12,7 @@ app.get('/movie/title/:titleText', (req, res) => {
   res.send(`My favorite movie is ${reqId}`);
 });
 
-app.listen(port, () => console.log(`Server listening on port: ${port}`))
+app.listen(port, () => console.log(`Server listening on port: ${port}`));
 
 
 module.exports = app;
