@@ -4,4 +4,5 @@ module.exports = {
     'default',
     './.submission-system/customJestReporter.js',
   ],
+  transformIgnorePatterns: ['<rootDir>/basic-mongo-one/node_modules/'],
 };
