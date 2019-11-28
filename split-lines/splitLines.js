@@ -1,8 +1,26 @@
+const splitLines = (...args) => {
+  const [string, preserveNewlines] = args;
+  const regEx = /(\r\n)|(\r)|(\n)/g;
+  const splitList = [];
+  if (preserveNewlines) {
+    let temp = 0;
+    for (let i = 0; i < string.length; i += 1) {
+      if (string[i] === `\n`) {
+        splitList.push(string.slice(temp, i + 1));
+        temp = i + 1;
+      }
+    }
+    if (temp < string.length) {
+      splitList.push(string.slice(temp));
+    }
 
-function splitLines(...args) {
-  return args;
-}
+    if (string.endsWith('\n')) {
+      splitList.push('');
+    }
+    return splitList;
+  }
 
-export {
-  splitLines,
+  return string.replace(regEx, '-').split('-');
 };
+
+export { splitLines };
