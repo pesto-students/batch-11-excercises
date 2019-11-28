@@ -1,5 +1,5 @@
-import { getDb, getDbClient } from '../src/database';
-import {
+const { getDb, getDbClient } = require('./src/database');
+const {
   getMoviesCount,
   movieRating,
   writersIntersection,
@@ -15,7 +15,7 @@ import {
   fieldArraySize,
   addField,
   incrementalUpdate,
-} from '../src';
+} = require('./src');
 
 describe('Mongo Queries', () => {
   let db;
@@ -39,7 +39,7 @@ describe('Mongo Queries', () => {
 
     // 2
     describe('movieRating', () => {
-      test('should return title of the movie with rating 9.2 and year 1974', async () => {
+      test('should return title of the movie with rating 9 and year 1974', async () => {
         expect(await movieRating(db)).toEqual({ title: 'The Godfather: Part II' });
       });
     });
@@ -82,7 +82,7 @@ describe('Mongo Queries', () => {
     // 8
     describe('trimUnrated', () => {
       test('should return number of movies which are not rated "UNRATED" or no "rated" field at all', async () => {
-        expect(await trimUnrated(db)).toBe(2263);
+        expect(await trimUnrated(db)).toBe(32);
       });
     });
 
@@ -96,7 +96,7 @@ describe('Mongo Queries', () => {
     // 10
     describe('goodMovies', () => {
       test('should return number of movies with higher imdb rating >= 9.0 OR metacritic >= 90', async () => {
-        expect(await goodMovies(db)).toBe(27);
+        expect(await goodMovies(db)).toBe(28);
       });
     });
 
