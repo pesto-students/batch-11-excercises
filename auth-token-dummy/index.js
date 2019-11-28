@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const Cryptr = require('cryptr');
-const cryptr = new Cryptr('myPrivateKey');
+const AES = require("crypto-js/aes");
+const cryptr = 'abcd@1234';
+
 
 const app = express();
 
@@ -10,11 +11,13 @@ app.use(bodyParser.json());
 
 app.get('/', (req,res,next) => {
 
-    const decryptedString = cryptr.decrypt(req.headers.authorization);
-
     if(req.headers.authorization === undefined){
         res.send('Not Authenticated');
-    }else if(decryptedString !== cryptr){
+    } 
+
+    const decryptedString = cryptr.decrypt(req.headers.authorization,'1234567891011121');
+    
+    if(decryptedString !== cryptr){
         res.send('Invalid Token');
     }else{
         res.send({
@@ -27,7 +30,8 @@ app.post('/signup', (req,res) => {
     const userName = req.body.username;
     const passWord = req.body.password;
 
-    const encryptedString = cryptr.encrypt(cryptr);
+    const encryptedString = AES(cryptr);
+    req.headers.authorization = encryptedString;
     res.send({'token': encryptedString});
 });
 
