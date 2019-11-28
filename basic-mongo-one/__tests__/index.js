@@ -39,7 +39,7 @@ describe("Mongo Queries", () => {
 
     // 2
     describe("movieRating", () => {
-      test("should return title of the movie with rating 9.2 and year 1974", async () => {
+      test("should return title of the movie with rating 9 and year 1974", async () => {
         expect(await movieRating(db)).toEqual({
           title: "The Godfather: Part II"
         });
@@ -98,7 +98,7 @@ describe("Mongo Queries", () => {
     // 10
     describe("goodMovies", () => {
       test("should return number of movies with higher imdb rating >= 9.0 OR metacritic >= 90", async () => {
-        expect(await goodMovies(db)).toBe(27);
+        expect(await goodMovies(db)).toBe(26);
       });
     });
 
@@ -106,7 +106,7 @@ describe("Mongo Queries", () => {
     describe("regexSearch", () => {
       test("should return title of the movie whose plot contains the words: Master Yoda", async () => {
         expect(await regexSearch(db)).toEqual({
-          title: "Star Wars: Episode V - The Empire Strikes Back"
+          title: "Star Wars: Episode I - The Phantom Menace"
         });
       });
     });
@@ -136,7 +136,7 @@ describe("Mongo Queries", () => {
         const updatedMovie = await db
           .collection("movieDetails")
           .findOne({ title: "Iron Man 3" });
-        expect(updatedMovie.myRating).toBe(88);
+        expect(updatedMovie.myRating).toBe(90);
       });
     });
 
