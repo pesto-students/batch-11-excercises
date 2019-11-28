@@ -20,7 +20,9 @@ const movieRating = async (db) => db.collection(movieDetails).findOne({ year: 19
   Damon Lindelof
   Gene Roddenberry
 */
-const writersIntersection = async () => {};
+const writersIntersection = async (db) => db.collection(movieDetails).find({  }).toArray((err, result) => {
+  console.log(result);
+});
 
 /* Q4 (*)
   Return the number of movies written by any of the writers in Q3
@@ -92,4 +94,5 @@ const incrementalUpdate = async () => {};
 module.exports = {
   getMoviesCount, 
   movieRating,
+  writersIntersection,
 };
