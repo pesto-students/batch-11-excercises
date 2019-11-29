@@ -1,5 +1,5 @@
-import { getDb, getDbClient } from '../src/database';
-import {
+const { getDb, getDbClient } = require('../src/database');
+const {
   getMoviesCount,
   movieRating,
   writersIntersection,
@@ -15,7 +15,7 @@ import {
   fieldArraySize,
   addField,
   incrementalUpdate,
-} from '../src';
+} = require('../src');
 
 describe('Mongo Queries', () => {
   let db;
@@ -96,7 +96,7 @@ describe('Mongo Queries', () => {
     // 10
     describe('goodMovies', () => {
       test('should return number of movies with higher imdb rating >= 9.0 OR metacritic >= 90', async () => {
-        expect(await goodMovies(db)).toBe(27);
+        expect(await goodMovies(db)).toBe(26);
       });
     });
 
