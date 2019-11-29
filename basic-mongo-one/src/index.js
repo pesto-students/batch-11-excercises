@@ -11,7 +11,7 @@ const getMoviesCount = async (db) => db.collection(movies).count();
   Also, use mongodb projections to only get title from mongodb as opposed
   to accessing title property from the object
 */
-const movieRating = async (db) => db.collection(movieDetails).findOne({ year: 1974, 'imdb.rating': 9 }, {projection: { _id: 0, title: 1 }});
+const movieRating = async (db) => db.collection(movieDetails).findOne({ year: 1974, 'imdb.rating': 9 }, { projection: { _id: 0, title: 1 } });
 
 /* Q3 (*)
   Return the number of movies written by all these people (exactly these people in this order):
@@ -20,37 +20,50 @@ const movieRating = async (db) => db.collection(movieDetails).findOne({ year: 19
   Damon Lindelof
   Gene Roddenberry
 */
-const writersIntersection = async (db) => db.collection(movieDetails).find({  }).toArray((err, result) => {
-  console.log(result);
-});
+const writersIntersection = async (db) => db.collection(movieDetails).find({
+  writers: ['Roberto Orci',
+    'Alex Kurtzman', 'Damon Lindelof', 'Gene Roddenberry'],
+}).count();
 
 /* Q4 (*)
   Return the number of movies written by any of the writers in Q3
 */
-const writersUnion = async () => {};
+const writersUnion = async (db) => db.collection(movieDetails).find({
+  writers: {
+    $in: ['Roberto Orci', 'Alex Kurtzman', 'Damon Lindelof', 'Gene Roddenberry'],
+  },
+}).count();
 
 /* Q5 (*)
   Return the number of movies in which actor is "Jackie Chan"
 */
-const actor = async () => {};
+const actor = async (db) => db.collection(movieDetails).find({
+  actors: 'Jackie Chan',
+}).count();
 
 /* Q6 (*)
   Return the number of movies in which actor "Jackie Chan" is second
   in the array "actors"
 */
-const positionalActor = async () => {};
+const positionalActor = async (db) => db.collection(movieDetails).find({
+  'actors.1': 'Jackie Chan',
+}).count();
 
 /* Q7 (*)
   Return the first movie with imdb rating greater than or equal to 9.0
   and less than or equal to 9.2
 */
-const comparisonOperator = async () => {};
+const comparisonOperator = async (db) => db.collection(movieDetails).find({
+  'actors.1': 'Jackie Chan',
+}).count();
 
 /* Q8 (*)
   Return the number of movies which have an actual rating opposed to
   being "UNRATED" or having no "rated" field at all
 */
-const trimUnrated = async () => {};
+const trimUnrated = async (db) => db.collection(movieDetails).find({
+  $and: [{ 'imdb.rating': { $gt: 8.9 } }, { 'imdb.rating': { $lt: 9.3 } }],
+}).count();
 
 /* Q9 (*)
   Return number of movies in which "tomato" field exists but "tomato.rating" does not
@@ -92,7 +105,12 @@ const addField = async () => {};
 const incrementalUpdate = async () => {};
 
 module.exports = {
-  getMoviesCount, 
+  getMoviesCount,
   movieRating,
   writersIntersection,
+  writersUnion,
+  actor,
+  positionalActor,
+  comparisonOperator,
+  trimUnrated,
 };
