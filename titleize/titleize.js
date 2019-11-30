@@ -1,17 +1,14 @@
+const isAlphabet = (char) => char.search(/[A-Za-z]/) === 0;
 
 function titleize(stringVal) {
-  if(stringVal === ''){
-    return '';
-  }
 
-  let stringArray = stringVal.split(' ');
-
-  for(let i = 0; i < stringArray.length; i++){
-
-    if(stringArray[i].charCodeAt(0) >= 97 && stringArray[i].charCodeAt(0) <= 122){
-      stringArray[i][0] = stringArray[i][0].toUpperCase();
+  const stringArray = stringVal.split('').map((word,index) => {
+    if(typeof stringVal[index - 1] === 'string' && isAlphabet(stringVal[index - 1]) && isAlphabet(stringVal[index])) {
+      return word.toLowerCase();
     }
-  }
+    return word.toUpperCase();
+  }).join('');
+
   return stringArray;
 }
 
