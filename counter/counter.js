@@ -1,12 +1,11 @@
-function counter() {
+const counter = () => {
   let count = 0;
 
-  return function increment() {
+  return () => {
     count += 1;
     return count;
   };
-}
-
+};
 export {
   counter,
 };
