@@ -1,8 +1,11 @@
+const counter = () => {
+  let count = 0;
 
-function counter(...args) {
-  return args;
-}
-
+  return () => {
+    count += 1;
+    return count;
+  };
+};
 export {
   counter,
 };

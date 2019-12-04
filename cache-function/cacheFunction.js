@@ -1,6 +1,16 @@
+function cacheFunction(fn) {
+  const cache = {};
+  return function cbFunction(...args) {
+    const n = args[0];
+    if (n in cache) {
+      return cache[n];
+    }
 
-function cacheFunction(...args) {
-  return args;
+    const result = fn(n);
+    cache[args] = result;
+
+    return result;
+  };
 }
 
 export {
