@@ -1,8 +1,11 @@
-
-function steamrollArray(...args) {
-  return args;
+/* eslint-disable indent */
+function steamrollArray(array) {
+  return array.reduce(
+    (flat, toFlatten) => flat.concat(
+        Array.isArray(toFlatten) ? steamrollArray(toFlatten) : toFlatten,
+      ),
+    [],
+  );
 }
 
-export {
-  steamrollArray,
-};
+export { steamrollArray };
