@@ -5,7 +5,7 @@ describe('cacheFunction', () => {
     expect(typeof cacheFunction()).toBe('function');
   });
   it('The cached function should return the correct result', () => {
-    const foo = x => (x * x);
+    const foo = (x) => (x * x);
     const cachedFunction = cacheFunction(foo);
     expect(cachedFunction(5)).toBe(25);
   });
