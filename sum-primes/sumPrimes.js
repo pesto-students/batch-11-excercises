@@ -1,22 +1,23 @@
 
-function sumPrimes(...args) {
-  var result = 0;
-  for (var i=2;i<args[0];i++){
-    if(isPrime(i)) {
-      result = result + i;
+function sumPrimes(number) {
+  let result = 0;
+  const isPrime = (val) => {
+    for (let i = 2; i < val; i += 1) {
+      if (val % i === 0 && val !== i) {
+        return false;
+      }
+    }
+    return true;
+  };
+
+  for (let i = 2; i <= number; i += 1) {
+    if (isPrime(i)) {
+      result += i;
     }
   }
   return result;
 }
 
-function isPrime(value){
-
-  for(var i=2;i<value/2; i++){
-    if(value%i === 0 && value !== i){
-      return false;
-    }
-  }
-}
 
 export {
   sumPrimes,
