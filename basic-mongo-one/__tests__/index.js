@@ -1,5 +1,5 @@
-import { getDb, getDbClient } from '../src/database';
-import {
+const { getDb, getDbClient } = require('../src/database');
+const {
   getMoviesCount,
   movieRating,
   writersIntersection,
@@ -15,7 +15,7 @@ import {
   fieldArraySize,
   addField,
   incrementalUpdate,
-} from '../src';
+} = require('../src');
 
 describe('Mongo Queries', () => {
   let db;
@@ -39,8 +39,8 @@ describe('Mongo Queries', () => {
 
     // 2
     describe('movieRating', () => {
-      test('should return title of the movie with rating 9.2 and year 1974', async () => {
-        expect(await movieRating(db)).toEqual({ title: 'The Godfather: Part II' });
+      test('should return title of the movie with rating 6.2 and year 2014', async () => {
+        expect(await movieRating(db)).toEqual({ title: 'A Million Ways to Die in the West' });
       });
     });
 
