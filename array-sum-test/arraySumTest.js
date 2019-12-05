@@ -1,6 +1,7 @@
+const add = (total, addend) => total + addend;
 
-function arraySumTest(...args) {
-  return args;
+function arraySumTest(fixture) {
+  return fixture.reduce(add);
 }
 
 export {

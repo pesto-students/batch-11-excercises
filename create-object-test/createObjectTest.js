@@ -1,6 +1,9 @@
 
-function createObjectTest(...args) {
-  return args;
+function createObjectTest([fname, lname]) {
+  return {
+    fname,
+    lname,
+  };
 }
 
 export {

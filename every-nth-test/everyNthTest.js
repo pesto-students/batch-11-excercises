@@ -1,8 +1,14 @@
 
-function everyNthTest(...args) {
-  return args;
+function everyNth(dirtyString, step) {
+  const characters = dirtyString.split('');
+  return characters.filter((character, index) => {
+    if (index % step === 0) {
+      return character;
+    }
+    return '';
+  }).join('');
 }
 
 export {
-  everyNthTest,
+  everyNth,
 };
