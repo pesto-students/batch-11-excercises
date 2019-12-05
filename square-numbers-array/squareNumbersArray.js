@@ -1,14 +1,10 @@
 
 function squareNumbersArray(numbers) {
-  const squaredNumbers = [];
-
-  for (let i = 0; i < numbers.length; i += 1) {
-    if (typeof numbers[i] !== 'number') {
-      throw new Error('Every element in the array must be a number.');
-    }
-    squaredNumbers.push(numbers[i] ** 2);
+  // eslint-disable-next-line no-restricted-globals
+  if (numbers.filter((i) => isNaN(i)).length > 0) {
+    throw new Error('Every element in the array must be a number.');
   }
-  return squaredNumbers;
+  return numbers.map((number) => number ** 2);
 }
 
 export {

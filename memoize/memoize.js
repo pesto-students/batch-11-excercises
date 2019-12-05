@@ -1,8 +1,6 @@
-/* eslint-disable func-names */
-
 function memoize(regularFunction) {
   const cache = {};
-  return function (...args) {
+  return function memo(...args) {
     const key = args.join('');
     if (!cache[key]) {
       cache[key] = regularFunction(...args);

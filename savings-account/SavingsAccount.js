@@ -1,5 +1,3 @@
-/* eslint-disable no-useless-escape */
-/* eslint-disable arrow-body-style */
 
 function SavingsAccount(...accountInformation) {
   const [accountNumber, email, firstName, lastName, products] = accountInformation;
@@ -28,9 +26,7 @@ function SavingsAccount(...accountInformation) {
     return true;
   };
 
-  this.isValidAccountNumber = () => {
-    return this.getAccountNumber().length !== 6;
-  };
+  this.isValidAccountNumber = () => this.getAccountNumber().length !== 6;
 
   this.isValidEmail = () => {
     const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -47,25 +43,15 @@ function SavingsAccount(...accountInformation) {
     return !this.getLastName().match(digitPattern);
   };
 
-  this.getAccountNumber = () => {
-    return this.information.accountNumber;
-  };
+  this.getAccountNumber = () => this.information.accountNumber;
 
-  this.getEmail = () => {
-    return this.information.email;
-  };
+  this.getEmail = () => this.information.email;
 
-  this.getFirstName = () => {
-    return this.information.firstName;
-  };
+  this.getFirstName = () => this.information.firstName;
 
-  this.getLastName = () => {
-    return this.information.lastName;
-  };
+  this.getLastName = () => this.information.lastName;
 
-  this.getProducts = () => {
-    return this.information.products;
-  };
+  this.getProducts = () => this.information.products;
 
   this.isValidInformation();
 }
