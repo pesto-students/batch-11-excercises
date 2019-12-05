@@ -1,6 +1,10 @@
 
 function counter(...args) {
-  return args;
+  var flag = 0;
+  function counter() {
+    return ++flag;
+  }
+  return counter;
 }
 
 export {
