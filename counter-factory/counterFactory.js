@@ -1,8 +1,18 @@
+function counterFactory() {
+  const object = {
+    count: 0,
+    increment: function() {
+      this.count = this.count + 1;
+      return this.count;
+    },
 
-function counterFactory(...args) {
-  return args;
+    decrement: function() {
+      this.count = this.count - 1;
+      return this.count;
+    }
+  };
+
+  return object;
 }
 
-export {
-  counterFactory,
-};
+export { counterFactory };

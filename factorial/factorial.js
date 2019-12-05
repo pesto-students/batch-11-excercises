@@ -1,8 +1,11 @@
+function factorial(number) {
+  let total = 1;
 
-function factorial(...args) {
-  return args;
+  for (let i = 0; i < number; i++) {
+    total = total * (number - i);
+  }
+
+  return total;
 }
 
-export {
-  factorial,
-};
+export { factorial };
