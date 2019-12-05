@@ -18,10 +18,7 @@
     "node-fetch": "*"
   },
   "devDependencies": {
-    "@babel/core": "*",
-    "@babel/preset-env": "*",
-    "babel-core": "^7.0.0-bridge",
-    "babel-jest": "*",
+    "babel-eslint": "^8.2.3",
     "eslint": "*",
     "eslint-config-airbnb": "*",
     "eslint-plugin-import": "*",
@@ -37,6 +34,8 @@
     }
   },
   "lint-staged": {
-    "!(*.test).js": ["eslint"]
+    "!(*.test).js": [
+      "eslint"
+    ]
   }
 }

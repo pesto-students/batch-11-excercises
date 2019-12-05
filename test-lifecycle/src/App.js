@@ -4,11 +4,20 @@ class App extends Component {
   /* eslint-disable react/no-unused-state */
   state = {
     lifeCycle: '',
+  };
+  componentDidMount() {
+    this.setState({ lifeCycle: 'componentDidMount' });
   }
+  componentWillReceiveProps(nextProps, nextContext) {
+    this.setState({ lifeCycle: 'componentWillReceiveProps' });
+  }
+
   render() {
+    const { lifeCycle } = this.state;
     return (
       <div className="App">
-        Welcome to react
+        <h1> Welcome to react </h1>
+        <p className="lifeCycle">{lifeCycle}</p>
       </div>
     );
   }
