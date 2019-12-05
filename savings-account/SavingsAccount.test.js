@@ -3,10 +3,10 @@ import { SavingsAccount } from './SavingsAccount';
 describe('SavingsAccount', () => {
   test('SavingsAccount constructs the proper object', () => {
     const myAccount = {
-      _accountNumber: '123456',
-      _email: 'kohli@gmail.com',
-      _firstName: 'Virat',
-      _lastName: 'Kohli',
+      accountNumber: '123456',
+      email: 'kohli@gmail.com',
+      firstName: 'Virat',
+      lastName: 'Kohli',
       products: [],
     };
     const actualAccount = new SavingsAccount('123456', 'kohli@gmail.com', 'Virat', 'Kohli');
