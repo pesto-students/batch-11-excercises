@@ -1,0 +1,54 @@
+{
+    "day": "day-3",
+    "segmentName": "segment-2",
+    "exercises": {
+        "reverse-string": {
+            "completed": true
+        },
+        "is-palindrome": {
+            "completed": true
+        },
+        "diff-array": {
+            "completed": true
+        },
+        "longest-word-in-string": {
+            "completed": true
+        },
+        "telephone-check": {
+            "completed": true
+        },
+        "rot13": {
+            "completed": false
+        },
+        "get-index-to-ins": {
+            "completed": true
+        },
+        "repeat-string-num-times": {
+            "completed": true
+        },
+        "binary-agent": {
+            "completed": true
+        },
+        "bouncer": {
+            "completed": true
+        },
+        "sum-all": {
+            "completed": true
+        },
+        "pairwise": {
+            "completed": false
+        },
+        "convert-to-roman": {
+            "completed": true
+        },
+        "large-of-four": {
+            "completed": true
+        },
+        "steamroll-array": {
+            "completed": true
+        },
+        "rotated-string": {
+            "completed": true
+        }
+    }
+}
