@@ -36,19 +36,32 @@ const writersIntersection = async (db) => {
 /* Q4 (*)
   Return the number of movies written by any of the writers in Q3
 */
-const writersUnion = async () => {
+const writersUnion = async (db) => {
+  const writers = ['Roberto Orci', 'Alex Kurtzman', 'Damon Lindelof', 'Gene Roddenberry'];
+  const moviesUnion = writers.reduce(async (acc, writer) => {
+    const movies = await db
+      .collection('movieDetails')
+      .find({ writers: writer }, { projection: { _id: 1 } }).toArray();
+    return acc.then((result) => [...movies, ...result]);
+  }, Promise.resolve([]));
+  const moviesObj = await moviesUnion.then((items) => items.reduce((acc, item) => {
+    // eslint-disable-next-line no-underscore-dangle
+    acc[item._id] = 1;
+    return acc;
+  }, {}));
+  return Object.keys(moviesObj).length;
 };
 
 /* Q5 (*)
   Return the number of movies in which actor is "Jackie Chan"
 */
-const actor = async () => {};
+const actor = async (db) => db.collection('movieDetails').find({ actors: 'Jackie Chan' }).count();
 
 /* Q6 (*)
   Return the number of movies in which actor "Jackie Chan" is second
   in the array "actors"
 */
-const positionalActor = async () => {};
+const positionalActor = async (db) => db.collection('movieDetails').find({ 'actors.1': 'Jackie Chan' }).count();
 
 /* Q7 (*)
   Return the first movie with imdb rating greater than or equal to 9.0
@@ -106,4 +119,11 @@ module.exports = {
   movieRating,
   writersIntersection,
   writersUnion,
+  actor,
+  positionalActor,
+  comparisonOperator,
+  trimUnrated,
+  unratedByTomato,
+  goodMovies,
+  regexSearch,
 };
