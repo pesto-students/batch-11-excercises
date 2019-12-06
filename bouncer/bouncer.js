@@ -1,6 +1,7 @@
 
-function bouncer(...args) {
-  return args;
+function bouncer(randomArray) {
+  const listOfTruthyValues = randomArray.filter(Boolean);
+  return listOfTruthyValues;
 }
 
 export {
