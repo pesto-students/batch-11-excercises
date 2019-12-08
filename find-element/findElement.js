@@ -1,6 +1,6 @@
-
-function findElement(...args) {
-  return args;
+function findElement(elementsArray) {
+  const result = elementsArray.filter((element) => element % 2 === 0);
+  return result[0];
 }
 
 export {
