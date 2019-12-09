@@ -6,7 +6,7 @@
             "completed": false
         },
         "knuth-morris-pratt": {
-            "completed": false
+            "completed": true
         },
         "longest-common-substring": {
             "completed": false
