@@ -1,8 +1,13 @@
+const sumOfPerfectSquares = (number) => {
+  if (number <= 3) return number;
 
-function sumOfPerfectSquares(...args) {
-  return args;
-}
+  let res = number;
 
-export {
-  sumOfPerfectSquares,
+  for (let i = 1; i <= number; i += 1) {
+    const temp = i * i;
+    if (temp > number) break;
+    else res = Math.min(res, 1 + sumOfPerfectSquares(number - temp));
+  }
+  return res;
 };
+export { sumOfPerfectSquares };
