@@ -1,22 +1,13 @@
-function nearestSquare(number) {
-  if (Math.sqrt(number) % 1 === 0) {
-    return number;
+const sumOfPerfectSquares = (number) => {
+  if (number <= 3) return number;
+
+  let res = number;
+
+  for (let i = 1; i <= number; i += 1) {
+    const temp = i * i;
+    if (temp > number) break;
+    else res = Math.min(res, 1 + sumOfPerfectSquares(number - temp));
   }
-
-  // eslint-disable-next-line no-plusplus
-  return nearestSquare(--number);
-}
-
-function sumOfPerfectSquares(number) {
-  let count = 0;
-  let sumSquareNumber = number;
-  while (sumSquareNumber !== 0) {
-    sumSquareNumber -= nearestSquare(sumSquareNumber);
-    count += 1;
-  }
-  return count;
-}
-
-export {
-  sumOfPerfectSquares,
+  return res;
 };
+export { sumOfPerfectSquares };
