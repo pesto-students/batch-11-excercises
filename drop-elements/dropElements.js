@@ -1,6 +1,6 @@
 
-function dropElements(...args) {
-  return args;
+function dropElements(numbers, predicate) {
+  return numbers.filter(predicate);
 }
 
 export {
