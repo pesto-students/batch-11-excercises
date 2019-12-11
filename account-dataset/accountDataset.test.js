@@ -43,8 +43,8 @@ describe('accountDataset', () => {
     });
   });
 
-  describe.only('sumOfInterests', () => {
-    it('should return the sum the 18.9% interest for all amounts in bankBalances, in the selected states, rounded to the nearest cent', () => {
+  describe('sumOfInterests', () => {
+    it('should return the sum of the 18.9% interest for all amounts in bankBalances, in the selected states, rounded to the nearest cent', () => {
       expect(sumOfInterests())
         .toBe(2504611.23);
     });
