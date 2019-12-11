@@ -1,8 +1,18 @@
+function diffArray(firstArray, secondArray) {
+  let differenceArray = [];
+  for (let item of firstArray) {
+    if (!secondArray.includes(item)) {
+      differenceArray.push(item);
+    }
+  }
 
-function diffArray(...args) {
-  return args;
+  for (let item of secondArray) {
+    if (!firstArray.includes(item)) {
+      differenceArray.push(item);
+    }
+  }
+
+  return differenceArray;
 }
 
-export {
-  diffArray,
-};
+export { diffArray };
