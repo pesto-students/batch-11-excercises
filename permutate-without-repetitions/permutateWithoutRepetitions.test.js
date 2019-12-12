@@ -33,6 +33,7 @@ describe('permutateWithoutRepetitions', () => {
 
     const permutations3 = permutateWithoutRepetitions(['A', 'B', 'C']);
     expect(permutations3.length).toBe(factorial(3));
+    console.log(permutations3);
     expect(permutations3).toEqual([
       ['A', 'B', 'C'],
       ['B', 'A', 'C'],
