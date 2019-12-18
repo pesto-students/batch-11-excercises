@@ -6,7 +6,7 @@
             "completed": false
         },
         "ackermann": {
-            "completed": false
+            "completed": true
         },
         "aperture": {
             "completed": true
@@ -18,7 +18,7 @@
             "completed": false
         },
         "arithmetic-expression-evaluator": {
-            "completed": false
+            "completed": true
         },
         "array-addition": {
             "completed": true
