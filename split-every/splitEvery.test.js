@@ -17,9 +17,9 @@ describe('splitEvery', () => {
   });
 
   it('throws if first argument is not positive', () => {
-    expect(() => { splitEvery(0, []); }).toThrow();
-    expect(() => { splitEvery(0, ''); }).toThrow();
-    expect(() => { splitEvery(-1, []); }).toThrow();
-    expect(() => { splitEvery(-1, ''); }).toThrow();
+    expect(() => { splitEvery(0, []); }).toThrow('Split length should be positive');
+    expect(() => { splitEvery(0, ''); }).toThrow('Split length should be positive');
+    expect(() => { splitEvery(-1, []); }).toThrow('Split length should be positive');
+    expect(() => { splitEvery(-1, ''); }).toThrow('Split length should be positive');
   });
 });
