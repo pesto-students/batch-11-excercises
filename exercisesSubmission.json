@@ -30,7 +30,7 @@
             "completed": false
         },
         "summable": {
-            "completed": false
+            "completed": true
         },
         "theatre": {
             "completed": false
