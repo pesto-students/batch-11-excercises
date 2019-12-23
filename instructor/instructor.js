@@ -1,6 +1,6 @@
 
-function instructor(...args) {
-  return args;
+function instructor() {
+  return null;
 }
 
 export {
