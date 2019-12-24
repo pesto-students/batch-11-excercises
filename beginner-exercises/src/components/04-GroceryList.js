@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /*
   In this exercises, you'll will make a reactive grocery list.
@@ -25,33 +26,32 @@ class GroceryList extends React.Component {
     this.state = {
       groceries: [{ name: 'Apples' }, { name: 'KitKat' }, { name: 'Red Bull' }],
     };
+    this.addGrocery = this.addGrocery.bind(this);
   }
+
+  addGrocery(event) {
+    event.preventDefault();
+    this.setState(prevState => [...prevState.groceries, { name: this.grocery.value }]);
+  };
 
   render() {
     const { groceries } = this.state;
-    /*
-      Properties are a way to pass parameters to your React components.
-      We mentioned this in the third exercise. Properties are to React
-      components what attributes are to HTML elements.
-
-      Below you can see how to pass properties to child components.
-      We have defined a `grocery` property for each `GroceryListItem`.
-    */
-    const groceriesComponents = groceries.map(item => ( // eslint-disable-line no-unused-vars
+    const groceriesComponents = groceries.map(item => (
       <GroceryListItem grocery={item} />
     ));
-    // Hint: Don't forget about putting items into `ul`
     return (
-      <div>
-        Put your code here
-      </div>
+      <React.Fragment>
+        <ul> {groceriesComponents} </ul>
+        <form>
+          <label form="grocery"> Grocery: </label>
+          <input type="text" name="grocery" id="grocery" ref={input => this.grocery = input}/>
+          <button type="submit" onClick={this.addGrocery}> Add </button>
+        </form>
+      </React.Fragment>
     );
   }
 }
 
-// Render grocery name from component's properties.
-// If you have a problem, check `this.props` in the console.
-/* eslint-disable react/no-multi-comp, no-useless-constructor */
 class GroceryListItem extends React.Component {
   constructor(props) {
     super(props);
@@ -60,12 +60,15 @@ class GroceryListItem extends React.Component {
   render() {
     return (
       <li>
-        Put your code here.
+        {this.props.grocery.name}
       </li>
     );
   }
 }
 
-// Do prop validation here using the package `prop-types`
+GroceryListItem.propTypes = {
+  grocery: PropTypes.object,
+};
+
 
 export default GroceryList;
