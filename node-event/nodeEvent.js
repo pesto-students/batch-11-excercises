@@ -1,8 +1,13 @@
+const EventEmitter = require('events');
 
-function nodeEvent(...args) {
-  return args;
-}
+const nodeEvent = (message) => {
+  console.log(`Hello ${message}`);
+};
+
+const GreetingEmitter = new EventEmitter();
+
+GreetingEmitter.on('greet', nodeEvent);
 
 export {
-  nodeEvent,
+  GreetingEmitter,
 };

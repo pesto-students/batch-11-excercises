@@ -1,7 +1,10 @@
-import { nodeEvent } from './nodeEvent';
+import { GreetingEmitter } from './nodeEvent';
 
-describe('Template Test', () => {
-  test('Write your own test cases here', () => {
-    // Write your own tests
+describe('Greeting emitter', () => {
+  test('should be an instanceof event', () => {
+    expect(GreetingEmitter.constructor.name).toBe('EventEmitter');
+  });
+  test('should return text in correct format', () => {
+    expect(GreetingEmitter.emit('greet', 'Meet')).toBe(true);
   });
 });
